@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<div class="timer-section">
+    <div class="container" id="demo-box">
+        <p id="demo" class="time-left"></p>
+    </div>
+</div>
+
+<div class="question-section">
+    <div class="container">
+        <p style="font-family: 'Cabin', sans-serif;font-weight: 200;font-size:24px;color:#111a2d">Question Accuracy:
+            {{question.accuracy}} %</p>
+
+        <div class="question" style="user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;-user-select:none;" >
+            <strong>Q {{question.Q_number}} :- </strong><br>
+            {{ question.Question|safe }}
+        </div>
+        
+        {% if question.image %}
+
+    <div class="image-section">
+      <img src="{{question.image.url}}" width="100%"/>
+    </div>
+
+  {%endif%}
+
+        <form id="ans" method="post" action="/answer/">
+            {% csrf_token %}
+            <div class="options-block">
+                <div class="opt">
+                    <input type="radio" name="option" value="1" id="option1">
+                    <label for="option1" style="user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;-user-select:none;">{{question.option1}}</label>
+                </div>
+                <div class="opt">
+                    <input type="radio" name="option" value="2" id="option2">
+                    <label for="option2" style="user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;-user-select:none;">{{question.option2}}</label>
+                </div>
+                <div class="opt">
+                    <input type="radio" name="option" value="3" id="option3">
+                    <label for="option3" style="user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;-user-select:none;">{{question.option3}}</label>
+                </div>
+                <div class="opt">
+                    <input type="radio" name="option" value="4" id="option4">
+                    <label for="option4" style="user-select:none;-webkit-user-select:none;-moz-user-select:none;-o-user-select:none;-user-select:none;">{{question.option4}}</label>
+                </div>
+                <span style="display:none"><input type="radio" name="option" id="option5" value="0" /></span>
+                <input type="button" class="clear-button" value="Clear Choice"
+                    onclick="document.getElementById('option5').checked = true;" />
+
+            </div>
+            <div class="next-arrow-block">
+                <div class="next-arrow">
+                    <input type="submit" value="Next &#8594" />
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    // Set the date we're counting down to
+    True = 1
+      False=0
+      var countDownDate
+      if ({{player.qualified}}) {
+        // Final slot date
+        countDownDate = new Date("Jan 11, 2022 23:10:00").getTime();
+      }
+      else if ({{player.slot}}==1) {
+        // slot 1 date
+        countDownDate = new Date("Jan 11, 2022 21:40:00").getTime();
+      } 
+      else if ({{player.slot}}==2) {
+        // slot 2 date 
+        countDownDate = new Date("Jan 11, 2022 22:00:00").getTime();
+      } 
+      else if ({{player.slot}}==3) {
+        // slot 3 date 
+        countDownDate = new Date("Jan 11, 2022 22:20:00").getTime();
+      } 
+      else{
+        // final slot date 
+        countDownDate = new Date("Jan 11, 2022 23:10:00").getTime();
+      }
+      
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("demo-box").style.visibility = "visible";
+        document.getElementById("demo").innerHTML = "Time Left : " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "TIME OVER";
+            // window.location.replace("/lboard");
+            document.getElementById("ans").submit();
+            // window.location.reload();
+        }
+        else if(hours == 0 && minutes == 5 && seconds == 0)
+        {
+            alert("Quiz will auto-submit after 5 minutes");
+        }
+    }, 1000);
+</script>
+
+
+{%endblock%}

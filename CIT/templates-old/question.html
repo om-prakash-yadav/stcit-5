@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<!-- For Timer -->
+<div class="row">
+  <div class="col-lg-12">
+      <div class="rules border-shadow" style="padding:5px; visibility: hidden;" id="demo-box">
+        <p style="text-align:center;font-size:25px;color:green" id="demo"></p>
+      </div>
+    </div>
+  </div>
+<!-- If image exist in the question -->
+<div class="row">
+{% if question.image %}
+<div class="col-lg-12">
+    <div class="rules border-shadow" style="padding:20px;">
+      <img style="display: block; margin-left: auto; margin-right: auto;" src="{{question.image.url}}" width="100%"/>
+    </div>
+  </div>
+  {%endif%}
+</div>
+
+
+<div class="row">
+
+    <!-- Jumbotron -->
+    <div class="col-lg-12">
+    <div class=" rules border-shadow" style="padding:20px;">
+      <p style="font-size:25px;color:#008080">Question Accuracy: {{question.accuracy}} %</p>
+      <div class="lead" style="padding:10px; font-family: 'Montserrat', sans-serif; font-size: 25px;">
+        <strong>Q {{question.Q_number}}</strong>
+        {{ question.Question|safe }}
+          </div>
+          <form id="ans" method="post" action="/answer/">
+              {% csrf_token %}
+              <div style="padding-left: 10px;">
+                    <input type="radio" name="option" value="1" id="option1" />
+                    <label for="option1" style="font-size: 20px;">{{question.option1}}</label>
+                    <br>
+                    <input type="radio" name="option" value="2" id="option2" />
+                    <label for="option2" style="font-size: 20px;">{{question.option2}}</label>
+                    <br>
+                    <input type="radio" name="option" value="3" id="option3" />
+                    <label for="option3" style="font-size: 20px;">{{question.option3}}</label>
+                    <br>
+                    <input type="radio" name="option" value="4" id="option4" />
+                    <label for="option4" style="font-size: 20px;">{{question.option4}}</label>
+                    <br>
+                    <span style="display:none"><input type="radio" name="option" id="option5" value="0" /></span>
+                    <input type="button" class="btn btn-primary" value="Clear Choice" onclick="document.getElementById('option5').checked = true;" />
+                  </div>
+              <br />
+              <input type="submit" class="btn btn-primary btn-lg btn-block" value="Next Question" />
+          </form>
+        </div>
+      </div>
+    </div>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Dec 09, 2020 21:15:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo-box").style.visibility = "visible";
+  document.getElementById("demo").innerHTML = "Time Left: " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "TIME OVER";
+    window.location.replace("/lboard");
+    // document.getElementById("ans").submit();
+
+  }
+}, 1000);
+</script>
+{%endblock%}
+

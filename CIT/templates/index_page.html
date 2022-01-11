@@ -1,0 +1,110 @@
+{%extends 'base.html'%}
+{% load static %} 
+{% block content %}
+
+<div class="section section1">
+    <div class="container">
+        <h1 class="title"> <strong> Cognitive Intelligence Test 5.0 </strong> </h1>
+        <p style="font-weight: bold;">
+            Cognitive Intelligence test is the newest member in the chapter's list of
+            events. It is an online event where sets of questions are designed similar
+            to that of a screening process in company.CIT not only provides an idea
+            about the level of competition but also gives a chance to rectify oneself.
+            The test comprises of basic mathematical aptitude, verbal and logical
+            reasoning and data interpretation. This is one of the finest opportunities
+            to test one's skills and be better before the ultimate showdown.
+        </p>
+        <h2><strong>Schedule For CIT 5.0</strong></h2>    
+            <b>Preliminary Round:</b> Candidates can attempt CIT only once in any of the three available slots:
+            <li><b>Slot 1:</b> January 18, 2021 (7:00 PM - 7:45 PM)</li>
+            <li><b>Slot 2:</b> January 19, 2021 (7:00 PM - 7:45 PM)</li>
+            <li><b>Slot 3:</b> January 20, 2021 (8:00 PM - 8:45 PM)</li>
+            <b>Final Round:</b> Candidates selected for final round will receive a mail with details
+            <li><b>Final:</b> January 22, 2021 (8:00 PM - 8:45 PM)</li>
+        </div>
+</div>
+
+<div class="section2">
+    <div class="container">
+        <div class="count-down">
+            <h3><strong>Count Down</strong></h3>
+                <p id="demo">START!</p>
+        </div>
+        <div class="login">
+            <h3>Login to Book Slot for Preliminary Round !</h3><br>
+            <button class="login-button" onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';">Login With Google</button>
+        </div>
+    </div>
+</div>
+
+<div class="section prizes-section">
+    <div class="container">
+        <div class="col-lg-12 ">
+            <h2><strong>Cash PRIZES worth 7.5K For CIT 5.0</strong></p>
+                <img src="{% static 'img/prize.jpeg'%}" alt="PRIZES">
+        </div>
+    </div>
+</div>
+<div class="rules-section">
+    <div class="container">
+        <h2><strong>RULES</strong></h2>
+        <ul>
+            <li>Register at <a href="#">Dare2Compete</a> platform to confirm your registration.</li>
+            <li>This test comprises of <strong>30 questions</strong> which needs to be solved in
+                time limit of <strong>45 minutes</strong>.</li> 
+            <li>Test includes questions from Logical Reasoning, Verbal Reasoning, Data Interpretation and Aptitude.
+                </li>
+            <li>Each question carries <strong>4 mark for correct answer. Incorrect
+                    answer will fetch you negative marks of - 1.</strong></li>
+            <li>No marks if question is not attempted.</li>
+            <li><strong>Just Select the Option or Click Next Question(without
+                    selecting any option) to skip the Question</strong></li>
+            <li>Once you skip to the next question you cannot go back.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="section sponsors-section">
+    <div class="container">
+        <div class="col-lg-12 ">
+            <h2><strong>EVENT SPONSOR</strong></p>
+                <img src="{% static 'img/ims.png'%}" alt="IMS"
+                    style="margin-right: 10px; padding-bottom: 0;">
+                <!-- <img src="{% static 'img/iocl.png'%}" alt="IOCL"
+                    style="padding-bottom: 0;"> -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 11, 2022 21:30:00").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+    
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+    
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+      // Display the result in the element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+    
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "START!";
+      }
+    }, 1000);
+    </script>
+
+{%endblock%}

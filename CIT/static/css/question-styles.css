@@ -1,0 +1,129 @@
+.time-left{
+    font-family: 'Cabin' , sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(255, 27, 27);
+    background-color: white;
+}
+
+.question {
+  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+}
+
+.image-section{
+  width: 50%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+form div{
+    margin-left: 15px;
+}
+
+.opt {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 1.2em;
+  padding: 0 0.5em;
+}
+.opt input {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.opt input::before,
+.opt input::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+}
+.opt input:checked::before {
+  background: #111a2d;
+  transform: translate(-50%, -50%);
+}
+.opt input::after {
+  width: 12px;
+  height: 12px;
+  background: none;
+  border: 2px solid #111a2d;
+  border-radius: 50px;
+  transform: translate(-80%, -50%);
+  transition: all 0.4s;
+}
+.opt input:checked::after {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #111a2d;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.opt label {
+  margin-left: 0.5em;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+input.clear-button{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 15px;
+  background-color: rgba(17, 26, 45, 0.9);
+  color: white;
+  font-family: 'Montserrat' , sans-serif;
+  border: 1px solid white;
+  border-radius: 25px;
+}
+input.clear-button:hover{
+  background-color: rgba(17, 26, 45, 0.8);
+}
+
+.next-arrow-block{
+  width: 100%;
+  position: relative;
+}
+.next-arrow {
+  width: auto;
+  height: 50px;
+  background-color: transparent;
+  color: #111a2d;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.next-arrow input{
+  border: none;
+  background-color: transparent;
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 30px;
+  padding-right: 10px;
+}
+/* .next-arrow-block span{
+  display: inline;
+} */
+
+@media (max-width: 700px){
+  .image-section{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .question {
+    font-size: 18px;
+  }
+}

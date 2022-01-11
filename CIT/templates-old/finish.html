@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%block content%}
+<!-- Example row of columns -->
+<div class="row">
+	<div class="col-sm-12">
+	{% if user and not user.is_anonymous %}
+        <br><br>
+         <h1 style="color: #4D9A1A; font-weight: bold; text-align: center;font-family:'Capriola',sans-serif;"><strong>TEST FINISHED</strong></h1>
+         <br>
+         <h2 style="color: #4D9A1A; font-weight: bold; text-align: center;"><strong>Your score is {{player.score}}</strong></h2>
+         <br>
+         <h3 style="color: #4D9A1A; font-weight: bold; text-align: center;"><strong><a href="/lboard"> LeaderBoard </a> to see Results</strong></h3>
+         <br><br>
+	{% endif %}
+	</div>
+</div>
+
+{%endblock%}
+
+
+
+

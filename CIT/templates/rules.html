@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<div class="rules-section">
+    <div class="container">
+        <h2><strong>Important Instructions</strong></h2>
+        <ul>
+            <li>Register at <a href="#">Dare2Compete</a> platform to confirm your registration.</li> 
+            <li> <b>Preliminary Round:</b> Candidates can attempt CIT only once in any of the three available slots:</li>
+            <ul>
+            <li><b>Slot 1:</b> January 18, 2021 (7:00 PM - 7:45 PM)</li>
+            <li><b>Slot 2:</b> January 19, 2021 (7:00 PM - 7:45 PM)</li>
+            <li><b>Slot 3:</b> January 20, 2021 (8:00 PM - 8:45 PM)</li>
+            </ul>
+            <li>Candidates selected for final round will receive a mail with details.</li>
+            <li><b>Final Round:</b> January 22, 2021 (8:00 PM - 8:45 PM)</li>
+        </ul>
+        <h2><strong>RULES</strong></h2>
+        <ul>
+            <li>This test comprises of <strong>30 questions</strong> which needs to be solved in
+                time limit of <strong>45 minutes</strong>.</li> 
+            <li>Test includes questions from Logical Reasoning, Verbal Reasoning, Data Interpretation and Aptitude.
+                </li>
+            <li>Each question carries <strong>4 mark for correct answer. Incorrect
+                    answer will fetch you negative marks of - 1.</strong></li>
+            <li>No marks if question is not attempted.</li>
+            <li><strong>Just Select the Option or Click Next Question(without
+                    selecting any option) to skip the Question</strong></li>
+            <li>Once you skip to the next question you cannot go back.</li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="section prizes-section">
+    <div class="container">
+        <div class="col-lg-12 ">
+            <h2><strong>Cash PRIZES worth 7.5K For CIT 5.0</strong></p>
+                <img src="{% static 'img/prize.jpeg'%}" alt="PRIZES">
+        </div>
+    </div>
+</div>
+
+{%endblock%}

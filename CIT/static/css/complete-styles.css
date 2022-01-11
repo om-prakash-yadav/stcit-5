@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Poppins", sans-serif; */
+}
+body {
+  background-color: #f5f7fa;
+  background-repeat: no-repeat;
+  position: relative;
+}
+/* .wrapper {
+  position: relative;
+  min-height: 100vh;
+  max-height: 300vh;
+} */
+nav {
+  padding-top: 15px;
+  width: 100%;
+  height: auto;
+  background-color: #111a2d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Logo {
+  color: white;
+  font-size: 1.5em;
+  margin-top: 20px;
+  font-family: "Cabin", sans-serif;
+}
+.Logo a {
+  text-decoration: none;
+  color: white;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.nav ol {
+  display: flex;
+  list-style: none;
+}
+.nav ol li {
+  margin: 1em;
+}
+.nav ol li a {
+  text-decoration: none;
+  padding: 0.2em 1.2em 0.9em 1.2em;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.nav ol li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 41px;
+  border-radius: 10px 10px 0 0;
+  background: #853333;
+  transform-origin: bottom;
+  background: white;
+  transform: scaleY(0.05);
+  z-index: -1;
+  transition: all 0.4s;
+}
+.nav ol li a:hover::before {
+  transform: scaleY(1.1);
+}
+.nav ol li a:hover {
+  color: black;
+}
+
+.drop-down {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  margin-top: 10px;
+  z-index: 1;
+}
+.d-content{
+  display: flex;
+  flex-direction: column;
+}
+.drop-down:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a{
+  margin-bottom: 5px;
+}
+.dropdown-content a b {
+  color: #111a2d;
+}
+
+.btn {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: none;
+  margin-bottom: 15px;
+}
+.btn::before {
+  content: "\f0c9";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  font-size: 2em;
+}
+
+/* update_profile.html css */
+
+.update-profile {
+  font-family: "Montserrat", sans-serif;
+}
+.update-profile h3{
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.update-profile span{
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+/* view_profile.html css */
+
+.view-profile{
+  font-family: "Montserrat", sans-serif;
+}
+
+.view-profile h1{
+  margin-bottom: 15px;
+  margin-top: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+.view-profile h3 , .view-profile h4{
+  line-height: 1.6;
+}
+/* forms.html css */
+
+.slots-choose{
+  margin-top: 60px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 15vh;
+  text-align: center;
+}
+.slots-choose h2{
+  margin-bottom: 30px;
+}
+.slots-choose .options-block{
+  margin-left: 40%;
+  margin-right: 40%;
+  padding-bottom: 30px;
+}
+/* .slots-block .opt{
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+} */
+
+/* body css */
+
+.section {
+  width: 100%;
+  text-align: center;
+  color: #111a2d;
+}
+.section1 {
+  margin-top: 60px;
+  padding: 0px, 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+.title {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+.section1 p {
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+.section1 h2 {
+  font-size: 30px;
+  font-weight: bolder;
+}
+.section1 li{
+  font-weight: 900;
+  line-height: 2;
+}
+.section2 .container {
+  font-family: "Cabin", sans-serif;
+  background-color: white;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.count-down {
+  text-align: center;
+  flex: 50%;
+  border-right: 1.5px solid #111a2d;
+}
+.count-down p {
+  font-size: 27px;
+  margin-bottom: 0;
+  color: #e00000;
+}
+.login {
+  text-align: center;
+  flex: 50%;
+}
+.login h3 {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.login-button {
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 25px 0 25px;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: #e00000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  border-radius: 8px;
+}
+.login-button:hover {
+  background-color: #c90000;
+}
+/* .login-button:hover {
+  background: hsla(6, 100%, 67%, 1);
+
+  background: linear-gradient(
+    180deg,
+    hsla(6, 100%, 67%, 1) 0%,
+    hsla(0, 100%, 44%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    180deg,
+    hsla(6, 100%, 67%, 1) 0%,
+    hsla(0, 100%, 44%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    180deg,
+    hsla(6, 100%, 67%, 1) 0%,
+    hsla(0, 100%, 44%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF6655", endColorstr="#E00000", GradientType=1 );
+} */
+
+.prizes-section {
+  margin-top: 30px;
+  padding: 45px 0;
+  background-color: #111a2d;
+  color: white;
+}
+.prizes-section img {
+  width: 70%;
+  margin-top: 20px;
+}
+
+.sponsors-section {
+  margin-top: 60px;
+  padding: 45px 30px;
+  background-color: #111a2d;
+  color: white;
+}
+
+.sponsors-section img {
+  width: 30%;
+}
+
+.rules-section {
+  margin-top: 30px;
+  margin-bottom: 45px;
+  padding: 30px 0px;
+  background-color: white;
+  color: #111a2d;
+}
+
+.rules-section ul li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 2;
+}
+.rules-section h2 {
+  font-family: "Cabin", sans-serif;
+  margin-bottom: 15px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* win.html css and finish.html css and wait.html css and luck.html css */
+
+.win-section,
+.finish-section,
+.wait-section,
+.luck-section {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 90px;
+}
+.win-section h2,
+.finish-section h2,
+.luck-section h2 {
+  line-height: 1.6;
+}
+.wait-section #demo {
+  font-size: 27px;
+  color: #e00000;
+  font-weight: bolder;
+}
+.win-section {
+  margin-bottom: 15vh;
+}
+.wait-section {
+  margin-bottom: 7vh;
+}
+.finish-section {
+  margin-bottom: 25vh;
+}
+.luck-section {
+  margin-bottom: 13vh;
+}
+
+/* footer css */
+
+.line {
+  width: 90%;
+  background-color: #111a2d;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45px;
+  margin-bottom: 30px;
+}
+
+.footer {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Cabin", sans-serif;
+  padding-bottom: 20px;
+  /* position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0; */
+}
+
+.footer img {
+  display: inline;
+  margin-left: 0.5em;
+  max-height: 4em;
+  max-width: 70%;
+}
+
+/* lboard.html css */
+.table-section {
+  margin-top: 45px;
+  font-family: "Montserrat", sans-serif;
+}
+.table-section h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.table {
+  border-radius: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.table thead {
+  background-color: #111a2d;
+  color: white;
+}
+.table tr {
+  height: 60px;
+  text-align: center;
+  border-bottom: 1px solid rgba(17, 26, 45, 0.6);
+}
+.table tr:hover {
+  background-color: rgba(17, 26, 45, 0.1);
+}
+.table tr.highlight-rank {
+  background-color: rgba(17, 26, 45, 0.1);
+}
+.table td {
+  font-size: 16px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.slots{
+  margin-top: 20px;
+}
+.slots .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.slot-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  background-color: rgba(17, 26, 45, 1);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid white;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-left: 15px;
+}
+.slot-button:hover {
+  background-color: rgba(17, 26, 45, 0.9);
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .btn {
+    display: flex;
+    z-index: 100;
+    color: white;
+  }
+  .btn:hover {
+    color: white;
+  }
+  nav {
+    justify-content: space-between;
+    padding: 0 2em;
+  }
+  .nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: #111a2d;
+    transform: translateY(-110%);
+    transition: all 0.4s;
+  }
+  nav input:checked ~ .nav {
+    transform: translateY(0%);
+  }
+  nav input:checked::before {
+    content: "\f00d";
+  }
+}
+@media (max-width: 700px) {
+  .Logo{
+    font-size: 1.4em;
+  }
+  .nav ol {
+    flex-direction: column;
+    text-align: center;
+  }
+  .title {
+    font-size: 35px;
+  }
+  .section1 p {
+    font-size: 16px;
+  }
+  .section2 .container {
+    flex-direction: column;
+  }
+  .rules-section ul li {
+    font-size: 18px;
+    line-height: 2;
+  }
+  .count-down {
+    width: 90%;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #111a2d;
+    border-right: none;
+  }
+  .sponsors-section img {
+    width: 40%;
+  }
+  .table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slot-button{
+    font-size: 13px;
+    margin-left: 5px;
+  }
+
+  .slots-choose .options-block{
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+}
+@media (max-width: 500px){
+  .title {
+    font-size: 30px;
+  }
+  .section1{
+    font-size: 16px;
+  }
+  .section1 h2{
+    font-size: 27px;
+  }
+  .section1 p {
+    font-size: 15px;
+  }
+  .slots-choose .options-block{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+@media (max-width: 330px){
+  .Logo{
+    font-size: 1.2em;
+  }
+  .slot-button{
+    font-size: 12px;
+    margin-left: 0;
+  }
+}

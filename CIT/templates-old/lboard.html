@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+      <div class="row">
+
+        <a href="/"><button type="button" class="btn btn-primary btn-lg " style="margin-top:10px; visibility: hidden;" id="go-back">Go Back</button></a>
+
+        <h1 class="lboardh1">Leaderboard</h1>
+
+        <div class="col-lg-8 col-lg-offset-2">
+
+            {% if players %}
+            <div class="table-responsive">
+            <table  class="table table-hover table-striped table-bordered "  style="font-weight:bold;box-shadow: 0px 0px 8px #000">
+                <tr style="background-color:#457fca;color:#fff;font-size:18px">
+                	<th>Rank</th><th >Name</th><th>Score</th></th>
+                </tr>
+                {% for player in players %}
+                {% if rank == player.rank %}
+                <tr style="background-color:#507bb3; color:#fff;font-size:18px">
+                	<td>{{ player.rank }}</td><td>{{ player.name }}</td>    <td> {{player.score}} </td>    </td>
+                </tr>
+                {% else %}
+                <tr>
+                	<td>{{ player.rank }}</td><td>{{ player.name }}</td>    <td> {{player.score}} </td>    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </table>
+            </div>
+        {% else %}
+            <h3 style="text-align:center"><strong>No Registrations For The Exam Till Now</strong></h3>
+        {% endif %}
+        </div>
+      </div>
+
+      <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Dec 09, 2020 21:15:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+          // Get today's date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // If the count down is finished, write some text
+          if (distance > 0) {
+            clearInterval(x);
+            document.getElementById("go-back").style.visibility = "visible";
+          }
+        }, 1000);
+        </script>
+{%endblock%}
+
+

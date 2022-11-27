@@ -1,0 +1,419 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+body {
+    background-image: url('../Assets/cit pc 2-02.png');
+    background-size: cover;
+
+}
+
+
+.header {
+    /* border: 2px solid rgb(75, 75, 238); */
+    height: 3em;
+    border-radius: 15px;
+    margin: 20px;
+    font-size: 2rem;
+
+}
+
+
+.header img {
+    height: 3.6em;
+    border-radius: 84px;
+    position: absolute;
+    top: 6%;
+}
+
+.header h2 {
+    font-family: sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    border: 1px solid rgb(40, 113, 240);
+    border-radius: 15px;
+    background-color: rgb(13, 45, 82);
+
+    color: #ffffff;
+
+    margin: 3px;
+    font-size: 3em;
+}
+
+.main {
+    /* border: 2px solid rgb(0, 0, 128); */
+    height: 20rem;
+    margin: 21px;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.question {
+    height: auto;
+    /* border: 1px solid rgb(78, 255, 151); */
+    padding: 43px;
+    border-radius: 15px;
+    color: white;
+}
+
+.answer {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.box {
+    /* border: 2px solid blue; */
+    border-radius: 5px;
+    width: 200px;
+    margin: 15px;
+}
+
+.timer {
+    /* border: 1px solid green; */
+    width: 40px;
+
+}
+
+.timer img {
+    display: inline;
+    height: 4rem;
+    position: absolute;
+    right: 114px;
+    top: 31px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+
+}
+
+.box {
+    position: absolute;
+    right: -44px;
+    top: 74px;
+
+    color: #fff;
+
+
+
+}
+
+.glass {
+    position: absolute;
+    bottom: 8px;
+    right: 45px;
+    background-color: #191970;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+p {
+    color: #00FFFF;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Anonymous Pro', monospace;
+}
+
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    bottom: -167px;
+    right: 60px;
+    
+}
+
+.btn:hover,
+.btn:focus {
+    color: #fff;
+    outline: 0;
+}
+
+.third {
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+.content {
+    position: relative;
+    margin-top: 40px;
+
+}
+
+.content h2 {
+    color: rgb(255, 10, 10);
+    font-size: 0.8em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 0.8em;
+    margin: 1em;
+}
+
+.content h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+
+
+
+
+.time-left {
+    font-family: 'Cabin', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(255, 27, 27);
+    background-color: white;
+}
+
+.question {
+    font-family: "Montserrat", sans-serif;
+    font-size: 19px;
+}
+
+.image-section {
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+form div {
+    margin-left: 15px;
+}
+
+.opt {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 1.2em;
+    padding: 0 0.5em;
+}
+
+.opt input {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.opt input::before,
+.opt input::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+}
+
+.opt input:checked::before {
+    background: #85eb01;
+    transform: translate(-50%, -50%);
+}
+
+.opt input::after {
+    width: 12px;
+    height: 12px;
+    background: none;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    transform: translate(-80%, -50%);
+    transition: all 0.4s;
+}
+
+.opt input:checked::after {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #48fc07;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.opt label {
+    margin-left: 0.5em;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+input.clear-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 15px;
+    background-color: rgba(36, 46, 46, 0.9);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid white;
+    border-radius: 25px;
+    font-weight: bolder;
+}
+
+input.clear-button:hover {
+    background-color: rgba(17, 26, 45, 0.8);
+}
+
+.next-arrow-block {
+    width: 100%;
+    position: relative;
+}
+
+.next-arrow {
+    width: auto;
+    height: 50px;
+    background-color: transparent;
+    color: #2e6aed;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.next-arrow input {
+    border: none;
+    background-color: transparent;
+    font-size: 28px;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 30px;
+    padding-right: 10px;
+}
+
+
+
+@media (max-width: 700px) {
+    .image-section {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+}
+
+
+
+.options-block {
+    margin-left: 40%;
+    margin-right: 40%;
+    padding-bottom: 10px;
+    color: white;
+
+    /* border: 1px solid yellow; */
+}
+
+.opt {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .timer img {
+        position: absolute;
+        left: 84px;
+        top: 954px;
+    }
+
+    .box {
+        position: absolute;
+        left: 49px;
+        top: 1007px;
+        width: auto;
+        display: inline;
+
+    }
+
+    .logo img {
+        height: 2.6em;
+        border-radius: 84px;
+        position: absolute;
+        top: 9%;
+        left: 4px;
+    }
+
+
+    .btn {
+        position: absolute;
+        bottom: -451px;
+        right: 38px;
+    }
+}
+
+
+.container1 {
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 2;
+    border-color: rgb(98, 159, 228);
+    height: auto;
+    padding: 15px;
+    margin: 10px;
+}
+
+
+.main {
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 2;
+    border-color: rgb(98, 159, 228);
+    height: auto;
+    padding: 15px;
+    margin: 10px;
+}

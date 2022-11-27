@@ -27,7 +27,8 @@ body {
     height: 3.6em;
     border-radius: 84px;
     position: absolute;
-    top: 6%;
+    top: 1.5%;
+    left: -2.5%;
 }
 
 .header h2 {
@@ -37,12 +38,15 @@ body {
     top: 8%;
     border: 1px solid rgb(40, 113, 240);
     border-radius: 15px;
-    background-color: rgb(13, 45, 82);
+    background-color: rgba(83, 174, 219, 0.155);
 
     color: #ffffff;
 
     margin: 3px;
     font-size: 3em;
+
+
+
 }
 
 .main {
@@ -56,7 +60,7 @@ body {
 .question {
     height: auto;
     /* border: 1px solid rgb(78, 255, 151); */
-    padding: 43px;
+    padding: -26px;
     border-radius: 15px;
     color: white;
 }
@@ -68,38 +72,26 @@ body {
     margin-top: 10px;
 }
 
-.box {
-    /* border: 2px solid blue; */
+
+.box p {
+    border: rgb(0, 94, 255);
+    width: auto;
     border-radius: 5px;
-    width: 200px;
-    margin: 15px;
-}
-
-.timer {
-    /* border: 1px solid green; */
-    width: 40px;
-
-}
-
-.timer img {
-    display: inline;
-    height: 4rem;
+    right: 89px;
+    top: -40px;
     position: absolute;
-    right: 114px;
-    top: 31px;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
+    font-size: 1.2em;
+    color: #fff;
 
 }
+
+
 
 .box {
     position: absolute;
     right: -44px;
     top: 74px;
-
     color: #fff;
-
-
 
 }
 
@@ -119,8 +111,8 @@ p {
     color: #00FFFF;
     font-size: 1.2rem;
     width: 100%;
-    padding: 20px;
-    text-align: center;
+
+    
     font-family: 'Anonymous Pro', monospace;
 }
 
@@ -154,7 +146,7 @@ p {
     position: absolute;
     bottom: -167px;
     right: 60px;
-    
+
 }
 
 .btn:hover,
@@ -182,7 +174,7 @@ p {
 
 .content {
     position: relative;
-    margin-top: 40px;
+    margin-top: 2px;
 
 }
 
@@ -217,6 +209,7 @@ p {
 .question {
     font-family: "Montserrat", sans-serif;
     font-size: 19px;
+
 }
 
 .image-section {
@@ -232,12 +225,13 @@ form div {
 }
 
 .opt {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     align-items: center;
-    margin-top: 1.2em;
-    padding: 0 0.5em;
+    margin-top: 0.4em;
+    padding-left: 1rem;
+
 }
 
 .opt input {
@@ -247,6 +241,10 @@ form div {
     appearance: none;
     -webkit-appearance: none;
 }
+
+
+
+
 
 .opt input::before,
 .opt input::after {
@@ -258,7 +256,7 @@ form div {
 }
 
 .opt input:checked::before {
-    background: #85eb01;
+    background: #00bfff;
     transform: translate(-50%, -50%);
 }
 
@@ -275,7 +273,7 @@ form div {
 .opt input:checked::after {
     width: 12px;
     height: 12px;
-    border: 2px solid #48fc07;
+    border: 2px solid #0062ff;
     border-radius: 10px;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -294,16 +292,16 @@ input.clear-button {
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 15px;
-    background-color: rgba(36, 46, 46, 0.9);
+    background-color: rgba(62, 188, 251, 0.157);
     color: white;
     font-family: 'Montserrat', sans-serif;
     border: 1px solid white;
-    border-radius: 25px;
+    border-radius: 9px;
     font-weight: bolder;
 }
 
 input.clear-button:hover {
-    background-color: rgba(17, 26, 45, 0.8);
+    background-color: rgba(0, 81, 122, 0.157);
 }
 
 .next-arrow-block {
@@ -341,22 +339,19 @@ input.clear-button:hover {
 
     .question {
         font-size: 18px;
+        padding: 0px;
     }
 }
 
 
 
 .options-block {
-    margin-left: 40%;
-    margin-right: 40%;
-    padding-bottom: 10px;
     color: white;
 
     /* border: 1px solid yellow; */
 }
 
 .opt {
-    border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -365,27 +360,31 @@ input.clear-button:hover {
 }
 
 @media only screen and (max-width: 600px) {
-    .timer img {
-        position: absolute;
-        left: 84px;
-        top: 954px;
+
+    .header h2 {
+        font-size: 1.3rem;
+        left: 40%;
     }
 
     .box {
-        position: absolute;
-        left: 49px;
-        top: 1007px;
-        width: auto;
-        display: inline;
+        font-size: 1.35rem;
+    }
 
+    .box p {
+        border: rgb(0, 94, 255);
+        width: auto;
+        border-radius: 5px;
+        right: 53px;
+        top: -33px;
+        position: absolute;
+        font-size: 1.2em;
+        color: #fff;
     }
 
     .logo img {
-        height: 2.6em;
-        border-radius: 84px;
-        position: absolute;
-        top: 9%;
-        left: 4px;
+        height: 2em;
+            top: 2.2%;
+            left: -13px;
     }
 
 
@@ -401,9 +400,9 @@ input.clear-button:hover {
     border-style: solid;
     border-radius: 20px;
     border-width: 2;
-    border-color: rgb(98, 159, 228);
+    /* border-color: rgb(98, 159, 228); */
     height: auto;
-    padding: 15px;
+    padding: 10px;
     margin: 10px;
 }
 
@@ -416,4 +415,45 @@ input.clear-button:hover {
     height: auto;
     padding: 15px;
     margin: 10px;
+}
+
+.glowing-circle {
+
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+.outerBorder {
+    position: relative;
+    border: 2px solid #4EBAF0;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+}
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+    }
+
+    to {
+        box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+    }
+}
+
+
+.grid-container {
+    
+    gap: 5px 95%;
+    grid-template-columns: auto auto auto;
+
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    text-align: center;
 }

@@ -39,10 +39,10 @@ body {
 
 
 .logo img {
-    height: 7em;
+    height: 115.188px;
     border-radius: 84px;
     position: absolute;
-    top: -0.5%;
+top: 1.5%;
     left: -2.5%;
 }
 
@@ -65,7 +65,7 @@ body {
 .container {
     color: rgb(255, 254, 254);
     padding: 10px;
-    margin: 40px;
+    margin: 60px;
 }
 
 h4 {

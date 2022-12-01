@@ -11,7 +11,7 @@ body {
 }
 
 .outerBorder {
-    position: relative;
+    position: fixed;
     border: 2px solid #4EBAF0;
     width: 95%;
     height: 95%;
@@ -24,7 +24,6 @@ body {
 
 .btn:before {
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     width: 0%;
@@ -54,7 +53,9 @@ body {
     left: 100%;
 }
 
-
+.navButton {
+    margin-top: 2rem;
+}
 
 .rounded-corners-gradient-borders {
     border: double 2px transparent;
@@ -72,6 +73,14 @@ body {
     animation: glowing 1s ease-in-out infinite alternate;
 }
 
+.buttonBox {
+    height: 80%;
+    top: 10%;
+    padding-top: 2rem;
+    position: relative;
+    display: inline;
+}
+
 @keyframes glowing {
     from {
         box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
@@ -84,31 +93,18 @@ body {
 
 @media (min-width: 200px) and (max-width: 656px) {
     .btn {
-        position: fixed;
-        padding: 20px 30px;
-        width: 17rem;
+        position: relative;
+        padding: 15px 20px;
+        width: 15rem;
+        top: 10%;
         text-decoration: none;
         color: #4EBAF0;
-        font-size: 1.4em;
+        font-size: 1em;
         text-transform: uppercase;
-        font-family: 'Mons Olympia', sans-serif;
-        font-family: 'Mons Olympia Condensed', sans-serif;
         letter-spacing: 4px;
         overflow: hidden;
     }
 
-    .instructions {
-        top: 15rem;
-    }
-    
-    .leaderboard {
-        top: 22rem;
-    }
-    
-    .start {
-        top: 29rem;
-    }
-    
     .logo img {
         position: fixed;
         width: 8rem;
@@ -120,29 +116,16 @@ body {
 
 @media (min-width: 656px) {
     .btn {
-        position: absolute;
+        position: relative;
         padding: 20px 50px;
+        top: 10%;
         width: 30rem;
         text-decoration: none;
         color: #4EBAF0;
         font-size: 2em;
         text-transform: uppercase;
-        font-family: 'Mons Olympia', sans-serif;
-        font-family: 'Mons Olympia Condensed', sans-serif;
         letter-spacing: 4px;
         overflow: hidden;
-    }
-
-    .instructions {
-        top: 10rem;
-    }
-    
-    .leaderboard {
-        top: 20rem;
-    }
-    
-    .start {
-        top: 30rem;
     }
 
     .logo img {

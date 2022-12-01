@@ -22,21 +22,30 @@
 
     <!--  -->
 
-    <!-- Font Mons olympia link -->
-    <link href="https://fonts.cdnfonts.com/css/mons-olympia?styles=118316" rel="stylesheet">
-
     <!-- Linking styles -->
     <link rel="stylesheet" href="./css/navStyles.css">
-
+    <style>
+        @font-face {
+            font-family: MonsOlympia;
+            src: url(./fonts/MonsOlympia.ttf);
+          }
+      
+          body {
+            font-family: MonsOlympia;
+          }
+    </style>
     <title>Navigation</title>
 </head>
 
 <body>
     <div class="logo text-left"><img src="./Assets/isteLogoThemed.png" alt="ISTE Logo"></div>
     <div class="outerBorder glowing-circle"></div>
-    <button type="button" class="btn instructions rounded-corners-gradient-borders">instructions</button>
-    <button type="button" class="btn leaderboard rounded-corners-gradient-borders ">leaderboard</button>
-    <button type="button" class="btn start rounded-corners-gradient-borders">start</button>
+    <div class="buttonBox">
+        <button type="button" class="btn instructions rounded-corners-gradient-borders navButton">instructions</button><br>
+        <button type="button" class="btn leaderboard rounded-corners-gradient-borders navButton">leaderboard</button><br>
+        <button type="button" class="btn start rounded-corners-gradient-borders navButton">view profile</button><br>
+        <button type="button" class="btn start rounded-corners-gradient-borders navButton">start</button>
+    </div>
 </body>
 
 </html>

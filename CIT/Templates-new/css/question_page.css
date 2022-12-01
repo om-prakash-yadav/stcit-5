@@ -6,11 +6,15 @@
 
 @import url('https://fonts.cdnfonts.com/css/mons-olympia');
 
+@font-face {
+    font-family: MonsOlympia;
+    src: url(../fonts/MonsOlympia.ttf);
+}
+
 body {
     background-image: url('../Assets/cit\ pc\ 2-02.png');
     background-size: cover;
-    font-family: 'Mons Olympia', sans-serif;
-    font-family: 'Mons Olympia Condensed', sans-serif;
+font-family: MonsOlympia;
 }
 
 
@@ -34,7 +38,7 @@ body {
 
 .header h2 {
     /* font-family: sans-serif; */
-    font-family: 'Mons Olympia Condensed', sans-serif;
+    
     position: absolute;
     left: 50%;
     top: 8%;
@@ -73,7 +77,7 @@ body {
     border-radius: 15px;
     margin-top: 15px;
     font-size: 1.3rem;
-    font-family: 'Mons Olympia Condensed', sans-serif;
+    
 }
 
 
@@ -117,7 +121,7 @@ p {
     width: 100%;
 
 
-    font-family: 'Mons Olympia Condensed', sans-serif;
+    
 }
 
 .btn {
@@ -145,7 +149,7 @@ p {
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Mons Olympia Condensed', sans-serif;
+    
     font-weight: 700;
     position: absolute;
     bottom: -167px;
@@ -201,7 +205,7 @@ p {
 
 
 .time-left {
-    font-family: 'Mons Olympia Condensed', sans-serif;
+  
     font-weight: 500;
     font-size: 30px;
     text-align: center;
@@ -211,7 +215,7 @@ p {
 }
 
 .question {
-    font-family: 'Mons Olympia', sans-serif;
+  
     font-size: 19px;
 
 }
@@ -283,7 +287,6 @@ form div {
 .opt label {
     margin-left: 0.9em;
     cursor: pointer;
-    font-family: 'Mons Olympia Condensed', sans-serif;
     font-size: 20px;
     text-align: left;
 }
@@ -296,8 +299,7 @@ input.clear-button {
     margin-top: 15px;
     background-color: rgba(62, 188, 251, 0.157);
     color: white;
-    /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Mons Olympia Condensed', sans-serif;
+    
     border: 1px solid white;
     border-radius: 9px;
     font-weight: bolder;
@@ -326,7 +328,7 @@ input.clear-button:hover {
     border: none;
     background-color: transparent;
     font-size: 28px;
-    font-family: 'Mons Olympia Condensed', sans-serif;
+    
     margin-top: 30px;
     padding-right: 10px;
 }

@@ -1,8 +1,3 @@
-@font-face {
-	font-family: MonsOlympia;
-	src: url(fonts\MonsOlympiaCondensed.ttf);
-}
-
 
 body {
 	background-repeat: no-repeat;
@@ -11,7 +6,7 @@ body {
 	color: #4EBAF0;
 	font-family: MonsOlympia;
 	letter-spacing: 4px;
-	background-image: url('bg.png');
+	background-image: url("../Assets/bg.png");
 }
 .logo{
 	position: absolute;

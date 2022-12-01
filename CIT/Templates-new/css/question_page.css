@@ -4,17 +4,10 @@
 }
 
 
-@import url('https://fonts.cdnfonts.com/css/mons-olympia');
-
-@font-face {
-    font-family: MonsOlympia;
-    src: url(../fonts/MonsOlympia.ttf);
-}
 
 body {
     background-image: url('../Assets/cit\ pc\ 2-02.png');
     background-size: cover;
-font-family: MonsOlympia;
 }
 
 
@@ -38,7 +31,6 @@ font-family: MonsOlympia;
 
 .header h2 {
     /* font-family: sans-serif; */
-    
     position: absolute;
     left: 50%;
     top: 8%;
@@ -77,7 +69,6 @@ font-family: MonsOlympia;
     border-radius: 15px;
     margin-top: 15px;
     font-size: 1.3rem;
-    
 }
 
 
@@ -120,8 +111,6 @@ p {
     font-size: 1.3rem;
     width: 100%;
 
-
-    
 }
 
 .btn {
@@ -149,7 +138,6 @@ p {
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    
     font-weight: 700;
     position: absolute;
     bottom: -167px;
@@ -200,12 +188,7 @@ p {
     -webkit-text-stroke: 2px #ffffff;
 }
 
-
-
-
-
 .time-left {
-  
     font-weight: 500;
     font-size: 30px;
     text-align: center;
@@ -215,9 +198,8 @@ p {
 }
 
 .question {
-  
     font-size: 19px;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -282,7 +264,9 @@ form div {
    
 } 
 
-
+.opt{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .opt label {
     margin-left: 0.9em;
@@ -299,7 +283,7 @@ input.clear-button {
     margin-top: 15px;
     background-color: rgba(62, 188, 251, 0.157);
     color: white;
-    
+    /* font-family: 'Montserrat', sans-serif; */
     border: 1px solid white;
     border-radius: 9px;
     font-weight: bolder;
@@ -328,7 +312,6 @@ input.clear-button:hover {
     border: none;
     background-color: transparent;
     font-size: 28px;
-    
     margin-top: 30px;
     padding-right: 10px;
 }

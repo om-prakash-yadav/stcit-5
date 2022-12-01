@@ -6,7 +6,6 @@
 body {
     background-image: url(../Assets/cit\ pc\ 2-02.png);
     background-size: cover;
-    font-family: 'Mons Olympia Condensed', sans-serif;
 }
 
 
@@ -61,7 +60,6 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    font-family: 'Mons Olympia Condensed', sans-serif;
 }
 
 .container {
@@ -72,13 +70,11 @@ body {
 
 h4 {
     margin-top: 15px;
-    font-family: 'Mons Olympia Condensed', sans-serif;
 }
 
 .logo h1 {
     color: white;
     margin-top: 15px;
-    font-family: 'Mons Olympia Condensed', sans-serif;
 }
 
 
@@ -94,7 +90,6 @@ h4 {
     .logo h1 {
         color: white;
         margin-top: 9px;
-        font-family: 'Mons Olympia Condensed', sans-serif;
         font-size: 23px;
         margin-left: 41px;
     }

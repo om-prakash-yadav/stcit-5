@@ -1,0 +1,96 @@
+<!-- {% extends 'base.html' %} {% block content %}
+{% load widget_tweaks %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/profile_page.css">
+    <link href="https://fonts.cdnfonts.com/css/mons-olympia?styles=118316" rel="stylesheet">
+    <title>view-profile</title>
+    <style>
+        @font-face {
+			font-family: MonsOlympia;
+			src: url(./fonts/MonsOlympia.ttf);
+		}
+		  
+		body {
+			font-family: MonsOlympia;
+            letter-spacing: 2px;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="view-profile outerBorder glowing-circle">
+        <div class="logo">
+            <img src="./Assets/isteLogoThemed.png" alt="" />
+            <h1>Your Profile</h1>
+        </div>
+
+        <div class="container outerBorder glowing-circle">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 mb-2">
+                    <h4><strong>Name : </strong> </h4>
+                    <h4><strong>Email Id : </strong> </h4>
+                    <h4><strong>Mobile No : </strong> </h4>
+                    <h4><strong>School/College : </strong> </h4>
+                    <h4><strong>Year of Study : </strong> </h4>
+                    <h4><strong>Department : </strong> </h4>
+                </div>
+                <div class="col-md-12 col-lg-6 mb-2">
+                    <!-- {% if player.slot == 0 %} -->
+                    <h4><strong>Preliminary Round : </strong>Select
+                        <!-- <a href="{% url 'cit2020:index' %}"> -->
+                        <strong>Slot</strong></a>
+                    </h4>
+                    <!-- {% else %} -->
+                    <h4><strong>Preliminary Round : </strong></h4>
+                    <h4><strong>Slot: </strong>
+                        <!-- {% if player.slot == 1 %} (1) Jan 11, 2022 (9:30 PM - 9:40 PM)
+                        {% elif player.slot == 2 %} (2) Jan 11, 2022 (9:50 PM - 10:00 PM)
+                        {% elif player.slot == 3 %} (3) Jan 11, 2022 (10:10 PM - 10:20 PM)
+                        {% endif %} -->
+                    </h4>
+                    <h4><strong>Score : </strong> </h4>
+                    <!-- {% if final == False %} -->
+                    <h4><strong>Selected for Final : </strong> </h4>
+                    <!-- {% elif player.qualified == True %} -->
+                    <h4><strong>Selected for Final : </strong> </h4>
+                    <!-- {% else %} -->
+                    <h4><strong>Selected for Final : </strong> </h4>
+                    <!-- {% endif %}
+                    {% if player.qualified == True %} -->
+                    <h4><strong>Final Round : </strong></h4>
+                    <h4><strong>Slot : </strong> </h4>
+                    <h4><strong>Score : </strong> </h4>
+                    <!-- {% endif %}
+                    {% endif %} -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- {% endblock content %} -->

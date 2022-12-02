@@ -73,7 +73,7 @@ body {
     animation: glowing 1s ease-in-out infinite alternate;
 }
 
-.buttonBox {
+.buttonBox-nav {
     height: 80%;
     top: 10%;
     padding-top: 2rem;
@@ -91,6 +91,7 @@ body {
     }
 }
 
+/* For mobiles */
 @media (min-width: 200px) and (max-width: 656px) {
     .btn {
         position: relative;
@@ -105,7 +106,7 @@ body {
         overflow: hidden;
     }
 
-    .logo img {
+    .logo-nav img {
         position: fixed;
         width: 8rem;
         height: auto;
@@ -114,12 +115,14 @@ body {
     }
 }
 
+/* For desktop */
+
 @media (min-width: 656px) {
     .btn {
         position: relative;
         padding: 20px 50px;
-        top: 10%;
-        width: 30rem;
+        top: -5%;
+        width: 25rem;
         text-decoration: none;
         color: #4EBAF0;
         font-size: 2em;
@@ -128,7 +131,7 @@ body {
         overflow: hidden;
     }
 
-    .logo img {
+    .logo-nav img {
         position: fixed;
         width: 10rem;
         height: auto;

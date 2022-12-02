@@ -14,7 +14,7 @@ body {
 
 
 /* ------------------------------Button effect------------------------------------------------------------ */
-.startBtn a {
+.startBtn-home a {
   position: fixed;
   padding: 20px 50px;
   text-decoration: none;
@@ -26,33 +26,33 @@ body {
   box-shadow: 0 5px 5px rgba(0, 0, 0.2);
 }
 
-.startBtn a:hover:after {
+.startBtn-home a:hover:after {
   left: 100%;
 }
 
-.startBtn a span {
+.startBtn-home a span {
   position: fixed;
   display: flex;
   transition: all 1s ease
 }
 
-.startBtn a:hover {
+.startBtn-home a:hover {
   text-decoration: none;
   transform: scale(1.1);
 }
 
-.startBtn a span:hover {
+.startBtn-home a span:hover {
   transform: scale(1.1);
 }
 
-.startBtn a:hover span:nth-child(4) {
+.startBtn-home a:hover span:nth-child(4) {
   height: 100%;
   transform: translateY(-100%);
 }
 
 /* ---------------------------------------------------------------------- */
 
-.socialMedia img:hover {
+.socialMedia-home img:hover {
   transform: scale(1.2);
 }
 
@@ -62,16 +62,16 @@ body {
     background-image: url("../Assets/cit pc 2 mobi version bg.png");
   }
 
-  .titleHeading {
+  .titleHeading-home {
     justify-content: center;
     color: #4EBAF0;
     font-size: 9rem;
-    top: 5rem;
+    top: 3rem;
     position: relative;
     font-optical-sizing: auto;
   }
 
-  .textAfterHeading {
+  .textAfterHeading-home {
     color: #4EBAF0;
     justify-content: center;
     height: 5rem;
@@ -79,7 +79,7 @@ body {
     font-size: 1rem;
   }
 
-  .socialMedia {
+  .socialMedia-home {
     display: inline-flex;
     position: fixed;
     left: 2rem;
@@ -87,14 +87,14 @@ body {
     color: #4EBAF0;
   }
 
-  .socialMedia img {
+  .socialMedia-home img {
     width: 1.3rem;
     margin-top: 0.1em;
     margin-left: 0.1rem;
     letter-spacing: 1rem;
   }
 
-  .startBtn a {
+  .startBtn-home a {
     position: relative;
     display: inline;
     top: 3rem;
@@ -118,7 +118,7 @@ body {
     box-shadow: 0 5px 5px rgba(0, 0, 0.2);
   }
 
-  .logo img {
+  .logo-home img {
     position: fixed;
     width: 6rem;
     height: auto;
@@ -168,17 +168,17 @@ body {
     background-image: url("../Assets/cit pc 2 bg-01.png");
   }
 
-  .titleHeading {
+  .titleHeading-home {
     color: #4EBAF0;
     font-size: 18rem;
     position: fixed;
     display: flex;
     top: -3rem;
-    left: 15rem;
+    left: 9rem;
 
   }
 
-  .logo img {
+  .logo-home img {
     position: fixed;
     width: 10rem;
     height: auto;
@@ -186,7 +186,7 @@ body {
     right: 2rem;
   }
 
-  .textAfterHeading {
+  .textAfterHeading-home {
     color: #4EBAF0;
     position: relative;
     top: 24rem;
@@ -195,11 +195,12 @@ body {
     overflow: hidden;
   }
 
-  .startBtn a {
+  .startBtn-home a {
     position: absolute;
-    padding: 1.2rem 4rem;
-    top: 4rem;
+    padding: 1.2rem 2rem;
+    top: 5rem;
     left: 4rem;
+    width: 16rem;
     text-decoration: none;
     color: #4EBAF0;
     font-size: 2rem;
@@ -211,7 +212,7 @@ body {
     background-color: rgba(0, 64, 255, 0.153);
   }
 
-  .startBtn a:after {
+  .startBtn-home a:after {
     content: '';
     position: absolute;
     top: 0;
@@ -232,7 +233,7 @@ body {
     box-shadow: 0 5px 5px rgba(0, 0, 0.2);
   }
 
-  .socialMedia {
+  .socialMedia-home {
     display: inline-flex;
     position: fixed;
     font-size: 2rem;
@@ -241,7 +242,7 @@ body {
     color: #4EBAF0;
   }
 
-  .socialMedia img {
+  .socialMedia-home img {
     margin-top: 0.8rem;
     margin-left: 0.1rem;
     letter-spacing: 1rem;

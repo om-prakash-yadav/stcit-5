@@ -16,17 +16,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <style>
-        @font-face {
-            font-family: MonsOlympia;
-            src: url(./fonts/MonsOlympia.ttf);
-        }
-
-        body {
-            font-family: MonsOlympia;
-        }
-
-
-        .bg-containerluckpage {
+        .bg-containertimerpage {
             background-image: url('https://i.ibb.co/s1XmVdR/Whats-App-Image-2022-12-02-at-21-03-12.jpg');
             margin: 0;
             padding: 0;
@@ -44,8 +34,8 @@
             width: 95%;
             height: 95%;
             top: 2.5%;
-            left: 2.7%;
-            border-radius: 50px;
+            left:2.5%;
+            border-radius: 3rem;
             justify-content: center;
             align-items: center;
             align-content: center;
@@ -68,19 +58,19 @@
             }
         }
 
-        .containerluckpage-1 {
+        .containertimerpage-1 {
             height: cover;
-            padding: 15px;
             margin: 10px;
+            padding-top: 10%;
         }
 
-        .contluckpage {
+        .conttimerpage {
             display: flex;
             flex-direction: row;
             justify-content: center;
         }
 
-        .logo-imageluckpage {
+        .logo-imagetimerpage {
             position: fixed;
             width: 10rem;
             height: auto;
@@ -88,48 +78,58 @@
             left: 2rem;
         }
 
-        .paraluckpage-1 {
-            color: white;
-            padding-top: 100px;
-            font-size: 30px;
+        .containertimerpage {
             text-align: center;
-            text-align: center;
+        }
+
+        .main-headingtimerpage {
+            font-size: 40px;
             font-family: 'Mons Olympia';
             font-style: normal;
             font-weight: 400;
-
+            color: white;
+            padding-top: 25px;
         }
 
-        .paraluckpage-2 {
-            color: white;
-            padding-top: 10px;
-            font-size: 30px;
-            text-align: center;
-            text-align: center;
+        .heading1timerpage {
+            font-size: 35px;
             font-family: 'Mons Olympia';
             font-style: normal;
             font-weight: 400;
-
+            color: red;
         }
 
-        .paraluckpage-3 {
-            color: white;
-            padding-top: 70px;
-            font-size: 30px;
-            text-align: center;
-            text-align: center;
+        .paratimerpage1 {
+            font-size: 25px;
             font-family: 'Mons Olympia';
             font-style: normal;
             font-weight: 400;
-
+            color: white;
+            padding: 20px;
         }
 
+        .paratimerpage2 {
+            font-size: 32px;
+            font-family: 'Mons Olympia';
+            font-style: normal;
+            font-weight: 350;
+            color: white;
+            padding: 20px;
+        }
 
+        .paratimerpage3 {
+            font-size: 31px;
+            font-family: 'Mons Olympia';
+            font-style: normal;
+            font-weight: 300;
+            color: white;
+            padding: 20px;
+        }
 
 
         @media screen and (max-width: 600px) {
 
-            .logo-imageluckpage {
+            .logo-imagetimerpage {
                 position: fixed;
                 width: 6rem;
                 height: auto;
@@ -137,52 +137,48 @@
                 left: 0.6rem;
             }
 
-            .paraluckpage-1 {
-                color: white;
-                padding: 50pxpx;
-                font-size: 23px;
-                text-align: center;
-                font-family: 'Mons Olympia';
-                font-style: normal;
-                font-weight: 400;
+            .main-headingtimerpage {
+                font-size: 25px;
+                margin-top: 30%;
+
             }
 
-            .paraluckpage-2 {
-                color: white;
-                padding: 13px;
-                font-size: 23px;
-                text-align: center;
-                font-family: 'Mons Olympia';
-                font-style: normal;
-                font-weight: 400;
+            .headingtimerpage {
+                font-size: 22px;
             }
 
-            .paraluckpage-3 {
-                color: white;
-                padding: 13px;
-                font-size: 23px;
-                text-align: center;
-                font-family: 'Mons Olympia';
-                font-style: normal;
-                font-weight: 400;
+            .paratimerpage1 {
+                font-size: 20px;
+
             }
+
+            .paratimerpage2 {
+                font-size: 21px;
+
+            }
+
+            .paratimerpage3 {
+                font-size: 21px;
+            }
+
         }
     </style>
 </head>
 
 <body>
     <div class=" outerBorder glowing-circle"></div>
-    <div class="bg-containerluckpage">
-        <div class="containerluckpage-1">
-            <div class="text-center contluckpage">
-                <img class="logo-imageluckpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+    <div class="bg-containertimerpage">
+        <div class="containertimerpage-1">
+            <div class="text-center conttimerpage">
+                <img class="logo-imagetimerpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
 
             </div>
-            <div class=" container-fluid">
-                <p class="paraluckpage-1">You Have Not Qualified For The Final Round </p>
-                <p class="paraluckpage-2"> Your score is {{player.score}} which is less than cutoff </p>
-                <p class="paraluckpage-3">Keep Practicing, Meet You In CIT 7.0 </p>
-
+            <div class="containertimerpage container-fluid">
+                <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
+                <h1 class="heading1timerpage">REFRESH TO START</h1>
+                <p class="paratimerpage1">Register at Dare2Compete platform to confirm your registration.</p>
+                <p class="paratimerpage2">READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</p>
+                <p class="paratimerpage3">ALL THE BEST!</p>
 
 
             </div>

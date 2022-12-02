@@ -40,26 +40,31 @@
 <body>
     <div class="outerBorder glowing-circle"></div>
     <div class="wrapper">
-        <div class="logo text-right"><img src="./Assets/isteLogoThemed.png" alt="ISTE Logo"></div>
-        <div class="titleHeading text-center">CIT
-            <div class="textAfterHeading text-center">Cognitive Intelligence Test<br>
-                <div class="startBtn">
+        <div class="logo-home text-right"><img src="./Assets/isteLogoThemed.png" alt="ISTE Logo"></div>
+        <div class="titleHeading-home text-center">CIT
+            <div class="textAfterHeading-home text-center">Cognitive Intelligence Test<br>
+                <div class="startBtn-home text-center">
 
-                    <a href="#" class="rounded-corners-gradient-borders"><span></span>
+                    <a href="#" class="rounded-corners-gradient-borders" id="demo" onclick="change_text()" ><span></span>
                         <span></span>
                         <span></span>
-                        <span></span>Enter</a>
+                        <span></span>Register</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="socialMedia text-left align-text-bottom">Follow us on :&nbsp;
+    <div class="socialMedia-home text-left align-text-bottom">Follow us on :&nbsp;
         <a href="https://www.facebook.com/istenitdgp/" target="_blank"><img src="./Assets/Asset 3.png"
                 alt="Facebook"></a><a href="https://instagram.com/istenitdgp?igshid=YmMyMTA2M2Y=" target="_blank"><img
                 src="./Assets/Asset 1.png" alt="Instagram"></a><a href="https://www.linkedin.com/company/istenitdgp/"
             target="_blank"><img src="./Assets/Asset 2.png" alt="Linkedin"></a>
     </div>
+    <script>
+        function change_text() {
+            document.getElementById("demo").innerHTML = "Start";
+        }
+    </script>
 </body>
 
 </html>

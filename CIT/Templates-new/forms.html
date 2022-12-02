@@ -15,6 +15,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+
   <style>
     @font-face {
       font-family: MonsOlympia;
@@ -25,11 +26,16 @@
       font-family: MonsOlympia;
     }
 
-    .bg-container {
-      background-image: url('./Assets/cit pc 2-02.png');
-      background-size: cover;
+    body {
+      margin: 0;
+      padding: 0;
       height: 100vh;
-      padding: 20px;
+      display: flex;
+      justify-content: center;
+      background-image: url("./Assets/cit pc 2-02.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
     }
 
     .outerBorder {
@@ -61,34 +67,20 @@
       }
     }
 
-    .container-1 {
-      border-style: solid;
-      border-radius: 20px;
-      border-width: 2;
-      border-color: rgb(98, 159, 228);
-      height: cover;
-      padding: 15px;
-      margin: 10px;
-    }
-
-    .cont {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-    }
-
-    .image {
-      height: 100px;
-      position: absolute;
-      left: 0;
+    .image-forms {
+      position: fixed;
+      width: 10rem;
+      height: auto;
+      top: 3rem;
+      left: 2.5rem;
     }
 
     .container {
       text-align: center;
     }
 
-    .main-heading {
-      font-size: 35px;
+    .main-heading-slot {
+      font-size: 2rem;
       font-style: normal;
       font-weight: 400;
       color: white;
@@ -96,7 +88,7 @@
     }
 
     .p1 {
-      font-size: 35px;
+      font-size: 2rem;
       font-style: normal;
       font-weight: 400;
       color: white;
@@ -120,23 +112,31 @@
       font-weight: 500;
     }
 
-
+    .rounded-corners-gradient-borders {
+      border: double 2px transparent;
+      border-radius: 20px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#2241cb, #0018223b);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 5px 5px rgba(0, 0, 0.2);
+    }
 
     @media screen and (max-width: 600px) {
 
-      .image {
-        height: 70px;
-        position: absolute;
-        left: 10px;
-        ;
+      .image-forms {
+        position: fixed;
+        width: 8rem;
+        height: auto;
+        top: 3rem;
+        left: 1rem;
       }
 
-      .main-heading {
+      .main-heading-slot {
         font-size: 23px;
         font-style: normal;
         font-weight: 400;
         color: white;
-        padding-top: 6rem;
+        padding-top: 12rem;
       }
 
       .p1 {
@@ -154,12 +154,12 @@
         top: 50px;
         left: 20px;
         text-decoration: none;
-        color: #4eebf0;
+        color: #4e91f0;
         font-size: 20px;
         letter-spacing: 4px;
         overflow: hidden;
         border-width: 1px;
-        border-radius: 35px;
+        border-radius: 25px;
         border-image-slice: 1;
         background-color: rgba(0, 64, 255, 0.153);
         font-weight: 500;
@@ -169,45 +169,40 @@
 </head>
 
 <body>
-  <div class="bg-container">
-    <div class="container-1 outerBorder glowing-circle">
-      <div class="text-center cont">
-        <img class="image" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+  <div class="outerBorder glowing-circle">
+    <div class="text-center cont-forms">
+      <img class="image-forms" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+    </div>
+    <div class="container container-fluid">
+      <div class="slots-choose">
+        <div class="container">
 
-      </div>
-      <div class="container container-fluid">
-        <div class="slots-choose">
-          <div class="container">
+          <h2 class="main-heading-slot">Please Choose Your Slot - </h2>
 
-            <h2 class="main-heading">Please Choose Your Slot - </h2>
+          <form id="slot" method="post" action="/forms/">
 
-            <form id="slot" method="post" action="/forms/">
-
-              <div class="options-block slots-block">
-                <div class="opt">
-                  <input type="radio" name="slot" value="1" id="slot1" />
-                  <label for="slot1" class="p1">18 January 2022 (7:00 PM - 7:45 PM)</label>
-                </div>
-                <div class="opt">
-                  <input type="radio" name="slot" value="2" id="option2" />
-                  <label for="option2" class="p1">19 January 2022 (7:00 PM - 7:45 PM)</label>
-                </div>
-                <div class="opt">
-                  <input type="radio" name="slot" value="3" id="option3" />
-                  <label for="option3" class="p1">20 January 2022 (8:00 PM - 8:45 PM)</label>
-                </div>
+            <div class="options-block slots-block">
+              <div class="opt">
+                <input type="radio" name="slot" value="1" id="slot1" />
+                <label for="slot1" class="p1">18 January 2022 (7:00 PM - 7:45 PM)</label>
               </div>
-              <br> <br>
-              <div class="next-arrow-block">
-                <div class="next-arrow">
-                  <input type="submit" value="Submit &#8594 " class="submitbtn" />
-                </div>
+              <div class="opt">
+                <input type="radio" name="slot" value="2" id="option2" />
+                <label for="option2" class="p1">19 January 2022 (7:00 PM - 7:45 PM)</label>
               </div>
-            </form>
-          </div>
+              <div class="opt">
+                <input type="radio" name="slot" value="3" id="option3" />
+                <label for="option3" class="p1">20 January 2022 (8:00 PM - 8:45 PM)</label>
+              </div>
+            </div>
+            <br> <br>
+            <div class="next-arrow-block">
+              <div class="next-arrow">
+                <input type="submit" value="Submit" class="submitbtn rounded-corners-gradient-borders" />
+              </div>
+            </div>
+          </form>
         </div>
-
-
       </div>
     </div>
   </div>

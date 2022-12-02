@@ -30,7 +30,7 @@ body {
 }
 
 .header h2 {
-    /* font-family: sans-serif; */
+    font-family: MonsOlympia;
     position: absolute;
     left: 50%;
     top: 8%;
@@ -61,6 +61,7 @@ body {
     padding: -26px;
     border-radius: 15px;
     color: white;
+    font-family: MonsOlympia;
 }
 
 .answer {
@@ -110,6 +111,8 @@ p {
     color: #00FFFF;
     font-size: 1.3rem;
     width: 100%;
+    font-family: MonsOlympia;
+    letter-spacing: 2px;
 
 }
 
@@ -199,7 +202,7 @@ p {
 
 .question {
     font-size: 19px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: MonsOlympia;
 }
 
 
@@ -273,6 +276,7 @@ form div {
     cursor: pointer;
     font-size: 20px;
     text-align: left;
+    font-family: MonsOlympia;
 }
 
 input.clear-button {
@@ -328,6 +332,7 @@ input.clear-button:hover {
     .question {
         font-size: 18px;
         padding: 0px;
+        font-family: MonsOlympia;
     }
 }
 
@@ -349,9 +354,20 @@ input.clear-button:hover {
 
 @media only screen and (max-width: 600px) {
 
+    p{
+        font-size: 17px;
+        font-family: MonsOlympia;
+    }
+
+    .opt label{
+        font-size: 17px;
+        font-family: MonsOlympia;
+    }
+
     .header h2 {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
         left: 40%;
+        font-family: MonsOlympia;
     }
 
     .box {
@@ -363,17 +379,17 @@ input.clear-button:hover {
 
         width: auto;
         border-radius: 5px;
-        right: 53px;
-        top: -33px;
+        right: 45px;
+        top: -45px;
         position: absolute;
-        font-size: 1.2em;
+        font-size: 1em;
         color: #fff;
     }
 
-     img {
-        height: 2em;
-        top: 2.2%;
-        left: -13px;
+     .logo img {
+            height: 68px;
+                top: 7px;
+                left: -16px;
     }
 
 

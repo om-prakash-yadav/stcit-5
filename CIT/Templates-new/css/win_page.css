@@ -178,41 +178,59 @@ body {
            .image {
                height: 100px;
                position: absolute;
-               left: 0;
+               left: -27px;
+               top: 3px;
            }
     
            .para-1 {
                color: white;
-               padding-top: 100px;
-               font-size: 20px;
+               
+               font-size: 35px;
                text-align: center;
                text-align: center;
                font-style: normal;
                font-weight: 400;
+            font-family: MonsOlympia;
     
            }
     
            .para-2 {
                color: white;
-               padding-top: 10px;
-               font-size: 20px;
+               padding-top: 50px;
+               font-size: 30px;
                text-align: center;
                text-align: center;
                font-style: normal;
                font-weight: 400;
+            font-family: MonsOlympia;
     
            }
     
            .para-3 {
                color: white;
-               padding-top: 70px;
-               font-size: 20px;
+               padding-top: 55px;
+               font-size: 30px;
                text-align: center;
                text-align: center;
                font-style: normal;
                font-weight: 400;
+            font-family: MonsOlympia;
     
+
            }
+
+
+                   .para-4 {
+                       color: white;
+                       padding-top: 121px;
+                       font-size: 30px;
+                       text-align: center;
+                       text-align: center;
+                       font-style: normal;
+                       font-weight: 400;
+                    font-family: MonsOlympia;
+        
+                   }
     
     
     
@@ -222,7 +240,7 @@ body {
                .image {
                    height: 70px;
                    position: absolute;
-                   left: 10px;
+                   left: -16px;
                    ;
                }
     

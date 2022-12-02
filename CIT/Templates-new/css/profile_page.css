@@ -14,7 +14,7 @@ body {
     border: 2px solid #4EBAF0;
     height: auto;
     top: 2.5%;
-    border-radius: 3rem;
+    border-radius: 50px;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -39,18 +39,18 @@ body {
 
 
 .logo img {
-    height: 115.188px;
+    height: 93px;
     border-radius: 84px;
     position: absolute;
-top: 1.5%;
-    left: -2.5%;
+    top: 30px;
+    left: 9px;
 }
 
 
 
 .view-profile {
     border-style: solid;
-    border-radius: 20px;
+    border-radius: 50px;
     border-width: 2;
     border-color: rgb(98, 159, 228);
     height: auto;
@@ -60,6 +60,10 @@ top: 1.5%;
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    margin-left: 28px;
+    margin-right: 28px;
 }
 
 .container {
@@ -74,22 +78,22 @@ h4 {
 
 .logo h1 {
     color: white;
-    margin-top: 15px;
+    margin-top: 38px;
 }
 
 
 @media only screen and (max-width: 600px) {
 
     .logo img {
-        height: 4.5em;
-        top: 0.2%;
-        left: -18px;
+        height: 4em;
+        top: 2.2%;
+        left: -7px;
     }
 
 
     .logo h1 {
         color: white;
-        margin-top: 9px;
+        margin-top: 28px;
         font-size: 23px;
         margin-left: 41px;
     }
@@ -98,7 +102,7 @@ h4 {
         font-size: 15px;
     }
 
-    
+
 
 
 

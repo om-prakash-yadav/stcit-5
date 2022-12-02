@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Leaderboard</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="./css/lBoardStyles.css">
+
+	<style>
+		@font-face {
+			font-family: MonsOlympia;
+			src: url(./fonts/MonsOlympia.ttf);
+		}
+
+		body {
+			font-family: MonsOlympia;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<section class="outerBorder glowing-circle">
+		<div class="container">
+			<div class="logo-lBoard"><img src="./Assets/logoThemed.png" alt="logo-lBoard"></div>
+			<div class="container">
+				<section>
+					<div class="cont-lBoard">
+						<div class="content text-center outerBorder glowing-circle">
+							LEADERBOARD
+						</div>
+
+					</div>
+					<div class="slots-lBoard">
+						<div class="container">
+							<a class="slot-button-lBoard rounded-corners-gradient-borders"
+								href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
+							<a class="slot-button-lBoard rounded-corners-gradient-borders"
+								href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
+							<a class="slot-button-lBoard rounded-corners-gradient-borders"
+								href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
+							<a class="slot-button-lBoard rounded-corners-gradient-borders"
+								href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
+						</div>
+					</div>
+				</section>
+				<br>
+				<br>
+
+				<div class="row">
+					<!-- First Position -->
+					<div class="col-sm-4">
+						<div class="leaderboard-card leaderboard-card">
+
+							<div class="leaderboard-card__body">
+								<div class="text-center">
+									<img src="./Assets/lBoardAsset1.svg" class="circle-img mb-2" alt="User Img">
+									<div class="bodyBox-lBoard">
+										<h5 class="mb-0">John doe</h5>
+										<p class="text-muted mb-0">@johndoe</p>
+										<div class="leaderboard-card-bottom">
+											<h3 class="text-center">#</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--  -->
+					<div class="col-sm-4">
+						<div class="leaderboard-card">
+							<div class="leaderboard-card__body">
+								<div class="text-center">
+									<img src="./Assets/lBoardAsset2.svg" class="circle-img mb-2" alt="User Img">
+									<div class="bodyBox-lBoard">
+										<h5 class="mb-0">John doe</h5>
+										<p class="text-muted mb-0">@johndoe</p>
+										<div class="leaderboard-card-bottom">
+											<h3 class="text-center">#</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--  -->
+					<div class="col-sm-4">
+						<div class="leaderboard-card">
+							<div class="leaderboard-card__body">
+								<div class="text-center">
+									<img src="./Assets/lBoardAsset3.svg" class="circle-img mb-2" alt="User Img">
+									<div class="bodyBox-lBoard">
+										<h5 class="mb-0">John doe</h5>
+										<p class="text-muted mb-0">@johndoe</p>
+										<div class="leaderboard-card-bottom">
+											<h3 class="text-center">#</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+
+				<h4>All Users</h4>
+				<table class="table table-borderless">
+					<thead>
+						<tr>
+							<th scope="col">Rank</th>
+							<th scope="col">Name</th>
+							<th scope="col" class="text-center">Score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td scope="row">1</td>
+							<td>Demo_name
+								<p class="text-muted mb-0">@demo</p>
+							</td>
+							<td class="text-center">#</td>
+						</tr>
+						<tr>
+							<td scope="row">2</td>
+							<td>Demo_name
+								<p class="text-muted mb-0">@demo</p>
+							</td>
+							<td class="text-center">#</td>
+						</tr>
+						<tr>
+							<td scope="row">3</td>
+							<td>Demo_name
+								<p class="text-muted mb-0">@demo</p>
+							</td>
+							<td class="text-center">#</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

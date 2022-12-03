@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT-Forms</title>
+
+    <!---------------------------------- CSS Link ----------------------------------------->
+
+    <link rel="stylesheet" href="./css/form_page_Styles.css">
+
+    <!-----------------------------------Font Link----------------------------------------->
+
+    <style>
+        @font-face {
+            font-family: MonsOlympia;
+            src: url(./fonts/MonsOlympia.ttf);
+        }
+
+        body {
+            font-family: MonsOlympia;
+        }
+
+        ::placeholder {
+            font-family: MonsOlympia;
+        }
+
+        span {
+            font-family: MonsOlympia;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="forms-main-container">
+        <div class="forms-container">
+            <div class="forms-card">
+                <div class="forms-inner-box">
+                    
+                    <div class="forms-card-front">
+                        <div class="forms-heading">
+                            <div class="forms-logo">
+                                <img src="./Assets/isteLogoThemed.png" alt="">
+                            </div>
+                            <div class="forms-title">
+                                <h3>Register</h3>
+                            </div>
+                        </div>
+                        <form>
+
+                            <input type="text" class="forms-input-box" placeholder="Your Name" required>
+                            <input type="text" class="forms-input-box" placeholder="Your Username" required>
+                            <input type="number" class="forms-input-box" placeholder="Your Phone Number" required>
+                            <input type="text" class="forms-input-box" placeholder="Name of College/School" required>
+                            <input type="text" class="forms-input-box" placeholder="Department/School Name" required>
+                            <input type="text" class="forms-input-box" placeholder="Year of Study" required>
+                            <button type="submit" class="forms-submit-btn"><span>Submit</span></button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

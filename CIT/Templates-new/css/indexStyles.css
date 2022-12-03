@@ -59,14 +59,14 @@ body {
 /* Bg image and responsiveness for mobile and tablet devices */
 @media (min-width: 200px) and (max-width: 1024px) {
   body {
-    background-image: url("../Assets/cit pc 2 mobi version bg.png");
+    background-image: url("../Assets/homePageMobile.png");
   }
 
   .titleHeading-home {
     justify-content: center;
     color: #4EBAF0;
     font-size: 9rem;
-    top: 3rem;
+    top: 5rem;
     position: relative;
     font-optical-sizing: auto;
   }
@@ -75,7 +75,9 @@ body {
     color: #4EBAF0;
     justify-content: center;
     height: 5rem;
+    margin-left: -1rem;
     margin-top: -2rem;
+    text-align: center;
     font-size: 1rem;
   }
 
@@ -99,6 +101,7 @@ body {
     display: inline;
     top: 3rem;
     justify-content: center;
+    text-align: center;
     padding: 20px 30px;
     text-decoration: none;
     color: #4EBAF0;
@@ -131,10 +134,10 @@ body {
   .outerBorder {
     position: fixed;
     border: 2px solid #4EBAF0;
-    width: 93%;
-    height: 94.5%;
+    width: 95%;
+    height: 95%;
     top: 2.6%;
-    left: 2.6%;
+    left: 3%;
     border-radius: 40px;
     justify-content: center;
     align-items: center;
@@ -165,7 +168,7 @@ body {
 
 @media (min-width: 1025px) {
   body {
-    background-image: url("../Assets/cit pc 2 bg-01.png");
+    background-image: url("../Assets/homePageDesktop.png");
   }
 
   .titleHeading-home {

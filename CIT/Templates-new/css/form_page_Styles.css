@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.forms-main-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.forms-container {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#05053a, #040452);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms-card {
+    height: 90%;
+    width: 70%;
+    background-color: #05053a;
+    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+    border: 1.4px solid aqua;
+    border-radius: 20px;
+    perspective: 1000px;
+}
+
+@media screen and (max-width: 420px) {
+    .forms-card {
+        height: 90%;
+        width: 85%;
+    }
+}
+
+.forms-inner-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.forms-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 80, 0.6), rgba(0, 0, 70, 0.5)),
+        url("../Assets/bg.png");
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.forms-heading {
+    width: 85%;
+    height: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms-logo {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms-logo img {
+    position: fixed;
+    height: auto;
+    width: 10rem;
+    left: 0rem;
+    top:2rem;
+}
+
+.forms-title {
+    position: relative;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms-card .forms-title h3 {
+    margin-right: 90px;
+}
+
+@media screen and (max-width: 280px) {
+    .forms-logo img {
+        position: fixed;
+        height: auto;
+        width: 8rem;
+    }
+
+    .forms-card .forms-title h3 {
+        margin-left: 35px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .forms-card .forms-title h3 {
+        margin-right: 25px;
+    }
+
+    .forms-logo img {
+        height: auto;
+        width: 7rem;
+        margin-right: 8px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .forms-card .forms-title h3 {
+        margin-right: 52px;
+    }
+
+    .forms-logo img {
+        height: auto;
+        width: 7rem;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .forms-logo img {
+        height: auto;
+        width: 8rem;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .forms-logo img {
+        height: auto;
+        width: 8rem;
+    }
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.forms-card h3 {
+    font-weight: normal;
+    font-size: 24px;
+    color: aqua;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.forms-input-box {
+    width: 70%;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid aqua;
+    margin: 8px 0;
+    padding: 0 10px;
+    height: 35px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 280px) {
+    .forms-input-box {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .forms-input-box {
+        width: 82%;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .forms-input-box {
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .forms-input-box {
+        margin: 15px 0;
+    }
+}
+
+::placeholder {
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    width: 25%;
+    background: transparent;
+    border: 1px solid aqua;
+    margin: 16px 0 10px;
+    padding: 0 10px;
+    height: 35px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 600px) {
+    button {
+        width: 70%;
+    }
+}
+
+.submit-btn {
+    position: relative;
+}
+
+.card .btn {
+    margin-top: 25px;
+}

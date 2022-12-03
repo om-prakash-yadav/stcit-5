@@ -167,7 +167,7 @@ img.circle-img.circle-img--small {
 
 /* Border */
 
-.outerBorder {
+.outerBorder-lBoard {
 	position: relative;
 	border: 2px solid #4EBAF0;
 	width: 95%;
@@ -214,6 +214,20 @@ img.circle-img.circle-img--small {
 		color: rgb(77, 150, 233);
 	}
 
+	.outerBorder-lBoard {
+		position: relative;
+		border: 2px solid #4EBAF0;
+		width: 95%;
+		margin-top: 2.5%;
+		top:1rem;
+		bottom: 1rem;
+		left: 2.5%;
+		margin-bottom: 1.5%;
+		border-radius: 1.5rem;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+	}
 	.table tr {
 		font-size: 0.5rem;
 	}

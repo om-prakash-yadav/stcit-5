@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="./about.css ">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <style>
+    .outerBorder {
+            position: fixed;
+            border: 2px solid #4EBAF0;
+            width: 95%;
+            height: 95%;
+            top: 2.5%;
+            left:2.5%;
+            border-radius: 3rem;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        .containeraboutpage-1 {
+      border-style: solid;
+    border-width: 2;
+    padding: 15px;
+    margin: 0px;
+    }
+
+
+        .glowing-circle {
+
+            -webkit-animation: glowing 1s ease-in-out infinite alternate;
+            -moz-animation: glowing 1s ease-in-out infinite alternate;
+            animation: glowing 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowing {
+            from {
+                box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+            }
+
+            to {
+                box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+            }
+        }
+    @font-face {
+      font-family: MonsOlympia;
+      src: url(./fonts/MonsOlympia.ttf);
+    }
+
+    body {
+      font-family: MonsOlympia;
+    }
+
+    .bg-containeraboutpage {
+      background-image: url('https://i.ibb.co/s1XmVdR/Whats-App-Image-2022-12-02-at-21-03-12.jpg');
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+    }
+
+    
+    .contaboutpage {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .logo-imageaboutpage {
+      height: 100px;
+      position: absolute;
+      left: 0;
+    }
+
+    .main-headingaboutpage {
+      border-style: solid;
+      border-width: 1;
+      border-color: rgba(98, 159, 228, 0.781);
+      border-radius: 30px;
+      padding: 10px;
+      font-size: 40px;
+      border-left-style: none;
+      color: rgb(77, 150, 233);
+      background-color: rgba(83, 174, 219, 0.155);
+      text-align: center;
+      align-self: flex-end;
+    }
+
+    .containeraboutpage-2 {
+      border-style: solid;
+    border-radius: 20px;
+    border-width: 1;
+    border-color: rgba(98, 122, 228, 0.648);
+    padding: 15px;
+    margin-top: 30px;
+    height: 80%;
+    }
+
+    @media  screen and (max-width: 600px){
+    .main-headingaboutpage{
+        font-size: 25px;
+    }
+    .logo-imageaboutpage {
+       padding-left: 10px;
+    width: 6rem;
+    height: auto;
+    top: 2.5rem;
+    left: 0.6rem;
+    }
+    .containeraboutpage-2{
+      height: cover;
+    }
+   
+}
+  </style>
+</head>
+
+<body>
+  <div class="bg-containeraboutpage">
+    <div class="containeraboutpage-1 outerBorder glowing-circle container-fluid">
+      <div class="text-center contaboutpage">
+        <img class="logo-imageaboutpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+        <h class="main-headingaboutpage">About</h>
+      </div>
+      <div class="containeraboutpage-2">
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

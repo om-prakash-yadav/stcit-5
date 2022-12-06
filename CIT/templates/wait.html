@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {%block content%}
+<!-- Example row of columns -->
+<div class="wait-section">
+  <div class="container">
+    {% if user and not user.is_anonymous %}
+    <h1><strong>TEST WILL START AFTER</strong></h1>
+    <p id="demo"></p>
+    <br />
+    <h3>Register at <a href="#" style="text-decoration: none;" >Dare2Compete</a> platform to confirm your registration.</h3>
+    <br>
+    <h3><strong>READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</strong></h3>
+    <br /><br />
+    <h1><strong>ALL THE BEST!</strong></h1>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+      True = 1
+      False=0
+      var countDownDate
+      if ({{player.qualified}}) {
+        // Final slot date
+        countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
+      }
+      else if ({{player.slot}}==1) {
+        // slot 1 date
+        countDownDate = new Date("Jan 11, 2022 21:30:00").getTime();
+      } 
+      else if ({{player.slot}}==2) {
+        // slot 2 date 
+        countDownDate = new Date("Jan 11, 2022 21:50:00").getTime();
+      } 
+      else if ({{player.slot}}==3) {
+        // slot 3 date 
+        countDownDate = new Date("Jan 11, 2022 22:10:00").getTime();
+      } 
+      else{
+        // final slot date 
+        countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
+      }
+      
+
+     // Update the count down every 1 second
+     var x = setInterval(function () {
+
+         // Get today's date and time
+         var now = new Date().getTime();
+
+         // Find the distance between now and the count down date
+         var distance = countDownDate - now;
+
+         // Time calculations for days, hours, minutes and seconds
+         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+         // Display the result in the element with id="demo"
+         document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+             + minutes + "m " + seconds + "s ";
+
+         // If the count down is finished, write some text
+         if (distance < 0) {
+             clearInterval(x);
+             document.getElementById("demo").innerHTML = "REFRESH TO START!";
+         }
+     }, 1000);
+</script>
+{%endblock%}

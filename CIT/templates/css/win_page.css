@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../Assets/cit\ pc\ 2-02.png);
+    background-size: cover;
+    overflow-y: hidden;
+    
+    font-family: MonsOlympia;
+    letter-spacing: 2.3px;
+    font-weight: 400;
+    
+}
+
+
+
+@font-face {
+    font-family: MonsOlympia;
+    src: url(./fonts/MonsOlympia.ttf);
+}
+
+body {
+    font-family: MonsOlympia;
+}
+
+.bg-container {
+    background-image: url('https://i.ibb.co/9NcNjGK/cit-pc-2-02.png');
+    background-size: cover;
+    height: 100vh;
+    padding: 20px;
+}
+
+  .outerBorder {
+      position: fixed;
+      border: 2px solid #4EBAF0;
+      width: 93%;
+      height: 94.5%;
+      top: 2.6%;
+      left: 2.6%;
+      border-radius: 40px;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+
+.glowing-circle {
+
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+    }
+
+    to {
+        box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+    }
+}
+
+.container-1 {
+    border-style: solid;
+    border-radius: 50px;
+    border-width: 2;
+    border-color: rgb(98, 159, 228);
+    height: cover;
+  
+}
+
+.container-fluid {
+    padding-top: 10rem;
+}
+
+.cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.image {
+    height: 93.3681px;
+    position: absolute;
+    left: 9px;
+    top: 30px;
+}
+
+.para-1 {
+    color: white;
+
+    font-size: 35px;
+    text-align: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-family: MonsOlympia;
+
+}
+
+.para-2 {
+    color: white;
+    padding-top: 45px;
+    font-size: 30px;
+    text-align: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-family: MonsOlympia;
+
+}
+
+.para-3 {
+    color: white;
+    padding-top: 55px;
+    font-size: 30px;
+    text-align: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-family: MonsOlympia;
+
+
+}
+
+
+.para-4 {
+    color: white;
+    padding-top: 110px;
+    font-size: 30px;
+    text-align: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-family: MonsOlympia;
+
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+    .image {
+        height: 70px;
+        position: absolute;
+        left: -2px;
+        ;
+    }
+
+
+    .container-fluid {
+        padding-top: 7rem;
+    }
+
+    .para-1 {
+        color: white;
+        padding: 65px;
+        font-size: 20px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .para-2 {
+        color: white;
+        padding: 13px;
+        font-size: 20px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .para-3 {
+        color: white;
+        padding: 13px;
+        font-size: 20px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+.para-4 {
+    color: white;
+    padding: 19px;
+    font-size: 20px;
+    text-align: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-family: MonsOlympia;
+
+}
+
+
+}

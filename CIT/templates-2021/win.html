@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<div class="win-section">
+    <div class="container">
+        <h2><strong>You Have Attempted All Questions</strong></h2>
+        <br>
+        {% if player.qualified == True %}
+         <h2 ><strong>Your Preliminary Round Score is {{player.score}} and Final Round Score is {{player.final_score}}</strong></h2>
+         <br><br>
+        <h2 ><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a> for Rank</strong></h2>
+        {% else %}
+        <h2 ><strong>Your Preliminary Round Score is {{player.score}}</strong></h2>
+         <br><br>
+        <h2 ><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' slot=player.slot  %}"> LEADERBOARD </a> for Rank</strong></h2>
+        {% endif %}
+    </div>
+</div>
+
+{%endblock%}

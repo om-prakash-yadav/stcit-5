@@ -9,19 +9,19 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2022, 1, 11, 21, 30, 00, 701322)
-slot1_end=datetime.datetime(2022, 1, 11, 21, 40, 00, 701322)
+slot1_start=datetime.datetime(2023, 12, 30, 15, 00, 00, 701322)
+slot1_end=datetime.datetime(2023, 12, 30, 15, 40, 00, 701322)
 
-slot2_start=datetime.datetime(2022, 1, 11, 21, 50, 00, 701322)
-slot2_end=datetime.datetime(2022, 1, 11, 22, 00, 00, 701322)
+slot2_start=datetime.datetime(2023, 12, 30, 15, 00, 00, 701322)
+slot2_end=datetime.datetime(2023, 12, 30, 15, 40, 00, 701322)
 
-slot3_start=datetime.datetime(2022, 1, 11, 22, 10, 00, 701322)
-slot3_end=datetime.datetime(2022, 1, 11, 22, 20, 00, 701322)
+slot3_start=datetime.datetime(2023, 12, 30, 15, 00, 00, 701322)
+slot3_end=datetime.datetime(2023, 12, 30, 15, 40, 00, 701322)
 
-round1_result=datetime.datetime(2022, 1, 11, 22, 30, 00, 701322)
+round1_result=datetime.datetime(2023, 11, 30, 15, 00, 00, 701322)
 
-final_start=datetime.datetime(2022, 1, 11, 23, 00, 00, 701322)
-final_end=datetime.datetime(2022, 1, 11, 23, 10, 00, 701322)
+final_start=datetime.datetime(2023, 12, 1, 9, 00, 00, 701322)
+final_end=datetime.datetime(2023, 12, 1, 9, 40, 00, 701322)
 
 def index(request):
 
@@ -33,7 +33,7 @@ def index(request):
             player = models.player.objects.get(user_id=request.user.pk)
         except:
             logout(request)
-            return render(request, 'index_page.html')
+            return render(request, 'home_page.html')
         
         if player.details_updated == False:
             return redirect(reverse_lazy('cit2020:update_profile'))
@@ -41,13 +41,16 @@ def index(request):
         elif player.slot < 1:
             return render(request, 'forms.html')
         
+        
+        elif player.slot>=1: 
+            return render(request, 'navigation_page.html')
+    
         elif player.qualified==True and datetime.datetime.now() < final_start:
             return render(request, 'wait.html', {'player': player,})
         elif player.qualified==True and datetime.datetime.now() > final_end:
             return render(request, 'finish.html', {'player': player})
         elif player.qualified==False and datetime.datetime.now() > round1_result:
             return render(request, 'luck.html', {'player': player})
-
         elif player.slot == 1 and datetime.datetime.now() < slot1_start:
             return render(request, 'wait.html', {'player': player})
         elif player.slot == 1 and datetime.datetime.now() > slot1_end:
@@ -70,7 +73,7 @@ def index(request):
             return render(request, 'question.html', {'player': player, 'question': question})
         except models.question.DoesNotExist:
             return render(request, 'finish.html', {'player': player})
-    return render(request, 'index_page.html')
+        return render(request, 'home_page.html')
 
 def save_profile(backend, user, response, *args, **kwargs):
     if backend.name == 'google-oauth2':

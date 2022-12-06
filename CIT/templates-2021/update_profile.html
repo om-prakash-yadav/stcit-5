@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+{% load widget_tweaks %}
+
+<div class="update-profile">
+  <div class="container">
+    <br>
+    <h3 >Update Your Profile </h3>
+
+    <form id="complete_profile" method="post" action="/profile/update">
+      {% csrf_token %}
+
+        <div class="col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" >
+        <span>Name</span>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-12 mb-2">    
+                {% render_field form.name class="form-control" placeholder="Enter Your Name" style="display:inline-block;max-width: 95%;" %}  
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" >
+        <span>Mobile</span>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-12 mb-2">    
+                {% render_field form.mobile class="form-control" placeholder="Enter Your Mobile Number" style="display:inline-block;max-width: 95%;" %}  
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" >
+        <span>Name of College/School</span>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-12 mb-2">    
+                {% render_field form.institute_name class="form-control" placeholder="Enter your Institute Name" style="display:inline-block;max-width: 95%;" %}  
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" >
+        <span>Department</span>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-12 mb-2">    
+                {% render_field form.department class="form-control" placeholder="Enter School if you are school student" style="display:inline-block;max-width: 95%;" %}  
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-2 mt-2 mb-2" >
+        <span>Year of Study</span>
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-12 mb-2">    
+                {% render_field form.year_of_study class="form-control" style="display:inline-block;max-width: 95%;" %}  
+        </div>
+        <br>
+        <br>
+      <div class="next-arrow-block">
+        <div class="next-arrow">
+          <input type="submit" value="Submit &#8594 " />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

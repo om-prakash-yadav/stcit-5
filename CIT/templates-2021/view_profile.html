@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block content %}
+{% load widget_tweaks %}
+
+<div class="view-profile">
+  <div class="container">
+    <br>
+    <h1>Your Profile :- </h1>
+    <br>
+    <div class="row">
+    <div class="col-md-12 col-lg-6 mb-2">
+        <h4><strong>Name : </strong> {{player.name}}</h4>  
+        <h4><strong>Email Id : </strong> {{player.email}}</h4>
+        <h4><strong>Mobile No : </strong> {{player.mobile}}</h4>
+        <h4><strong>School/College : </strong> {{player.institute_name}}</h4>
+        <h4><strong>Year of Study : </strong> {{player.year_of_study}}</h4>
+        <h4><strong>Department : </strong> {{player.department}}</h4>
+    </div>
+    <div class="col-md-12 col-lg-6 mb-2">
+        {% if player.slot == 0 %}
+        <h3><strong>Preliminary Round : </strong>Select <a href="{% url 'cit2020:index' %}"><strong>Slot</strong></a></h3>
+        {% else %}
+        <h3><strong>Preliminary Round : </strong></h3>
+        <h4><strong>Slot: </strong> 
+            {% if player.slot == 1 %} (1) Jan 11, 2022 (9:30 PM - 9:40 PM)
+            {% elif player.slot == 2 %} (2) Jan 11, 2022 (9:50 PM - 10:00 PM)
+            {% elif player.slot == 3 %} (3) Jan 11, 2022 (10:10 PM - 10:20 PM)
+            {% endif %}
+        </h4>
+        <h4><strong>Score : </strong> {{player.score}}</h4>
+        {% if final == False %}
+        <h4><strong>Selected for Final : </strong> -- </h4>
+        {% elif player.qualified == True %}
+        <h4><strong>Selected for Final : </strong> Yes </h4>
+        {% else %}
+        <h4><strong>Selected for Final : </strong> No </h4>
+        {% endif %}
+        {% if player.qualified == True %}
+        <h3><strong>Final Round : </strong></h3>
+        <h4><strong>Slot : </strong> Jan 11, 2022 (11:00 PM - 11:10 PM)</h4>
+        <h4><strong>Score : </strong> {{player.final_score}}</h4>
+        {% endif %}
+        {% endif %}    
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

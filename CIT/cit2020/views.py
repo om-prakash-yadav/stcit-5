@@ -40,12 +40,19 @@ def index(request):
         
         elif player.slot < 1:
             return render(request, 'forms.html')
-        
-        
-        elif player.slot>=1: 
+              
+        else: 
             return render(request, 'navigation_page.html')
-    
-        elif player.qualified==True and datetime.datetime.now() < final_start:
+
+def startNav(request):   
+    user = request.user
+    if user.is_authenticated:
+        try:
+            player = models.player.objects.get(user_id=request.user.pk)
+        except:
+            logout(request)
+            return render(request, 'home_page.html')
+        if player.qualified==True and datetime.datetime.now() < final_start:
             return render(request, 'wait.html', {'player': player,})
         elif player.qualified==True and datetime.datetime.now() > final_end:
             return render(request, 'finish.html', {'player': player})
@@ -195,6 +202,8 @@ def lboard(request,slot=0):
 def rules(request):
     return render(request, 'rules.html')
 
+def about(request):
+    return render(request, 'about.html')
 
 @login_required
 def forms(request):

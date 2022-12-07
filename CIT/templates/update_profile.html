@@ -307,7 +307,8 @@ form {
                 {% comment %} <input type="text" class="forms-input-box" placeholder="Your Name" required> {% endcomment %}
                 {% render_field form.name class="form-control forms-input-box" placeholder="Enter Your Name" style="display:inline-block;max-width: 95%;" %} 
 
-                <input type="text" class="forms-input-box" placeholder="Your Username" required>
+                {% comment %} <input type="text" class="forms-input-box" placeholder="Your Username" required> {% endcomment %}
+                {%render_field form.userName class="form-control forms-input-box" placeholder="Enter your Username" style="display:inline-block;max-width: 95%;" %}
 
                 {% comment %} <input type="text" class="forms-input-box" placeholder="Phn Number" required> {% endcomment %}
                 {% render_field form.mobile class="form-control forms-input-box" placeholder="Enter Your Mobile Number" style="display:inline-block;max-width: 95%;" %}  

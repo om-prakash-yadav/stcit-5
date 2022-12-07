@@ -1,21 +1,23 @@
-{% extends 'base.html' %} {%block content%}
-<!-- Example row of columns -->
-<div class="wait-section">
-  <div class="container">
-    {% if user and not user.is_anonymous %}
-    <h1><strong>TEST WILL START AFTER</strong></h1>
-    <p id="demo"></p>
-    <br />
-    <h3>Register at <a href="#" style="text-decoration: none;" >Dare2Compete</a> platform to confirm your registration.</h3>
-    <br>
-    <h3><strong>READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</strong></h3>
-    <br /><br />
-    <h1><strong>ALL THE BEST!</strong></h1>
-    {% endif %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- Example row of columns -->
+  {% comment %} <div class="wait-section">
+    <div class="container">
+      {% if user and not user.is_anonymous %}
+        <h1><strong>TEST WILL START AFTER</strong></h1>
+        <p id="demo"></p>
+        <br />
+        <h3>Register at <a href="#" style="text-decoration: none;">Dare2Compete</a> platform to confirm your registration.</h3>
+        <br />
+        <h3><strong>READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</strong></h3>
+        <br /><br />
+        <h1><strong>ALL THE BEST!</strong></h1>
+      {% endif %}
+    </div>
   </div>
-</div>
 
-<script>
+  <script>
       True = 1
       False=0
       var countDownDate
@@ -67,4 +69,230 @@
          }
      }, 1000);
 </script>
-{%endblock%}
+ {% endcomment %}
+
+<style>
+  @font-face {
+    font-family: MonsOlympia;
+    src: url({% static './fonts/MonsOlympia.ttf'%});
+  }
+
+  body{
+    font-family: MonsOlympia;
+  }
+
+  .bg-containertimerpage {
+      background-image: url('https://i.ibb.co/s1XmVdR/Whats-App-Image-2022-12-02-at-21-03-12.jpg');
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+  }
+
+  .outerBorder {
+      position: fixed;
+      border: 2px solid #4EBAF0;
+      width: 95%;
+      height: 95%;
+      top: 2.5%;
+      left:2.5%;
+      border-radius: 3rem;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+  }
+
+  .glowing-circle {
+
+      -webkit-animation: glowing 1s ease-in-out infinite alternate;
+      -moz-animation: glowing 1s ease-in-out infinite alternate;
+      animation: glowing 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes glowing {
+      from {
+          box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+      }
+
+      to {
+          box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+      }
+  }
+
+  .containertimerpage-1 {
+      height: cover;
+      margin: 10px;
+      padding-top: 10%;
+  }
+
+  .conttimerpage {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+
+  .logo-imagetimerpage {
+      position: fixed;
+      width: 10rem;
+      height: auto;
+      top: 3rem;
+      left: 2rem;
+  }
+
+  .containertimerpage {
+      text-align: center;
+  }
+
+  .main-headingtimerpage {
+      font-size: 40px;
+      font-family: MonsOlympia;
+      font-style: normal;
+      font-weight: 400;
+      color: white;
+      padding-top: 25px;
+  }
+
+  .heading1timerpage {
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 400;
+      color: red;
+  }
+
+  .paratimerpage1 {
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 400;
+      color: white;
+      padding: 20px;
+  }
+
+  .paratimerpage2 {
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 350;
+      color: white;
+      padding: 20px;
+  }
+
+  .paratimerpage3 {
+      font-size: 31px;
+      font-style: normal;
+      font-weight: 300;
+      color: white;
+      padding: 20px;
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+      .logo-imagetimerpage {
+          position: fixed;
+          width: 6rem;
+          height: auto;
+          top: 2.5rem;
+          left: 0.6rem;
+      }
+
+      .main-headingtimerpage {
+          font-size: 25px;
+          margin-top: 30%;
+
+      }
+
+      .headingtimerpage {
+          font-size: 22px;
+      }
+
+      .paratimerpage1 {
+          font-size: 20px;
+
+      }
+
+      .paratimerpage2 {
+          font-size: 21px;
+
+      }
+
+      .paratimerpage3 {
+          font-size: 21px;
+      }
+
+  }
+</style>
+
+<div class="outerBorder glowing-circle"></div>
+<div class="bg-containertimerpage">
+  {% if user and not user.is_anonymous %}
+  <div class="containertimerpage-1">
+    <div class="text-center conttimerpage">
+      <img class="logo-imagetimerpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+    </div>
+    <div class="containertimerpage container-fluid">
+      <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
+      <h1 class="heading1timerpage">REFRESH TO START</h1>
+      <p class="paratimerpage1">Register at <a href="https://www.facebook.com/istenitdgp/" style="text-decoration: none;">Dare2Compete</a> platform to confirm your registration.</p>
+      <p class="paratimerpage2">READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</p>
+      <p class="paratimerpage3">ALL THE BEST!</p>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+  True = 1
+  False=0
+  var countDownDate
+  if ({{player.qualified}}) {
+    // Final slot date
+    countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
+  }
+  else if ({{player.slot}}==1) {
+    // slot 1 date
+    countDownDate = new Date("Jan 11, 2022 21:30:00").getTime();
+  } 
+  else if ({{player.slot}}==2) {
+    // slot 2 date 
+    countDownDate = new Date("Jan 11, 2022 21:50:00").getTime();
+  } 
+  else if ({{player.slot}}==3) {
+    // slot 3 date 
+    countDownDate = new Date("Jan 11, 2022 22:10:00").getTime();
+  } 
+  else{
+    // final slot date 
+    countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
+  }
+  
+
+ // Update the count down every 1 second
+ var x = setInterval(function () {
+
+     // Get today's date and time
+     var now = new Date().getTime();
+
+     // Find the distance between now and the count down date
+     var distance = countDownDate - now;
+
+     // Time calculations for days, hours, minutes and seconds
+     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+     // Display the result in the element with id="demo"
+     document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+         + minutes + "m " + seconds + "s ";
+
+     // If the count down is finished, write some text
+     if (distance < 0) {
+         clearInterval(x);
+         document.getElementById("demo").innerHTML = "REFRESH TO START!";
+     }
+ }, 1000);
+</script>
+{% endblock %}

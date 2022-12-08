@@ -9,6 +9,7 @@ urlpatterns = [
     path('lboard/', views.lboard , name='lboard'),
     path('rules/', views.rules , name='rules'),
     path('about/', views.about, name='about'),
+    path('navPage/', views.navPage, name='navPage'),
     path('forms/', views.forms , name='forms'),
     path('startNav/', views.startNav , name='startNav'),
     path('profile/', views.view_profile , name='view_profile'),

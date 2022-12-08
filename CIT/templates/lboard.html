@@ -266,7 +266,7 @@
         position: relative;
         border: 2px solid #4EBAF0;
         width: 95%;
-        margin-top: 1.5%;
+        margin-top: 1.2%;
         left: 2.5%;
         margin-bottom: 1.5%;
         border-radius: 3rem;
@@ -292,9 +292,40 @@
             box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
         }
     }
+    {% comment %} back button {% endcomment %}
+    .backButton{
+        position: fixed;
+        border: 2px solid #4EBAF0;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        padding: 0px 10px;
+        right:5%;
+        top:5%;
+        font-family: MonsOlympia;
+        border-left-style: none;
+        color: rgb(194 200 206);
+        background-color:#0000004d;
+        text-align: center;
+    }
+
+    .backButton:hover{
+        background-color:#4EBAF0;
+        transform: scale(1.1);
+    }
+
+    .glowing-circle-backButton {
     
+        -webkit-animation: glowing 2s ease-in-out infinite alternate;
+        -moz-animation: glowing 2s ease-in-out infinite alternate;
+        animation: glowing 2s ease-in-out infinite alternate;
+    }
+    {% comment %}  {% endcomment %}
     /* For mobile */
     @media (min-width: 200px) and (max-width: 1024px) {
+        .backButton{
+            right:9%;
+            top:5%;
+        }
         .content {
             border-style: solid;
             border-width: 1;
@@ -406,6 +437,7 @@
     }
 </style>
 <section class="outerBorder-lBoard glowing-circle">
+    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
     <div class="container">
         <div class="logo-lBoard"><img src="{% static './Assets/logoThemed.png' %}" alt="logo-lBoard"></div>
         <div class="container">
@@ -416,6 +448,7 @@
                     </div>
 
                 </div>
+
                 {% comment %} <div class="slots-lBoard">
                     <div class="container">
                         <a class="slot-button-lBoard rounded-corners-gradient-borders"

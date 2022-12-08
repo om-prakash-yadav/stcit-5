@@ -84,8 +84,33 @@
             background-image: url({% static './Assets/bg.png' %});
             background-size: cover;
         }
+        {% comment %} back button {% endcomment %}
+        .backButton{
+            position: fixed;
+            border: 2px solid #4EBAF0;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            padding: 0px 10px;
+            right:5%;
+            top:5%;
+            border-left-style: none;
+            color: rgb(194 200 206);
+            background-color:#0000004d;
+            text-align: center;
+        }
+
+        .backButton:hover{
+            background-color:#4EBAF0;
+            transform: scale(1.1);
+        }
+
+        .glowing-circle-backButton {
         
-        
+            -webkit-animation: glowing 2s ease-in-out infinite alternate;
+            -moz-animation: glowing 2s ease-in-out infinite alternate;
+            animation: glowing 2s ease-in-out infinite alternate;
+        }
+        {% comment %}  {% endcomment %}
         .outerBorder-viewProfile {
             position: relative;
             border: 2px solid #4EBAF0;
@@ -106,6 +131,8 @@
             -moz-animation: glowing 1s ease-in-out infinite alternate;
             animation: glowing 1s ease-in-out infinite alternate;
         }
+
+        
         
         @keyframes glowing {
             from {
@@ -180,11 +207,17 @@
         
             h4 {
                 font-size: 15px;
-            }        
+            } 
+            
+            .backButton{
+                right:9%;
+                top:5%;
+            }
         }
     </style>
 
     <div class="view-profile outerBorder-viewProfile glowing-circle">
+        <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
         <div class="logo">
             <img src="{% static './Assets/isteLogoThemed.png' %}" alt="" />
             <h1>Your Profile</h1>

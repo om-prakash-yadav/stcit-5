@@ -43,6 +43,7 @@ def index(request):
               
         else: 
             return render(request, 'navigation_page.html')
+    return render(request, 'home_page.html')
 
 def startNav(request):   
     user = request.user
@@ -205,6 +206,8 @@ def rules(request):
 def about(request):
     return render(request, 'about.html')
 
+def navPage(request):
+    return render(request, 'navigation_page.html')
 @login_required
 def forms(request):
     slot = ""

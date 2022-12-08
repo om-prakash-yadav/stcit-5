@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 {% load widget_tweaks %}
   <style>
+    @font-face {
+        font-family: MonsOlympia;
+        src: url({% static './fonts/MonsOlympia.ttf'%});
+      }
+
         .outerBorder-instruct {
             position: absolute;
             border: 2px solid #4EBAF0;
@@ -108,9 +114,40 @@
             text-align: center;
             align-self: flex-end;
         }
+        {% comment %} back button {% endcomment %}
+        .backButton{
+            position: fixed;
+            border: 2px solid #4EBAF0;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+            padding: 0px 10px;
+            right:5%;
+            top:5%;
+            font-family: MonsOlympia;
+            border-left-style: none;
+            color: rgb(194 200 206);
+            background-color:#0000004d;
+            text-align: center;
+        }
 
+        .backButton:hover{
+            background-color:#4EBAF0;
+            transform: scale(1.1);
+        }
+
+        .glowing-circle-backButton {
+        
+            -webkit-animation: glowing 2s ease-in-out infinite alternate;
+            -moz-animation: glowing 2s ease-in-out infinite alternate;
+            animation: glowing 2s ease-in-out infinite alternate;
+        }
+        {% comment %}  {% endcomment %}
         @media screen and (max-width: 600px) {
-
+            .backButton{
+                right:9%;
+                top:5%;
+            }
+            
             .logo-imageinstructionpage {
                 position: absolute;
                 width: 8rem;
@@ -152,6 +189,7 @@
     </style>
 
   <div class="outerBorder-instruct glowing-circle">
+    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
     <img class="logo-imageinstructionpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
     <div class="container containerinstructionpage-1">
       <div class="text-center cont">

@@ -1,75 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <!-- Example row of columns -->
-  {% comment %} <div class="wait-section">
-    <div class="container">
-      {% if user and not user.is_anonymous %}
-        <h1><strong>TEST WILL START AFTER</strong></h1>
-        <p id="demo"></p>
-        <br />
-        <h3>Register at <a href="#" style="text-decoration: none;">Dare2Compete</a> platform to confirm your registration.</h3>
-        <br />
-        <h3><strong>READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</strong></h3>
-        <br /><br />
-        <h1><strong>ALL THE BEST!</strong></h1>
-      {% endif %}
+
+<div class="outerBorder glowing-circle"></div>
+<a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+<div class="bg-containertimerpage">
+  {% if user and not user.is_anonymous %}
+  <div class="containertimerpage-1">
+    <div class="text-center conttimerpage">
+      <img class="logo-imagetimerpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+    </div>
+    <div class="containertimerpage container-fluid">
+      <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
+      <p id="demo" style="color:red;"></p>
+      <p class="paratimerpage1">Register at <a href="https://www.facebook.com/istenitdgp/" style="text-decoration: none;">Dare2Compete</a> platform to confirm your registration.</p>
+      <p class="paratimerpage2">READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</p>
+      <p class="paratimerpage3">ALL THE BEST!</p>
     </div>
   </div>
-
-  <script>
-      True = 1
-      False=0
-      var countDownDate
-      if ({{player.qualified}}) {
-        // Final slot date
-        countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
-      }
-      else if ({{player.slot}}==1) {
-        // slot 1 date
-        countDownDate = new Date("Jan 11, 2022 21:30:00").getTime();
-      } 
-      else if ({{player.slot}}==2) {
-        // slot 2 date 
-        countDownDate = new Date("Jan 11, 2022 21:50:00").getTime();
-      } 
-      else if ({{player.slot}}==3) {
-        // slot 3 date 
-        countDownDate = new Date("Jan 11, 2022 22:10:00").getTime();
-      } 
-      else{
-        // final slot date 
-        countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
-      }
-      
-
-     // Update the count down every 1 second
-     var x = setInterval(function () {
-
-         // Get today's date and time
-         var now = new Date().getTime();
-
-         // Find the distance between now and the count down date
-         var distance = countDownDate - now;
-
-         // Time calculations for days, hours, minutes and seconds
-         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-         // Display the result in the element with id="demo"
-         document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-             + minutes + "m " + seconds + "s ";
-
-         // If the count down is finished, write some text
-         if (distance < 0) {
-             clearInterval(x);
-             document.getElementById("demo").innerHTML = "REFRESH TO START!";
-         }
-     }, 1000);
-</script>
- {% endcomment %}
+  {% endif %}
+</div>
 
 <style>
   @font-face {
@@ -190,12 +140,12 @@
 
    {% comment %} back button {% endcomment %}
    .backButton{
-    position: fixed;
+    position: absolute;
     border: 2px solid #4EBAF0;
     border-radius: 1rem;
     font-size: 1.5rem;
     padding: 0px 10px;
-    right:5%;
+    right:4%;
     top:5%;
     font-family: MonsOlympia;
     border-left-style: none;
@@ -220,7 +170,7 @@
   @media screen and (max-width: 600px) {
       .backButton{
         top:5%;
-        right:9%;
+        right:6%;
       }
       .logo-imagetimerpage {
           position: fixed;
@@ -257,24 +207,6 @@
   }
 </style>
 
-<div class="outerBorder glowing-circle"></div>
-<a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
-<div class="bg-containertimerpage">
-  {% if user and not user.is_anonymous %}
-  <div class="containertimerpage-1">
-    <div class="text-center conttimerpage">
-      <img class="logo-imagetimerpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
-    </div>
-    <div class="containertimerpage container-fluid">
-      <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
-      <p id="demo" style="color:red;"></p>
-      <p class="paratimerpage1">Register at <a href="https://www.facebook.com/istenitdgp/" style="text-decoration: none;">Dare2Compete</a> platform to confirm your registration.</p>
-      <p class="paratimerpage2">READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</p>
-      <p class="paratimerpage3">ALL THE BEST!</p>
-    </div>
-  </div>
-  {% endif %}
-</div>
 
 <script>
   True = 1
@@ -282,23 +214,23 @@
   var countDownDate
   if ({{player.qualified}}) {
     // Final slot date
-    countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
+    countDownDate = new Date("Dec 12, 2022 23:00:00").getTime();
   }
   else if ({{player.slot}}==1) {
     // slot 1 date
-    countDownDate = new Date("Jan 11, 2022 21:30:00").getTime();
+    countDownDate = new Date("Dec 09, 2022 21:30:00").getTime();
   } 
   else if ({{player.slot}}==2) {
     // slot 2 date 
-    countDownDate = new Date("Jan 11, 2022 21:50:00").getTime();
+    countDownDate = new Date("Dec 10, 2022 21:50:00").getTime();
   } 
   else if ({{player.slot}}==3) {
     // slot 3 date 
-    countDownDate = new Date("Jan 11, 2022 22:10:00").getTime();
+    countDownDate = new Date("Dec 11, 2022 22:10:00").getTime();
   } 
   else{
     // final slot date 
-    countDownDate = new Date("Jan 11, 2022 23:00:00").getTime();
+    countDownDate = new Date("Dec 12, 2022 23:00:00").getTime();
   }
   
 

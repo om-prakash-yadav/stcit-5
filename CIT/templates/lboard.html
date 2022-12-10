@@ -10,19 +10,24 @@
                 <div class="cont-lBoard">
                     <div class="content text-center outerBorder glowing-circle">
                         LEADERBOARD
+                        <br>
+                        {% if slot == 1 %}Slot 1
+                        {% elif slot == 2 %}Slot 2
+                        {% elif slot == 3 %}Slot 3
+                        {% else %}Final
+                        {% endif %}
                     </div>
-
                 </div>
 
                  <div class="slots-lBoard">
                     <div class="container">
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        <a id="slot1" class="slot-button-lBoard rounded-corners-gradient-borders"
                             href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        <a id="slot2" class="slot-button-lBoard rounded-corners-gradient-borders"
                             href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        <a id="slot3" class="slot-button-lBoard rounded-corners-gradient-borders"
                             href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        <a id="finalSlot" class="slot-button-lBoard rounded-corners-gradient-borders"
                             href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
                     </div>
                 </div>
@@ -58,6 +63,18 @@
                             <div class="text-center">
                                 <img src="{% static './Assets/lBoardAsset1.svg' %}" class="circle-img mb-2" alt="User Img">
                                 <div class="bodyBox-lBoard">
+                                {% if slot == 4 %}
+                                {% for player in players|slice:":1" %}
+                                    {% if rank !=  player.rank %}
+                                    <h5 class="hashTag">#1</h5>
+                                    <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                    <p class="text-muted mb-0">@{{player.userName}}</p>
+                                    <div class="leaderboard-card-bottom">
+                                        <h3 class="text-center scoreLboard">{{player.final_score}}</h3>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                {% else %}
                                 {% for player in players|slice:":1" %}
                                     {% if rank !=  player.rank %}
                                     <h5 class="hashTag">#1</h5>
@@ -68,6 +85,7 @@
                                     </div>
                                     {% endif %}
                                 {% endfor %}
+                                {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -80,6 +98,20 @@
                             <div class="text-center">
                                 <img src="{% static './Assets/lBoardAsset2.svg' %}" class="circle-img mb-2" alt="User Img">
                                 <div class="bodyBox-lBoard">
+                                    {% if slot == 4 %}
+                                    {% for player in players|slice:":2" %}
+                                    {% if rank !=  player.rank %}
+                                        {% if player.rank == 2 %}
+                                        <h5 class="hashTag">#2</h5>
+                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                        <p class="text-muted mb-0">@{{player.userName}}</p>
+                                        <div class="leaderboard-card-bottom">
+                                            <h3 class="text-center scoreLboard">{{player.final_score}}</h3>
+                                        </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% else %}
                                     {% for player in players|slice:":2" %}
                                     {% if rank !=  player.rank %}
                                         {% if player.rank == 2 %}
@@ -92,6 +124,7 @@
                                         {% endif %}
                                     {% endif %}
                                     {% endfor %}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -104,6 +137,7 @@
                             <div class="text-center">
                                 <img src="{% static './Assets/lBoardAsset3.svg' %}" class="circle-img mb-2" alt="User Img">
                                 <div class="bodyBox-lBoard">
+                                    {% if slot == 4 %}
                                     {% for player in players|slice:":3" %}
                                     {% if rank !=  player.rank %}
                                         {% if player.rank == 3 %}
@@ -116,6 +150,20 @@
                                         {% endif %}
                                     {% endif %}
                                     {% endfor %}
+                                    {% else %}
+                                    {% for player in players|slice:":3" %}
+                                    {% if rank !=  player.rank %}
+                                        {% if player.rank == 3 %}
+                                        <h5 class="hashTag">#3</h5>
+                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                        <p class="text-muted mb-0">@{{player.userName}}</p>
+                                        <div class="leaderboard-card-bottom">
+                                            <h3 class="text-center scoreLboard">{{player.score}}</h3>
+                                        </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -135,7 +183,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% if is_final == "True" %}
+                {% if slot == 4 %}
                     {% for player in players %}
                     {% if rank == player.rank %}
                     <tr class="highlight-rank" >
@@ -199,7 +247,7 @@
                     </tr> {% endcomment %}
                 </tbody>
             </table>
-            {%else  %}
+            {% else %}
             <div class="soonText text-center">
                 Leaderboard will be available soon .... 
             </div>
@@ -208,7 +256,6 @@
 
     </div>
 </section>
-
 <style>
     @font-face {
         font-family: MonsOlympia;
@@ -239,6 +286,10 @@
         font-size: 1.3rem;
         margin-left:1.5%;
         margin-top: 0.7%;
+    }
+
+    .highlight-rank{
+        color:red;
     }
     .cont-lBoard {
         display: flex;
@@ -585,6 +636,6 @@
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></scrip>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 {%endblock%}

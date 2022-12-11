@@ -1,56 +1,205 @@
 {%extends 'base.html'%}
 {% load static %}
 {%block content%}
-{% comment %} 
-<div class="slots">
+<section class="outerBorder-lBoard glowing-circle">
+    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
     <div class="container">
-        <a class="slot-button" href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
-        <a class="slot-button" href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
-        <a class="slot-button" href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
-        <a class="slot-button" href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
-     
-    </div>
-       
-</div>
+        <div class="logo-lBoard"><img src="{% static './Assets/logoThemed.png' %}" alt="logo-lBoard"></div>
+        <div class="container">
+            <section>
+                <div class="cont-lBoard">
+                    <div class="content text-center outerBorder glowing-circle">
+                        LEADERBOARD
+                        <br>
+                        {% if slot == 1 %}Slot 1
+                        {% elif slot == 2 %}Slot 2
+                        {% elif slot == 3 %}Slot 3
+                        {% else %}Final
+                        {% endif %}
+                    </div>
+                </div>
 
-<div class="table-section">
-    <div class="container">
-        <h1 style="text-decoration: underline; text-decoration-style: dotted;"><strong> Leaderboard 
-
-            {% if slot == 1 %} - Slot 1
-            {% elif slot == 2 %} - Slot 2
-            {% elif slot == 3 %} - Slot 3
-            {% else %} - Final
+                 <div class="slots-lBoard">
+                    <div class="container">
+                        <a id="slot1" class="slot-button-lBoard rounded-corners-gradient-borders"
+                            href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
+                        <a id="slot2" class="slot-button-lBoard rounded-corners-gradient-borders"
+                            href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
+                        <a id="slot3" class="slot-button-lBoard rounded-corners-gradient-borders"
+                            href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
+                        <a id="finalSlot" class="slot-button-lBoard rounded-corners-gradient-borders"
+                            href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
+                    </div>
+                </div>
+            
+            
+            <br>
+            {% if players %}
+            {% if rank == 0 %}
+            {% else %}
+            <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
             {% endif %}
+            <br>
 
-        </strong></h1>
-        {% if players %}
-        {% if rank == 0 %}
-        {% else %}
-        <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
-        {% endif %}
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Rank</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% if is_final == "True" %}
+            {% comment %} <div class="slots-lBoard">
+                <div class="container">
+                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
+                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
+                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
+                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
+                        href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
+                </div>
+            </div> {% endcomment %}
+        </section>
+            <div class="row">
+                <!-- First Position -->
+                <div class="col-sm-4">
+                    <div class="leaderboard-card leaderboard-card">
+
+                        <div class="leaderboard-card__body">
+                            <div class="text-center">
+                                <img src="{% static './Assets/lBoardAsset1.svg' %}" class="circle-img mb-2" alt="User Img">
+                                <div class="bodyBox-lBoard">
+                                {% if slot == 4 %}
+                                {% for player in players|slice:":1" %}
+                                    {% if rank !=  player.rank %}
+                                    <h5 class="hashTag">#1</h5>
+                                    <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                    <p class="text-muted mb-0">@{{player.userName}}</p>
+                                    <div class="leaderboard-card-bottom">
+                                        <h3 class="text-center scoreLboard">{{player.final_score}}</h3>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                {% else %}
+                                {% for player in players|slice:":1" %}
+                                    {% if rank !=  player.rank %}
+                                    <h5 class="hashTag">#1</h5>
+                                    <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                    <p class="text-muted mb-0">@{{player.userName}}</p>
+                                    <div class="leaderboard-card-bottom">
+                                        <h3 class="text-center scoreLboard">{{player.score}}</h3>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-sm-4">
+                    <div class="leaderboard-card">
+                        <div class="leaderboard-card__body">
+                            <div class="text-center">
+                                <img src="{% static './Assets/lBoardAsset2.svg' %}" class="circle-img mb-2" alt="User Img">
+                                <div class="bodyBox-lBoard">
+                                    {% if slot == 4 %}
+                                    {% for player in players|slice:":2" %}
+                                    {% if rank !=  player.rank %}
+                                        {% if player.rank == 2 %}
+                                        <h5 class="hashTag">#2</h5>
+                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                        <p class="text-muted mb-0">@{{player.userName}}</p>
+                                        <div class="leaderboard-card-bottom">
+                                            <h3 class="text-center scoreLboard">{{player.final_score}}</h3>
+                                        </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% else %}
+                                    {% for player in players|slice:":2" %}
+                                    {% if rank !=  player.rank %}
+                                        {% if player.rank == 2 %}
+                                        <h5 class="hashTag">#2</h5>
+                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                        <p class="text-muted mb-0">@{{player.userName}}</p>
+                                        <div class="leaderboard-card-bottom">
+                                            <h3 class="text-center scoreLboard">{{player.score}}</h3>
+                                        </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-sm-4">
+                    <div class="leaderboard-card">
+                        <div class="leaderboard-card__body">
+                            <div class="text-center">
+                                <img src="{% static './Assets/lBoardAsset3.svg' %}" class="circle-img mb-2" alt="User Img">
+                                <div class="bodyBox-lBoard">
+                                    {% if slot == 4 %}
+                                    {% for player in players|slice:":3" %}
+                                    {% if rank !=  player.rank %}
+                                        {% if player.rank == 3 %}
+                                        <h5 class="hashTag">#3</h5>
+                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                        <p class="text-muted mb-0">@{{player.userName}}</p>
+                                        <div class="leaderboard-card-bottom">
+                                            <h3 class="text-center scoreLboard">{{player.score}}</h3>
+                                        </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% else %}
+                                    {% for player in players|slice:":3" %}
+                                    {% if rank !=  player.rank %}
+                                        {% if player.rank == 3 %}
+                                        <h5 class="hashTag">#3</h5>
+                                        <h5 class="mb-0 nameLboard">{{player.name}}</h5>
+                                        <p class="text-muted mb-0">@{{player.userName}}</p>
+                                        <div class="leaderboard-card-bottom">
+                                            <h3 class="text-center scoreLboard">{{player.score}}</h3>
+                                        </div>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <h4>All Users</h4>
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="text-center">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% if slot == 4 %}
                     {% for player in players %}
                     {% if rank == player.rank %}
                     <tr class="highlight-rank" >
                         <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}</td>
-                        <td>{{player.final_score}}</td>
+                        <td>{{ player.name }}
+                            <p class="text-muted mb-0">@{{player.userName}}</p>
+                        </td>
+                        <td class="text-center">{{player.final_score}}</td>
                     </tr>
                     {% else %}
                     <tr>
                         <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}</td>
-                        <td>{{player.final_score}}</td>
+                        <td>{{ player.name }}
+                            <p class="text-muted mb-0">@{{player.userName}}</p>
+                        </td>
+                        <td class="text-center">{{player.final_score}}</td>
                     </tr>
                     {% endif %}
                     {% endfor %}
@@ -59,27 +208,54 @@
                     {% if rank == player.rank %}
                     <tr class="highlight-rank" >
                         <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}</td>
-                        <td>{{player.score}}</td>
+                        <td>{{ player.name }}
+                            <p class="text-muted mb-0">@{{player.userName}}</p>
+                        </td>
+                        <td class="text-center">{{player.score}}</td>
                     </tr>
                     {% else %}
                     <tr>
                         <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}</td>
-                        <td>{{player.score}}</td>
+                        <td>{{ player.name }}
+                            <p class="text-muted mb-0">@{{player.userName}}</p>
+                        </td>
+                        <td class="text-center">{{player.score}}</td>
                     </tr>
                     {% endif %}
                     {% endfor %}
                 {% endif %}
-            </tbody>
-        </table>
-        {%else  %}
-        <h1><strong> Leaderboard will be available soon ....  </strong></h1>
-        {% endif %}
+                    {% comment %} <tr>
+                        <td scope="row">1</td>
+                        <td>Demo_name
+                            <p class="text-muted mb-0">@demo</p>
+                        </td>
+                        <td class="text-center">#</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">2</td>
+                        <td>Demo_name
+                            <p class="text-muted mb-0">@demo</p>
+                        </td>
+                        <td class="text-center">#</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">3</td>
+                        <td>Demo_name
+                            <p class="text-muted mb-0">@demo</p>
+                        </td>
+                        <td class="text-center">#</td>
+                    </tr> {% endcomment %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="soonText text-center">
+                Leaderboard will be available soon .... 
+            </div>
+            {% endif %}
+        </div>
 
     </div>
-</div> {% endcomment %}
-
+</section>
 <style>
     @font-face {
         font-family: MonsOlympia;
@@ -95,7 +271,26 @@
         letter-spacing: 4px;
         background-image: url({% static './Assets/bg.png' %});
     }
-    
+    .nameLboard{
+        font-size: 150%;
+    }
+
+    .scoreLboard{
+        font-size: 90%;
+        color:white;
+    }
+
+    .hashTag{
+        position: absolute;
+        color: whitesmoke;
+        font-size: 1.3rem;
+        margin-left:1.5%;
+        margin-top: 0.7%;
+    }
+
+    .highlight-rank{
+        color:red;
+    }
     .cont-lBoard {
         display: flex;
         flex-direction: row;
@@ -183,6 +378,7 @@
         font-size: 16px;
         padding-top: 22px;
         padding-bottom: 22px;
+        color: #4EBAF0;
     }
     
     .table thead tr th,
@@ -294,13 +490,13 @@
     }
     {% comment %} back button {% endcomment %}
     .backButton{
-        position: fixed;
+        position: absolute;
         border: 2px solid #4EBAF0;
         border-radius: 1rem;
         font-size: 1.5rem;
         padding: 0px 10px;
-        right:5%;
-        top:5%;
+        right:2%;
+        top:2%;
         font-family: MonsOlympia;
         border-left-style: none;
         color: rgb(194 200 206);
@@ -323,8 +519,8 @@
     /* For mobile */
     @media (min-width: 200px) and (max-width: 1024px) {
         .backButton{
-            right:9%;
-            top:5%;
+            right:4%;
+            top:1%;
         }
         .content {
             border-style: solid;
@@ -356,6 +552,7 @@
             align-content: center;
         }
         .table tr {
+            color:#4EBAF0;
             font-size: 0.5rem;
         }
     
@@ -436,196 +633,9 @@
         }
     }
 </style>
-<section class="outerBorder-lBoard glowing-circle">
-    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
-    <div class="container">
-        <div class="logo-lBoard"><img src="{% static './Assets/logoThemed.png' %}" alt="logo-lBoard"></div>
-        <div class="container">
-            <section>
-                <div class="cont-lBoard">
-                    <div class="content text-center outerBorder glowing-circle">
-                        LEADERBOARD
-                    </div>
 
-                </div>
-
-                {% comment %} <div class="slots-lBoard">
-                    <div class="container">
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
-                        <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                            href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
-                    </div>
-                </div>
-            </section> {% endcomment %}
-            
-            <br>
-            {% if players %}
-            {% if rank == 0 %}
-            {% else %}
-            <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
-            {% endif %}
-            <br>
-
-            <div class="slots-lBoard">
-                <div class="container">
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
-                    <a class="slot-button-lBoard rounded-corners-gradient-borders"
-                        href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
-                </div>
-            </div>
-        </section>
-            <div class="row">
-                <!-- First Position -->
-                <div class="col-sm-4">
-                    <div class="leaderboard-card leaderboard-card">
-
-                        <div class="leaderboard-card__body">
-                            <div class="text-center">
-                                <img src="{% static './Assets/lBoardAsset1.svg' %}" class="circle-img mb-2" alt="User Img">
-                                <div class="bodyBox-lBoard">
-                                    <h5 class="mb-0">John doe</h5>
-                                    <p class="text-muted mb-0">@johndoe</p>
-                                    <div class="leaderboard-card-bottom">
-                                        <h3 class="text-center">#</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="col-sm-4">
-                    <div class="leaderboard-card">
-                        <div class="leaderboard-card__body">
-                            <div class="text-center">
-                                <img src="{% static './Assets/lBoardAsset2.svg' %}" class="circle-img mb-2" alt="User Img">
-                                <div class="bodyBox-lBoard">
-                                    <h5 class="mb-0">John doe</h5>
-                                    <p class="text-muted mb-0">@johndoe</p>
-                                    <div class="leaderboard-card-bottom">
-                                        <h3 class="text-center">#</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="col-sm-4">
-                    <div class="leaderboard-card">
-                        <div class="leaderboard-card__body">
-                            <div class="text-center">
-                                <img src="{% static './Assets/lBoardAsset3.svg' %}" class="circle-img mb-2" alt="User Img">
-                                <div class="bodyBox-lBoard">
-                                    <h5 class="mb-0">John doe</h5>
-                                    <p class="text-muted mb-0">@johndoe</p>
-                                    <div class="leaderboard-card-bottom">
-                                        <h3 class="text-center">#</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-
-            <h4>All Users</h4>
-            <table class="table table-borderless">
-                <thead>
-                    <tr>
-                        <th scope="col">Rank</th>
-                        <th scope="col">Name</th>
-                        <th scope="col" class="text-center">Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% if is_final == "True" %}
-                    {% for player in players %}
-                    {% if rank == player.rank %}
-                    <tr class="highlight-rank" >
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">{{player.final_score}}</td>
-                    </tr>
-                    {% else %}
-                    <tr>
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">{{player.final_score}}</td>
-                    </tr>
-                    {% endif %}
-                    {% endfor %}
-                {% else %}
-                    {% for player in players %}
-                    {% if rank == player.rank %}
-                    <tr class="highlight-rank" >
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">{{player.score}}</td>
-                    </tr>
-                    {% else %}
-                    <tr>
-                        <td scope="row">{{ player.rank }}</td>
-                        <td>{{ player.name }}
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">{{player.score}}</td>
-                    </tr>
-                    {% endif %}
-                    {% endfor %}
-                {% endif %}
-                    {% comment %} <tr>
-                        <td scope="row">1</td>
-                        <td>Demo_name
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">#</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">2</td>
-                        <td>Demo_name
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">#</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">3</td>
-                        <td>Demo_name
-                            <p class="text-muted mb-0">@demo</p>
-                        </td>
-                        <td class="text-center">#</td>
-                    </tr> {% endcomment %}
-                </tbody>
-            </table>
-            {%else  %}
-            <div class="soonText text-center">
-                Leaderboard will be available soon .... 
-            </div>
-            {% endif %}
-        </div>
-
-    </div>
-</section>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></scrip>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 {%endblock%}

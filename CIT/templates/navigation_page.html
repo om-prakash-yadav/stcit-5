@@ -170,11 +170,12 @@
   <div class="outerBorder-navPage glowing-circle"></div>
   <div class="buttonBox-nav">
     {% csrf_token %}
+    <a href="{% url 'cit2020:quiz' %}"><button type="button" class="btn start rounded-corners-gradient-borders-navPage navButton">Start Quiz</button></a><br />
+    <a href="{% url 'cit2020:about' %}"><button type="button" class="btn about rounded-corners-gradient-borders-navPage navButton">about</button></a><br />
     <a href="{% url 'cit2020:rules' %}"><button type="button" class="btn instructions rounded-corners-gradient-borders-navPage navButton">instructions</button></a><br />
     <a href="{% url 'cit2020:lboard' %}"><button type="button" class="btn leaderboard rounded-corners-gradient-borders-navPage navButton">leaderboard</button></a><br />
     <a href="{% url 'cit2020:view_profile' %}"><button type="button" class="btn profile rounded-corners-gradient-borders-navPage navButton">view profile</button></a><br />
-    <a href="{% url 'cit2020:about' %}"><button type="button" class="btn about rounded-corners-gradient-borders-navPage navButton">about</button></a><br />
-    <a href="{% url 'cit2020:startNav' %}"><button type="button" class="btn start rounded-corners-gradient-borders-navPage navButton">Start</button></a><br />
-    {% comment %} <button type="button" class="btn start rounded-corners-gradient-borders-navPage navButton" onclick="location.href='{% url 'startNav' %}'">start</button> {% endcomment %}
+  
+    {% comment %} <button type="button" class="btn start rounded-corners-gradient-borders-navPage navButton" onclick="location.href='{% url 'quiz' %}'">start</button> {% endcomment %}
   </div>
 {% endblock %}

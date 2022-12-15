@@ -83,6 +83,7 @@
         body {
             background-image: url({% static './Assets/bg.png' %});
             background-size: cover;
+            background-size: 100% 100%;
         }
         {% comment %} back button {% endcomment %}
         .backButton{
@@ -146,11 +147,11 @@
         
         
         .logo img {
-            height: 93px;
-            border-radius: 84px;
             position: absolute;
-            top: 30px;
-            left: 9px;
+            width: 10rem;
+            height: auto;
+            top: 1rem;
+            left: -0.5rem;
         }
         
         
@@ -192,9 +193,10 @@
         @media only screen and (max-width: 600px) {
         
             .logo img {
-                height: 4em;
-                top: 2.2%;
-                left: -7px;
+                width: 8rem;
+                height: auto;
+                top: 1rem;
+                left: -0.5rem;
             }
         
         
@@ -211,7 +213,7 @@
             
             .backButton{
                 right:4%;
-                top:2%;
+                top:4%;
             }
         }
     </style>

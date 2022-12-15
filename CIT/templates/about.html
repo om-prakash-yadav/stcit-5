@@ -76,9 +76,11 @@
   }
   
   .logo-imageaboutpage {
-    height: 100px;
     position: absolute;
-    left: 0;
+    width: 10rem;
+    height: auto;
+    top: 1rem;
+    left: -0.5rem;
   }
   
   .main-headingaboutpage {
@@ -104,37 +106,14 @@
     margin-top: 30px;
     height: 80%;
   }
-  
-  @media screen and (max-width: 600px) {
-    .main-headingaboutpage {
-      font-size: 25px;
-    }
-  
-    .logo-imageaboutpage {
-      padding-left: 10px;
-      width: 6rem;
-      height: auto;
-      top: 2.5rem;
-      left: 0.6rem;
-    }
-  
-    .containeraboutpage-2 {
-      height: cover;
-    }
-
-    .backButton{
-      right:4%;
-      top:1%;
-    }
-  }
 
   {% comment %} back button {% endcomment %}
   .backButton{
     position: absolute;
     border: 2px solid #4EBAF0;
     border-radius: 1rem;
-    font-size: 1.5rem;
-    padding: 0px 10px;
+    font-size: 2.5rem;
+    padding: 0px 1rem;
     right:2%;
     top:2%;
     border-left-style: none;
@@ -155,7 +134,30 @@
     -moz-animation: glowing 2s ease-in-out infinite alternate;
     animation: glowing 2s ease-in-out infinite alternate;
 }
-{% comment %}  {% endcomment %}
+
+@media screen and (max-width: 600px) {
+  .main-headingaboutpage {
+    font-size: 25px;
+  }
+
+  .logo-imageaboutpage {
+    position: absolute;
+    width: 8rem;
+    height: auto;
+    top: 1rem;
+    left: -0.5rem;
+  }
+
+  .containeraboutpage-2 {
+    height: cover;
+  }
+
+  .backButton{
+    font-size:1.5rem;
+    right:4%;
+    top:3%;
+  }
+}
 </style>
 <div class="bg-containeraboutpage">
   <div class="containeraboutpage-1 outerBorder glowing-circle container-fluid">
@@ -164,7 +166,7 @@
       <img class="logo-imageaboutpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
       <h class="main-headingaboutpage">About</h>
     </div>
-    <div class="containeraboutpage-2"></div>
+    {% comment %} <div class="containeraboutpage-2"></div> {% endcomment %}
   </div>
 </div>
 {% endblock %}

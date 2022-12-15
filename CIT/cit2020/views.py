@@ -24,9 +24,6 @@ final_start=datetime.datetime(2023, 12, 1, 9, 00, 00, 701322)
 final_end=datetime.datetime(2023, 12, 1, 9, 40, 00, 701322)
 
 def index(request):
-
-    lastquestion = models.question.objects.all().count()
-
     user = request.user
     if user.is_authenticated:
         try:
@@ -42,11 +39,13 @@ def index(request):
             return render(request, 'forms.html')
               
         else: 
-            return render(request, 'navigation_page.html')
+            return render(request, 'home_page.html')
     return render(request, 'home_page.html')
 
-def startNav(request):   
+def quiz(request):   
+    lastquestion = models.question.objects.all().count()
     user = request.user
+
     if user.is_authenticated:
         try:
             player = models.player.objects.get(user_id=request.user.pk)
@@ -113,7 +112,7 @@ def answer(request):
         except models.question.DoesNotExist:
             if player.current_question > lastquestion:
                 return render(request, 'win.html', {'player': player})
-            return redirect(reverse_lazy('cit2020:index'))
+            return redirect(reverse_lazy('cit2020:quiz'))
 
         if ans == question.answer:
             player.current_question = player.current_question + 1
@@ -129,7 +128,7 @@ def answer(request):
             question.save()
             player.save()
         
-            return redirect(reverse_lazy('cit2020:index'))
+            return redirect(reverse_lazy('cit2020:quiz'))
 
         elif ans == '0' or ans == None:
             player.current_question = player.current_question + 1
@@ -137,7 +136,7 @@ def answer(request):
             player.timestamp = timezone.now()
             player.save()
 
-            return redirect(reverse_lazy('cit2020:index'))
+            return redirect(reverse_lazy('cit2020:quiz'))
 
         else:
             player.current_question = player.current_question + 1
@@ -153,7 +152,7 @@ def answer(request):
             question.save()
             player.save()
 
-    return redirect(reverse_lazy('cit2020:index'))
+    return redirect(reverse_lazy('cit2020:quiz'))
 
 
 def lboard(request,slot=0):
@@ -225,7 +224,7 @@ def forms(request):
 
         player.save()
 
-    return redirect(reverse_lazy('cit2020:index'))
+    return redirect(reverse_lazy('cit2020:navPage'))
 
 @login_required
 def view_profile(request):  

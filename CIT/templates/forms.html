@@ -1,6 +1,8 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
 
-<div class="slots-choose">
+{% comment %} <div class="slots-choose">
   <div class="container">
 
     <h2>Please Choose Your Slot - </h2>
@@ -24,10 +26,204 @@
       <br> <br>
       <div class="next-arrow-block">
         <div class="next-arrow">
-          <input type="submit" value="Submit &#8594 " />
+          <input type="submit" value="Submit" />
         </div>
       </div>
     </form>
+  </div>
+</div> {% endcomment %}
+
+<style>
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("{% static './Assets/bg.png'%}");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+  }
+
+  .submitbtn {
+
+    padding: 1rem 2rem;
+    top: 100px;
+    left: 50px;
+    text-decoration: none;
+    color: #4e91f0;
+    font-size: 30px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border-width: 1px;
+    border-radius: 20px;
+    border-image-slice: 1;
+    background-color: rgba(0, 64, 255, 0.153);
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: MonsOlympia;
+    src: url("../fonts/MonsOlympia.ttf");
+  }
+
+  body {
+    font-family: MonsOlympia;
+  }
+
+  .outerBorder-forms {
+    position: relative;
+    border: 2px solid #4EBAF0;
+    width: 95%;
+    height: 95%;
+    top: 2.5%;
+    border-radius: 3rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .glowing-circle {
+
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes glowing {
+    from {
+      box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+    }
+
+    to {
+      box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+    }
+  }
+
+  .image-forms {
+    position: fixed;
+    width: 10rem;
+    height: auto;
+    top: 3rem;
+    left: 2.5rem;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .main-heading-slot {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    padding-top: 10rem;
+  }
+
+  .p1 {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    padding-top: 25px;
+  }
+
+  
+.submitbtn:hover{
+    transform: scale(1.1);
+}
+  .rounded-corners-gradient-borders-form-Slot {
+    border: double 2px transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#2241cb, #0018223b);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 5px 5px rgba(0, 0, 0.2);
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .image-forms {
+      position: fixed;
+      width: 8rem;
+      height: auto;
+      top: 3rem;
+      left: 1rem;
+    }
+
+    .main-heading-slot {
+      font-size: 23px;
+      font-style: normal;
+      font-weight: 400;
+      color: white;
+      padding-top: 12rem;
+    }
+
+    .p1 {
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      color: white;
+      padding-top: 25px;
+
+    }
+
+    .submitbtn {
+
+      padding: 1rem 2rem;
+      top: 50px;
+      left: 20px;
+      text-decoration: none;
+      color: #4e91f0;
+      font-size: 20px;
+      letter-spacing: 4px;
+      overflow: hidden;
+      border-width: 1px;
+      border-radius: 25px;
+      border-image-slice: 1;
+      background-color: rgba(0, 64, 255, 0.153);
+      font-weight: 500;
+    }
+  }
+</style>
+
+  <div class="outerBorder-forms glowing-circle">
+    <div class="text-center cont-forms">
+    <img class="image-forms" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+  </div>
+  <div class="container container-fluid">
+    <div class="slots-choose">
+      <div class="container">
+
+        <h2 class="main-heading-slot">Please Choose Your Slot - </h2>
+
+        <form id="slot" method="post" action="/forms/">
+          {% csrf_token %}
+          <div class="options-block slots-block">
+            <div class="opt">
+              <input type="radio" name="slot" value="1" id="slot1" />
+              <label for="slot1" class="p1">18 January 2022 (7:00 PM - 7:45 PM)</label>
+            </div>
+            <div class="opt">
+              <input type="radio" name="slot" value="2" id="option2" />
+              <label for="option2" class="p1">19 January 2022 (7:00 PM - 7:45 PM)</label>
+            </div>
+            <div class="opt">
+              <input type="radio" name="slot" value="3" id="option3" />
+              <label for="option3" class="p1">20 January 2022 (8:00 PM - 8:45 PM)</label>
+            </div>
+          </div>
+          <br> <br>
+          <div class="next-arrow-block">
+            <div class="next-arrow">
+              <input type="submit" value="Submit" class="submitbtn rounded-corners-gradient-borders-form-Slot" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 

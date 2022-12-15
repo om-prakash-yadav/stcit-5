@@ -8,6 +8,7 @@ class player(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.EmailField(max_length = 254,null=True)
     name = models.CharField(max_length=128)
+    userName = models.CharField(max_length=128)
     current_question = models.IntegerField(default=1)
     score = models.IntegerField(default=0)
     final_score = models.IntegerField(default=0)

@@ -1,45 +1,233 @@
-{%extends 'base.html'%}
-{% load static %}
+{% extends 'base.html' %}
 {% block content %}
+{% load static %}
+{% load widget_tweaks %}
+  <style>
+    @font-face {
+        font-family: MonsOlympia;
+        src: url({% static './fonts/MonsOlympia.ttf'%});
+      }
 
-<div class="rules-section">
-    <div class="container">
-        <h2><strong>Important Instructions</strong></h2>
-        <ul>
-            <li>Register at <a href="#">Dare2Compete</a> platform to confirm your registration.</li> 
-            <li> <b>Preliminary Round:</b> Candidates can attempt CIT only once in any of the three available slots:</li>
-            <ul>
-            <li><b>Slot 1:</b> January 18, 2021 (7:00 PM - 7:45 PM)</li>
-            <li><b>Slot 2:</b> January 19, 2021 (7:00 PM - 7:45 PM)</li>
-            <li><b>Slot 3:</b> January 20, 2021 (8:00 PM - 8:45 PM)</li>
-            </ul>
-            <li>Candidates selected for final round will receive a mail with details.</li>
-            <li><b>Final Round:</b> January 22, 2021 (8:00 PM - 8:45 PM)</li>
-        </ul>
-        <h2><strong>RULES</strong></h2>
-        <ul>
-            <li>This test comprises of <strong>30 questions</strong> which needs to be solved in
-                time limit of <strong>45 minutes</strong>.</li> 
-            <li>Test includes questions from Logical Reasoning, Verbal Reasoning, Data Interpretation and Aptitude.
-                </li>
-            <li>Each question carries <strong>4 mark for correct answer. Incorrect
-                    answer will fetch you negative marks of - 1.</strong></li>
-            <li>No marks if question is not attempted.</li>
-            <li><strong>Just Select the Option or Click Next Question(without
-                    selecting any option) to skip the Question</strong></li>
-            <li>Once you skip to the next question you cannot go back.</li>
-        </ul>
+        .outerBorder-instruct {
+            position: absolute;
+            border: 2px solid #4EBAF0;
+            width: 95%;
+            top: 2.5%;
+            border-radius: 3rem;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
 
-    </div>
-</div>
+        .glowing-circle {
 
-<div class="section prizes-section">
-    <div class="container">
-        <div class="col-lg-12 ">
-            <h2><strong>Cash PRIZES worth 7.5K For CIT 5.0</strong></p>
-                <img src="{% static 'img/prize.jpeg'%}" alt="PRIZES">
+            -webkit-animation: glowing 1s ease-in-out infinite alternate;
+            -moz-animation: glowing 1s ease-in-out infinite alternate;
+            animation: glowing 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowing {
+            from {
+                box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+            }
+
+            to {
+                box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-image: url({% static './Assets/bg.png' %});
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        .containerinstructionpage-1 {
+            height: cover;
+            top:4.5rem;
+            position: relative;
+            padding-bottom: 10rem;
+            margin-bottom: 3rem;
+        }
+
+        .continstructionpage {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .logo-imageinstructionpage {
+            position: absolute;
+            width: 10rem;
+            height: auto;
+            top: 1rem;
+            left: -0.5rem;
+        }
+
+        .main-headinginstructionpage {
+            border-style: solid;
+            border-width: 1;
+            border-color: rgba(98, 159, 228, 0.781);
+            border-radius: 30px;
+            padding: 10px;
+            position: relative;
+            top: 2rem;
+            font-size: 40px;
+            border-left-style: none;
+            font-family: Chalkduster, fantasy;
+            color: rgb(77, 150, 233);
+            background-color: rgba(83, 174, 219, 0.155);
+            text-align: center;
+            
+        }
+
+        .containerinstructionpage-2 {
+            border-style: solid;
+            border-radius: 20px;
+            border-width: 1;
+            border-color: #4EBAF0;
+            padding: 15px;
+            margin-top: 5rem;
+        }
+
+        .parainstructionpage {
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .main-headinginstructionpage1 {
+            border-style: solid;
+            border-width: 1;
+            border-color: rgba(98, 159, 228, 0.781);
+            border-radius: 30px;
+            padding: 10px;
+            font-size: 40px;
+            border-left-style: none;
+            font-family: Chalkduster, fantasy;
+            color: rgb(77, 150, 233);
+            background-color: rgba(83, 174, 219, 0.155);
+            text-align: center;
+            align-self: flex-end;
+        }
+        
+        {% comment %} back button {% endcomment %}
+    .backButton{
+        position: absolute;
+        border: 2px solid #4EBAF0;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        padding: 0px 10px;
+        right:1.5%;
+        top:2%;
+        font-family: MonsOlympia;
+        border-left-style: none;
+        color: rgb(194 200 206);
+        background-color:#0000004d;
+        text-align: center;
+    }
+
+    .backButton:hover{
+        background-color:#4EBAF0;
+        transform: scale(1.1);
+    }
+
+    .glowing-circle-backButton {
+    
+        -webkit-animation: glowing 2s ease-in-out infinite alternate;
+        -moz-animation: glowing 2s ease-in-out infinite alternate;
+        animation: glowing 2s ease-in-out infinite alternate;
+    }
+
+    .cont{
+        height: 0px;
+        margin-bottom: 10rem;
+    }
+    {% comment %}  {% endcomment %}
+   
+        /* For mobile */
+
+        @media screen and (max-width: 600px) {
+            .backButton{
+                right:4%;
+                top:1%;
+            }
+            
+            .logo-imageinstructionpage {
+                position: absolute;
+                width: 8rem;
+                height: auto;
+                top: 1rem;
+                left: -0.5rem;
+            }
+
+            .main-headinginstructionpage {
+                border-style: solid;
+                border-width: 1;
+                border-color: rgba(98, 159, 228, 0.781);
+                border-radius: 30px;
+                padding: 10px;
+                position: relative;
+                top: 4rem;
+                font-size: 40px;
+                border-left-style: none;
+                font-family: Chalkduster, fantasy;
+                color: rgb(77, 150, 233);
+                background-color: rgba(83, 174, 219, 0.155);
+                text-align: center;
+            }
+
+            .main-headinginstructionpage1 {
+                font-size: 25px;
+            }
+
+            .parainstructionpage {
+                color: white;
+                padding: 13px;
+                font-size: 18px;
+            }
+
+            .containerinstructionpage-1 {
+                margin: 0px;
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+
+    <div class="outerBorder-instruct glowing-circle">
+        <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+        <img class="logo-imageinstructionpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+        <div class="container containerinstructionpage-1">
+            <div class="text-center cont">
+        <h class="main-headinginstructionpage">Instructions</h>
+      </div>
+      <div class="containerinstructionpage-2">
+        <p class="parainstructionpage">
+          <span>&#x2022</span> at Dare2Compete platform to confirm your registration. <br />
+          <span>&#x2022</span> Qualifier Round: Candidates can attempt CIT only once in any of the three available slots: <br />
+          Slot 1: January 18, 2021 (7:00 PM - 7:45 PM) <br />
+          Slot 2: January 19, 2021 (7:00 PM - 7:45 PM) <br />
+          Slot 3: January 20, 2021 (8:00 PM - 8:45 PM) <br />
+          <span>&#x2022</span> Candidates selected for final round will receive a mail with details. <br />
+          <span>&#x2022</span> Final Round: January 22, 2021 (8:00 PM - 8:45 PM)
+        </p>
+        <div class="text-center">
+          <h class="main-headinginstructionpage1">Rules</h>
         </div>
+        <p class="parainstructionpage">
+          <span>&#x2022</span>This test comprises of 30 questions which needs to be solved in time limit of 45 minutes.<br />
+          <span>&#x2022</span>Test includes questions from Logical Reasoning, Verbal Reasoning, Data Interpretation and Aptitude.<br />
+          <span>&#x2022</span>Each question carries 4 mark for correct answer. Incorrect answer will fetch you negative marks of - 1.<br />
+          <span>&#x2022</span>No marks if question is not attempted.<br />
+          <span>&#x2022</span>Just Select the Option or Click Next Question(without selecting any option) to skip the Question<br />
+          <span>&#x2022</span>Once you skip to the next question you cannot go back.
+        </p>
+      </div>
     </div>
-</div>
-
-{%endblock%}
+  </div>
+{% endblock %}

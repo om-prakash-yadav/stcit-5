@@ -1,6 +1,6 @@
 Django==3.1.3
-pillow==8.0.1
-filter
+Pillow==9.3.0
+filters==1.3.2
 django-crispy-forms==1.9.2
 social-auth-app-django==4.0.0
 python-decouple==3.3

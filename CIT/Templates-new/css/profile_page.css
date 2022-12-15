@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../Assets/cit\ pc\ 2-02.png);
+    background-size: cover;
+}
+
+
+.outerBorder {
+    position: relative;
+    border: 2px solid #4EBAF0;
+    height: auto;
+    top: 2.5%;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.glowing-circle {
+
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+    }
+
+    to {
+        box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+    }
+}
+
+
+.logo img {
+    height: 93px;
+    border-radius: 84px;
+    position: absolute;
+    top: 30px;
+    left: 9px;
+}
+
+
+
+.view-profile {
+    border-style: solid;
+    border-radius: 50px;
+    border-width: 2;
+    border-color: rgb(98, 159, 228);
+    height: auto;
+    width: auto;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    margin-left: 28px;
+    margin-right: 28px;
+}
+
+.container {
+    color: rgb(255, 254, 254);
+    padding: 10px;
+    margin: 60px;
+}
+
+h4 {
+    margin-top: 15px;
+}
+
+.logo h1 {
+    color: white;
+    margin-top: 38px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .logo img {
+        height: 4em;
+        top: 2.2%;
+        left: -7px;
+    }
+
+
+    .logo h1 {
+        color: white;
+        margin-top: 28px;
+        font-size: 23px;
+        margin-left: 41px;
+    }
+
+    h4 {
+        font-size: 15px;
+    }
+
+
+
+
+
+
+}

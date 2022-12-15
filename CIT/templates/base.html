@@ -9,7 +9,7 @@
   <meta name="description" content="CIT 2021 ISTE NIT Durgapur" />
   <meta name="author" content="" />
 
-  <title>Cognitive Intelligence Test 5.0</title>
+  <title>Cognitive Intelligence Test 6.0</title>
 
   <link rel="icon" href="{% static 'img/iste_new_logo.jpg'%}" type="image/x-icon" />
 
@@ -26,8 +26,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- custom css styles -->
-  <link rel="stylesheet" href="{% static 'css/question-styles.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/complete-styles.css' %}" />
+  {% comment %} <link rel="stylesheet" href="{% static 'css/question-styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/complete-styles.css' %}" /> {% endcomment %}
+  {% comment %} <link rel="stylesheet" href="{% static 'css/indexStyles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/formSlotStyles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/form_page_Styles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/navStyles.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/profile_page.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/lBoardStyles.css' %}" /> {% endcomment %}
 
   <!-- fonts  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,54 +54,11 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <nav>
-      <p class="Logo"><a href="/">Cognitive Intelligence Test</a></p>
-      <input type="checkbox" name="" class="btn" />
-      <div class="nav">
-        <ol>
-          <li><a href="http://istenitdgp.com/">ISTE</a></li>
-          <li><a href="{% url 'cit2020:index' %}">CIT</a></li>
-          <li><a href="{% url 'cit2020:rules' %}">Rules</a></li>
-          <li><a href="{% url 'cit2020:lboard' %}">Leaderboard</a></li>
 
-          {% if user.is_anonymous %}
-          <li><a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">G-Login</a></li>
-          {% endif %}
-          {% if user and not user.is_anonymous %}
-          <li class="drop-down">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-              {{ user.get_full_name|default:user.username }}
-              <b class="caret"></b>
-            </a>
-            <div class="dropdown-content">
-              <div class="d-content">
-                <a href="{% url 'cit2020:view_profile' %}"><b>Profile</b></a>
-                <a href="{% url 'logout' %}?next={{ '/' }}"><b>Logout</b></a>
-              </div>
-            </div>
-          </li>
-          {% endif %}
-        </ol>
-      </div>
-    </nav>
 
 
     {% block content %} {% endblock %}
 
-    <footer class="footer">
-      <div class="line">
-        <hr>
-      </div>
-      <p style="color: #111a2d">
-        <strong>Developed by : </strong> ISTE NIT Durgapur, Students' Chapter
-      </p>
-      <!--<img src="{% static 'img/iste_logo2.png'%}" alt="iste_logo" style="border-radius: 50%;">-->
-      <img src="{% static 'img/iste_new_logo.jpg'%}" alt="iste_logo" style="border-radius: 50%" />
-      <img src="{% static 'img/nit_logo-min.png'%}" alt="iste_logo" style="border-radius: 50%" />
-      <!--<img src="{% static 'img/nitdgp_logo1.png'%}" alt="nitdgp_logo" style="border-radius: 30%;">-->
-    </footer>
-  </div>
 
 
 

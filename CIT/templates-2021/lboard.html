@@ -1,0 +1,82 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="slots">
+    <div class="container">
+        <a class="slot-button" href="{% url 'cit2020:lboard' 1  %}">Slot 1</a>
+        <a class="slot-button" href="{% url 'cit2020:lboard' 2  %}">Slot 2</a>
+        <a class="slot-button" href="{% url 'cit2020:lboard' 3  %}">Slot 3</a>
+        <a class="slot-button" href="{% url 'cit2020:lboard' 4 %}">Final Round</a>
+     
+    </div>
+       
+</div>
+
+<div class="table-section">
+    <div class="container">
+        <h1 style="text-decoration: underline; text-decoration-style: dotted;"><strong> Leaderboard 
+
+            {% if slot == 1 %} - Slot 1
+            {% elif slot == 2 %} - Slot 2
+            {% elif slot == 3 %} - Slot 3
+            {% else %} - Final
+            {% endif %}
+
+        </strong></h1>
+        {% if players %}
+        {% if rank == 0 %}
+        {% else %}
+        <h4 style="text-align: center;"><strong> Your rank is {{rank}} </strong></h4>
+        {% endif %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if is_final == "True" %}
+                    {% for player in players %}
+                    {% if rank == player.rank %}
+                    <tr class="highlight-rank" >
+                        <td scope="row">{{ player.rank }}</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{player.final_score}}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td scope="row">{{ player.rank }}</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{player.final_score}}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                {% else %}
+                    {% for player in players %}
+                    {% if rank == player.rank %}
+                    <tr class="highlight-rank" >
+                        <td scope="row">{{ player.rank }}</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{player.score}}</td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td scope="row">{{ player.rank }}</td>
+                        <td>{{ player.name }}</td>
+                        <td>{{player.score}}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+        {%else  %}
+        <h1><strong> Leaderboard will be available soon ....  </strong></h1>
+        {% endif %}
+
+    </div>
+</div>
+
+{%endblock%}

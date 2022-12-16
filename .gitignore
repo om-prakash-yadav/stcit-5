@@ -76,3 +76,15 @@ CIT/cit2020/migrations/
 
 # Media files
 media/
+myenv/pyvenv.cfg
+myenv/Scripts/activate
+myenv/Scripts/activate.bat
+myenv/Scripts/Activate.ps1
+myenv/Scripts/deactivate.bat
+myenv/Scripts/pip.exe
+myenv/Scripts/pip3.10.exe
+myenv/Scripts/pip3.exe
+myenv/Scripts/python.exe
+myenv/Scripts/pythonw.exe
+CIT/cit2020/migrations/
+CIT/cit2020/__pycache__/

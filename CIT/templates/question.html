@@ -34,6 +34,7 @@
 
             {%endif%}
         </div>
+        <form id="ans" method="post" action="/answer/">
         <div class="footer">
             {% csrf_token %}
             <div class="options-block">
@@ -87,12 +88,12 @@
                     <div class="last">
                         <div class="grid-item"><span style="display: none"><input type="radio" name="option"
                                     id="option5" value="0" /></span>
-                            <input type="button" class="clear-button" value="NEXT"
-                                onclick="document.getElementById('option5').checked = true;" />
+                                    <input type="submit" class="clear-button" value="Next &#8594" />
                         </div>
 
                     </div>
                 </div>
+            </form>
                 <div class="clear">
                 </div>
             </div>
@@ -117,11 +118,11 @@
     var countDownDate
     if ({{ player.qualified }}) {
         // Final slot date
-        countDownDate = new Date("Dec 2, 2022 23:10:00").getTime();
+        countDownDate = new Date("Dec 16, 2022 23:10:00").getTime();
     }
       else if ({{ player.slot }}== 1) {
         // slot 1 date
-        countDownDate = new Date("Dec 7, 2022 23:05:00").getTime();
+        countDownDate = new Date("Dec 16, 2022 23:05:00").getTime();
     } 
       else if ({{ player.slot }}== 2) {
         // slot 2 date 
@@ -172,7 +173,7 @@
 </script>
 
 
-{%endblock%}
+
 
 
 <style>
@@ -685,3 +686,5 @@
         text-align: center;
     }
 </style>
+
+{%endblock%}

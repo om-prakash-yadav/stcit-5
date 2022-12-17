@@ -59,6 +59,7 @@ CIT/db.sqlit
 # Environments
 .env
 .venv
+myenv/
 env/
 venv/
 ENV/

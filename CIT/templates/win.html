@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
-
 {%block content%}
-
+{% load static %}
 <style>
 
     * {
@@ -10,45 +9,37 @@
     }
     
     body {
-        background-image: url(../Assets/cit\ pc\ 2-02.png);
+        background-image: url({% static './Assets/bg.png' %});
         background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
         overflow-y: hidden;
-        
         font-family: MonsOlympia;
         letter-spacing: 2.3px;
-        font-weight: 400;
-        
     }
     
-    
-    
+
     @font-face {
         font-family: MonsOlympia;
-        src: url(./fonts/MonsOlympia.ttf);
-    }
-    
-    body {
-        font-family: MonsOlympia;
+        src: url({% static './fonts/MonsOlympia.ttf'%});
     }
     
     .bg-container {
-        background-image: url('https://i.ibb.co/9NcNjGK/cit-pc-2-02.png');
-        background-size: cover;
         height: 100vh;
-        padding: 20px;
     }
     
       .outerBorder {
-          position: fixed;
-          border: 2px solid #4EBAF0;
-          width: 93%;
-          height: 94.5%;
-          top: 2.6%;
-          left: 2.6%;
-          border-radius: 40px;
-          justify-content: center;
-          align-items: center;
-          align-content: center;
+        position: absolute;
+        border: 2px solid #4EBAF0;
+        width: 95%;
+        top: 2.5%;
+        left : 2.5%;
+        bottom: 2.5%;
+        border-radius: 3rem;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
       }
     
     .glowing-circle {
@@ -93,29 +84,27 @@
         left: 9px;
         top: 30px;
     }
+
+    .para-1 , .para-2 , .para-3{
+        letter-spacing : 5px;
+    }
     
     .para-1 {
         color: white;
-    
         font-size: 35px;
-        text-align: center;
         text-align: center;
         font-style: normal;
         font-weight: 400;
-        font-family: MonsOlympia;
-    
+        margin-top : 5%;
     }
     
     .para-2 {
         color: white;
-        padding-top: 45px;
+        margin-top: 45px;
         font-size: 30px;
-        text-align: center;
         text-align: center;
         font-style: normal;
         font-weight: 400;
-        font-family: MonsOlympia;
-    
     }
     
     {% comment %} .para-3 {
@@ -132,14 +121,11 @@
     
     .para-3 {
         color: white;
-        padding-top: 110px;
+        margin-top: 60px;
         font-size: 30px;
-        text-align: center;
         text-align: center;
         font-style: normal;
         font-weight: 400;
-        font-family: MonsOlympia;
-    
     }
     
     
@@ -149,30 +135,30 @@
             height: 70px;
             position: absolute;
             left: -2px;
-            ;
         }
     
     
         .container-fluid {
-            padding-top: 7rem;
+            padding: 21px;
+            padding-top : 8rem;
         }
     
         .para-1 {
             color: white;
-            padding: 65px;
-            font-size: 20px;
+            font-size: 19px;
             text-align: center;
             font-style: normal;
             font-weight: 400;
+            margin-top : 90px;
         }
     
         .para-2 {
             color: white;
-            padding: 13px;
-            font-size: 20px;
+            font-size: 19px;
             text-align: center;
             font-style: normal;
             font-weight: 400;
+            margin-top : 30px;
         }
     
         {% comment %} .para-3 {
@@ -186,14 +172,11 @@
     
         .para-3 {
         color: white;
-        padding: 19px;
-        font-size: 20px;
-        text-align: center;
+        font-size: 19px;
         text-align: center;
         font-style: normal;
         font-weight: 400;
-        font-family: MonsOlympia;
-    
+        margin-top : 30px;
         }
     
     }
@@ -203,18 +186,15 @@
 <div class = "bg-container">
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
-            <img class="image" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+            <img class="image" src="{% static './Assets/isteLogoThemed.png'%}" />
         </div>
         <div class="container-fluid">
             <h2 class = "para-1"><strong>You Have Attempted All Questions</strong></h2>
-            <br>
             {% if player.qualified == True %}
              <h2 class = "para-2" ><strong>Your Preliminary Round Score is {{player.score}} and Final Round Score is {{player.final_score}}</strong></h2>
-             <br><br>
             <h2 class = "para-3" ><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a> for Rank</strong></h2>
             {% else %}
             <h2 class = "para-2" ><strong>Your Preliminary Round Score is {{player.score}}</strong></h2>
-             <br><br>
             <h2 class = "para-3" ><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' slot=player.slot  %}"> LEADERBOARD </a> for Rank</strong></h2>
             {% endif %}
         </div>

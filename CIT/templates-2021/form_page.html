@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT Forms</title>
+
+    <!------------------------------------------- CSS LINK ------------------------------------------>
+
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("../static/Assets/cit\ pc\ 2\ bg-01.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.outerBorder {
+    position: relative;
+    border: 2px solid #4EBAF0;
+    width: 95%;
+    height: 95%;
+    top: 2.5%;
+    border-radius: 3rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.glowing-circle {
+
+    -webkit-animation: glowing 1s ease-in-out infinite alternate;
+    -moz-animation: glowing 1s ease-in-out infinite alternate;
+    animation: glowing 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+    }
+
+    to {
+        box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+    }
+}
+
+.main-forms-container {
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.forms-heading {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.forms-heading-left {
+    /* position: absolute; */
+    height: 100%;
+    width: 26%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms-heading-left img {
+    height: auto;
+    width: 10rem;
+    margin-top: 2px;
+    margin-bottom: 6px;
+}
+
+@media screen and (max-width: 290px) {
+    .forms-heading-left img {
+        height: auto;
+        width: 6rem;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .forms-heading-left img {
+        height: auto;
+        width: 7.5rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .forms-heading-left img {
+        height: auto;
+        width: 8rem;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    .forms-heading-left img {
+        height: auto;
+        width: 8.2rem;
+    }
+}
+
+.forms-heading-right {
+    position: relative;
+    height: 100%;
+    width: 74%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms-heading-right h3 {
+    position: absolute;
+    font-weight: normal;
+    font-size: 24px;
+    color: aqua;
+    text-align: center;
+    margin-bottom: 30px;
+    left: 27.5%;
+}
+
+@media screen and (max-width: 290px) {
+    .forms-heading-right h3 {
+        position: absolute;
+        left: 10%;
+    }
+}
+
+@media screen and (max-width: 362px) {
+    .forms-heading-right h3 {
+        position: absolute;
+        left: 14%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .forms-heading-right h3 {
+        position: absolute;
+        left: 15%;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .forms-heading-right h3 {
+        position: absolute;
+        left: 14%;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    .forms-heading-right h3 {
+        position: absolute;
+        left: 15%;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .forms-heading-right h3 {
+        position: absolute;
+        left: 24%;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .forms-heading-right h3 {
+        position: absolute;
+        left: 25%;
+    }
+}
+
+.forms-content {
+    width: 100%;
+    height: 80%;
+}
+
+.forms-content form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.forms-input-box {
+    width: 55%;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid aqua;
+    margin: 8px 0;
+    padding: 0 10px;
+    height: 35px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff;
+}
+
+::placeholder {
+    color: #fff;
+    text-align: center;
+}
+
+.submitbtn {
+    padding: 1rem 2rem;
+    margin-top: 5px;
+    top: 100px;
+    left: 50px;
+    text-decoration: none;
+    color: #4e91f0;
+    font-size: 15px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border-width: 1px;
+    border-radius: 35px;
+    border-image-slice: 1;
+    background-color: rgba(0, 64, 255, 0.153);
+    font-weight: 500;
+}
+
+@media screen and (max-width: 362px) {
+    .submitbtn {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .submitbtn {
+        font-size: 12px;
+    }
+}
+
+span {
+    color: #fff;
+}
+
+.rounded-corners-gradient-borders {
+    border: 1px solid aqua;
+    border-radius: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#2241cb, #0018223b);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 5px 5px rgba(0, 0, 0.2);
+}
+    </style>
+
+</head>
+
+<body>
+
+    <Style>
+        @font-face {
+            font-family: MonsOlympia;
+            src: url(./fonts/MonsOlympia.ttf);
+        }
+
+        body {
+            font-family: MonsOlympia;
+        }
+
+        ::placeholder {
+            font-family: MonsOlympia;
+        }
+
+        span {
+            font-family: MonsOlympia;
+        }
+    </Style>
+
+    <div class="outerBorder glowing-circle">
+        <div class="main-forms-container">
+            <div class="forms-heading">
+                <div class="forms-heading-left">
+                    <img src="../static/Assets/isteLogoThemed.png" alt="">
+                </div>
+                <div class="forms-heading-right">
+                    <h3>Register</h3>
+                </div>
+            </div>
+            <div class="forms-content">
+                <form>
+                    <input type="text" class="forms-input-box" placeholder="Your Name" required>
+                    <input type="text" class="forms-input-box" placeholder="Your Username" required>
+                    <input type="number" class="forms-input-box" placeholder="Your Phone Number" required>
+                    <input type="text" class="forms-input-box" placeholder="Name of College/School" required>
+                    <input type="text" class="forms-input-box" placeholder="Department/School Name" required>
+                    <input type="text" class="forms-input-box" placeholder="Year of Study" required>
+                    <button type="submit" value="submit"
+                        class="submitbtn rounded-corners-gradient-borders"><Span>Submit</Span></button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

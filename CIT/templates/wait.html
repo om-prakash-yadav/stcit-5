@@ -3,12 +3,12 @@
 {% block content %}
 
 <div class="outerBorder glowing-circle"></div>
-<a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+<a href="{% url 'cit2020:navPage' %}"> <button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
 <div class="bg-containertimerpage">
   {% if user and not user.is_anonymous %}
   <div class="containertimerpage-1">
     <div class="text-center conttimerpage">
-      <img class="logo-imagetimerpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+      <img class="logo-imagetimerpage" src="{% static './Assets/isteLogoThemed.png'%}" />
     </div>
     <div class="containertimerpage container-fluid">
       <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
@@ -32,7 +32,7 @@
   }
 
   .bg-containertimerpage {
-      background-image: url('https://i.ibb.co/s1XmVdR/Whats-App-Image-2022-12-02-at-21-03-12.jpg');
+      background-image: url({% static './Assets/bg.png' %});
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -114,6 +114,10 @@
       color: red;
   }
 
+  .paratimerpage1 , .paratimerpage3 , .paratimerpage3 , .main-headingtimerpage{
+    letter-spacing : 5px;
+  }
+
   .paratimerpage1 {
       font-size: 25px;
       font-style: normal;
@@ -169,39 +173,38 @@
 
   @media screen and (max-width: 600px) {
       .backButton{
-        top:5%;
-        right:6%;
+        top:8%;
+        right:7%;
       }
       .logo-imagetimerpage {
-          position: fixed;
-          width: 6rem;
-          height: auto;
-          top: 2.5rem;
-          left: 0.6rem;
+        position: absolute;
+        width: 8rem;
+        height: auto;
+        top: 2rem;
+        left: -0.5rem;
       }
 
       .main-headingtimerpage {
-          font-size: 25px;
-          margin-top: 30%;
-
+          font-size: 24px;
+          margin-top: 25%;
       }
 
       .headingtimerpage {
-          font-size: 22px;
+          font-size: 18px;
       }
 
       .paratimerpage1 {
-          font-size: 20px;
+          font-size: 18px;
 
       }
 
       .paratimerpage2 {
-          font-size: 21px;
+          font-size: 18px;
 
       }
 
       .paratimerpage3 {
-          font-size: 21px;
+          font-size: 18px;
       }
 
   }

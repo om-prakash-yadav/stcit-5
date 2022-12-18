@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {%block content%}
+{% load static %}
 
 <style>
     * {
@@ -8,20 +9,16 @@
     }
     
     body {
-        background-image: url(../Assets/cit\ pc\ 2-02.png);
+        background-image: url({% static './Assets/bg.png'%});
         background-size: cover;
         overflow-y: hidden;
-        
         font-family: MonsOlympia;
-        letter-spacing: 2.3px;
         font-weight: 400;
     }
     
-    
-    
     @font-face {
         font-family: MonsOlympia;
-        src: url(./fonts/MonsOlympia.ttf);
+        src: url({% static './fonts/MonsOlympia.ttf'%}); 
     }
     
     body {
@@ -29,7 +26,7 @@
     }
     
     .finish-container {
-        background-image: url('https://i.ibb.co/9NcNjGK/cit-pc-2-02.png');
+        {% comment %} background-image: url('{% static './Assets/bg.png'%}'); {% endcomment %}
         background-size: cover;
         height: 100vh;
         padding: 20px;
@@ -93,56 +90,64 @@
     
     .para-1 {
         color: white;
-    
         font-size: 35px;
         text-align: center;
         text-align: center;
         font-style: normal;
         font-weight: 400;
         font-family: MonsOlympia;
-    
+        margin-top : 60px;
+        letter-spacing : 5px;
     }
     
     .para-2 {
         color: white;
-        padding-top: 45px;
+        padding-top: 60px;
         font-size: 30px;
         text-align: center;
         text-align: center;
         font-style: normal;
         font-weight: 400;
         font-family: MonsOlympia;
-    
+        letter-spacing : 5px;
     }
     
     .para-3 {
         color: white;
-        padding-top: 55px;
+        padding-top: 30px;
         font-size: 30px;
         text-align: center;
         text-align: center;
         font-style: normal;
         font-weight: 400;
         font-family: MonsOlympia;
-    
-    
+        letter-spacing : 5px;
     }
     
     
     .para-4 {
         color: white;
-        padding-top: 110px;
+        padding-top: 60px;
         font-size: 30px;
         text-align: center;
         text-align: center;
         font-style: normal;
         font-weight: 400;
         font-family: MonsOlympia;
-    
+        letter-spacing : 5px;
     }
     
-    
-    
+    .para-5 {
+        color: white;
+        padding-top: 30px;
+        font-size: 30px;
+        text-align: center;
+        text-align: center;
+        font-style: normal;
+        font-weight: 400;
+        font-family: MonsOlympia;
+        letter-spacing : 5px;
+    }
     
     @media screen and (max-width: 600px) {
     
@@ -160,8 +165,8 @@
     
         .para-1 {
             color: white;
-            padding: 65px;
-            font-size: 20px;
+            padding-top: 45px;
+            font-size: 27px;
             text-align: center;
             font-style: normal;
             font-weight: 400;
@@ -169,7 +174,7 @@
     
         .para-2 {
             color: white;
-            padding: 13px;
+            padding-top: 30px;
             font-size: 20px;
             text-align: center;
             font-style: normal;
@@ -178,7 +183,7 @@
     
         .para-3 {
             color: white;
-            padding: 13px;
+            padding-top: 30px;
             font-size: 20px;
             text-align: center;
             font-style: normal;
@@ -187,7 +192,7 @@
     
         .para-4 {
             color: white;
-            padding: 19px;
+            padding-top: 30px;
             font-size: 20px;
             text-align: center;
             text-align: center;
@@ -199,13 +204,14 @@
 
         .para-5{
             color: white;
-            padding: 19px;
+            padding-top: 30px;
             font-size: 20px;
-            text-align: center;
-            text-align: center;
             font-style: normal;
             font-weight: 400;
             font-family: MonsOlympia;
+            text-align: center;
+            margin-left:auto;
+            margin-right:auto;
         }
     
     
@@ -216,19 +222,16 @@
 <div class = "finish-container">
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
-            <img class="image" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+            <img class="image" src="{% static './Assets/isteLogoThemed.png'%}" />
         </div>
         <div class="container-fluid">
             {% if user and not user.is_anonymous %}
-             <h2class = "para-1"><strong>TEST FINISHED</strong></h2class>
-             <br>
+             <h2 class = "para-1"><strong>TEST FINISHED</strong></h2class>
             {% if player.qualified == True %}
              <h2 class = "para-2"><strong>Your Preliminary Round Score is {{player.score}} and Final Round Score is {{player.final_score}}</strong></h2>
-             <br><br>
-            <h2class = "para-3"><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a> for Rank</strong></h2class>
+            <h2 class = "para-3"><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' %}"> LEADERBOARD </a> for Rank</strong></h2class>
             {% else %}
             <h2 class = "para-4"><strong>Your Preliminary Round Score is {{player.score}}</strong></h2>
-             <br><br>
             <h2 class = "para-5"><strong>Visit <a style="text-decoration:none;" href="{% url 'cit2020:lboard' slot=player.slot %}"> LEADERBOARD </a> for Rank</strong></h2>
             {% endif %}
             {% endif %}

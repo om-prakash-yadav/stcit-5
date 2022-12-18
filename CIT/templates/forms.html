@@ -2,53 +2,20 @@
 {% load static %}
 {% block content %}
 
-{% comment %} <div class="slots-choose">
-  <div class="container">
-
-    <h2>Please Choose Your Slot - </h2>
-
-    <form id="slot" method="post" action="/forms/">
-      {% csrf_token %}
-      <div class="options-block slots-block">
-        <div class="opt">
-          <input type="radio" name="slot" value="1" id="slot1" />
-          <label for="slot1">18 January 2022 (7:00 PM - 7:45 PM)</label>
-        </div>
-        <div class="opt">
-          <input type="radio" name="slot" value="2" id="option2" />
-          <label for="option2">19 January 2022 (7:00 PM - 7:45 PM)</label>
-        </div>
-        <div class="opt">
-          <input type="radio" name="slot" value="3" id="option3" />
-          <label for="option3">20 January 2022 (8:00 PM - 8:45 PM)</label>
-        </div>
-      </div>
-      <br> <br>
-      <div class="next-arrow-block">
-        <div class="next-arrow">
-          <input type="submit" value="Submit" />
-        </div>
-      </div>
-    </form>
-  </div>
-</div> {% endcomment %}
-
 <style>
-
   body {
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-image: url("{% static './Assets/bg.png'%}");
+    background-image: url({% static './Assets/bg.png'%});
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
   }
 
   .submitbtn {
-
     padding: 1rem 2rem;
     top: 100px;
     left: 50px;
@@ -66,7 +33,7 @@
 
   @font-face {
     font-family: MonsOlympia;
-    src: url("../fonts/MonsOlympia.ttf");
+    src: url({% static './fonts/MonsOlympia.ttf'%});
   }
 
   body {
@@ -120,6 +87,8 @@
     font-weight: 400;
     color: white;
     padding-top: 10rem;
+    letter-spacing : 5px;
+    margin-bottom : 30px;
   }
 
   .p1 {
@@ -128,8 +97,21 @@
     font-weight: 400;
     color: white;
     padding-top: 25px;
+    letter-spacing : 5px;
   }
-
+  .opt{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top : 15px;
+  }
+  .opt input{
+    margin-right : 12px;
+  }
+  .opt label{
+    padding : 0;
+  }
   
 .submitbtn:hover{
     transform: scale(1.1);
@@ -146,19 +128,19 @@
   @media screen and (max-width: 600px) {
 
     .image-forms {
-      position: fixed;
+      position: absolute;
       width: 8rem;
       height: auto;
-      top: 3rem;
-      left: 1rem;
+      top: 1rem;
+      left: -0.5rem;
     }
 
     .main-heading-slot {
-      font-size: 23px;
+      font-size: 21px;
       font-style: normal;
       font-weight: 400;
       color: white;
-      padding-top: 12rem;
+      padding-top: 10rem;
     }
 
     .p1 {
@@ -167,11 +149,9 @@
       font-weight: 400;
       color: white;
       padding-top: 25px;
-
     }
 
     .submitbtn {
-
       padding: 1rem 2rem;
       top: 50px;
       left: 20px;
@@ -191,7 +171,7 @@
 
   <div class="outerBorder-forms glowing-circle">
     <div class="text-center cont-forms">
-    <img class="image-forms" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+    <img class="image-forms" src="{% static './Assets/isteLogoThemed.png'%}" />
   </div>
   <div class="container container-fluid">
     <div class="slots-choose">
@@ -204,7 +184,7 @@
           <div class="options-block slots-block">
             <div class="opt">
               <input type="radio" name="slot" value="1" id="slot1" />
-              <label for="slot1" class="p1">18 January 2022 (7:00 PM - 7:45 PM)</label>
+              <label for="option1" class="p1">18 January 2022 (7:00 PM - 7:45 PM)</label>
             </div>
             <div class="opt">
               <input type="radio" name="slot" value="2" id="option2" />

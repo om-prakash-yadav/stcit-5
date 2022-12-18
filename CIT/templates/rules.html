@@ -46,6 +46,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
+            font-family : Montserrat;
         }
 
         .containerinstructionpage-1 {
@@ -74,16 +75,16 @@
             border-width: 1;
             border-color: rgba(98, 159, 228, 0.781);
             border-radius: 30px;
-            padding: 10px;
+            padding: 10px 25px;
             position: relative;
             top: 2rem;
             font-size: 40px;
             border-left-style: none;
-            font-family: Chalkduster, fantasy;
             color: rgb(77, 150, 233);
             background-color: rgba(83, 174, 219, 0.155);
             text-align: center;
-            
+            font-family : MonsOlympia;
+            letter-spacing : 5px;
         }
 
         .containerinstructionpage-2 {
@@ -106,14 +107,15 @@
             border-width: 1;
             border-color: rgba(98, 159, 228, 0.781);
             border-radius: 30px;
-            padding: 10px;
+            padding: 10px 20px;
             font-size: 40px;
             border-left-style: none;
-            font-family: Chalkduster, fantasy;
             color: rgb(77, 150, 233);
             background-color: rgba(83, 174, 219, 0.155);
             text-align: center;
             align-self: flex-end;
+            font-family : MonsOlympia;
+            letter-spacing : 5px;
         }
         
         {% comment %} back button {% endcomment %}
@@ -176,7 +178,7 @@
                 top: 4rem;
                 font-size: 40px;
                 border-left-style: none;
-                font-family: Chalkduster, fantasy;
+                font-family : MonsOlympia;
                 color: rgb(77, 150, 233);
                 background-color: rgba(83, 174, 219, 0.155);
                 text-align: center;
@@ -201,10 +203,10 @@
 
     <div class="outerBorder-instruct glowing-circle">
         <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
-        <img class="logo-imageinstructionpage" src="https://i.ibb.co/vPskLzN/Untitled-1-01.png" />
+        <img class="logo-imageinstructionpage" src="{% static './Assets/isteLogoThemed.png'%}" />
         <div class="container containerinstructionpage-1">
             <div class="text-center cont">
-        <h1 class="main-headinginstructionpage">Instructions</h>
+        <h class="main-headinginstructionpage">Instructions</h>
       </div>
       <div class="containerinstructionpage-2">
         <p class="parainstructionpage">

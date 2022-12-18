@@ -9,8 +9,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2022, 12, 16, 12, 10, 00, 701322)
-slot1_end=datetime.datetime(2022, 12, 16, 12, 12, 00, 701322)
+slot1_start=datetime.datetime(2022, 12, 18, 12, 10, 00, 701322)
+slot1_end=datetime.datetime(2022, 12, 18, 15, 12, 00, 701322)
 
 slot2_start=datetime.datetime(2022, 12, 16, 12, 13, 00, 701322)
 slot2_end=datetime.datetime(2022, 12, 16, 12, 15, 00, 701322)
@@ -18,10 +18,10 @@ slot2_end=datetime.datetime(2022, 12, 16, 12, 15, 00, 701322)
 slot3_start=datetime.datetime(2022, 12, 16, 12, 17, 00, 701322)
 slot3_end=datetime.datetime(2022, 12, 16, 12, 19, 00, 701322)
 
-round1_result=datetime.datetime(2022, 12, 16, 12, 20, 00, 701322)
+round1_result=datetime.datetime(2022, 12, 20, 15, 20, 00, 701322)
 
-final_start=datetime.datetime(2022, 12, 16, 12, 22, 00, 701322)
-final_end=datetime.datetime(2022, 12, 16, 12, 24, 00, 701322)
+final_start=datetime.datetime(2022, 12, 20, 12, 22, 00, 701322)
+final_end=datetime.datetime(2022, 12, 20, 12, 24, 00, 701322)
 
 def index(request):
     user = request.user
@@ -76,6 +76,8 @@ def quiz(request):
         elif player.current_question > lastquestion:
             return render(request, 'win.html', {'player': player})
         try:
+            if player.details_updated == False:
+                return redirect(reverse_lazy('cit2020:update_profile'))
             question = models.question.objects.get(Q_number=player.current_question)
             return render(request, 'question.html', {'player': player, 'question': question})
         except models.question.DoesNotExist:

@@ -133,6 +133,7 @@ form {
     text-align: center;
     color: #fff;
     letter-spacing : 4px;
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -232,10 +233,10 @@ form {
                         {%render_field form.userName class="form-control forms-input-box" placeholder="Enter your Username" style="display:inline-block;max-width: 95%;" %}
         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Phn Number" required> {% endcomment %}
-                        {% render_field form.mobile class="form-control forms-input-box" placeholder="Enter Your Mobile Number" style="display:inline-block;max-width: 95%;" %}  
+                        {% render_field form.mobile class="form-control forms-input-box" type="Number" placeholder="Enter Your Mobile Number" style="display:inline-block;max-width: 95%;" %}  
         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Name of College/School" required> {% endcomment %}
-                        {% render_field form.institute_name class="form-control forms-input-box" placeholder="Enter your Institute Name" style="display:inline-block;max-width: 95%;" %}  
+                        {% render_field form.institute_name class="form-control forms-input-box"  placeholder="Enter your Institute Name" style="display:inline-block;max-width: 95%;" %}  
                         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Department/School Name" required> {% endcomment %}
                         {% render_field form.department class="form-control forms-input-box" placeholder="Enter School if you are school student" style="display:inline-block;max-width: 95%;" %}

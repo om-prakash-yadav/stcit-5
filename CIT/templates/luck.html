@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{%block content%}
+{% block content%}
 {% load static %}
 <style>
 
@@ -9,20 +9,9 @@
     }
     
     body {
-        background-image: url({% static './Assets/bg.png' %});
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
         overflow-y: hidden;
         font-family: MonsOlympia;
         letter-spacing: 2.3px;
-    }
-    
-
-    @font-face {
-        font-family: MonsOlympia;
-        src: url({% static './fonts/MonsOlympia.ttf'%});
     }
     
     .bg-container {
@@ -58,7 +47,7 @@
             box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
         }
     }
-    
+
     .container-1 {
         border-style: solid;
         border-radius: 50px;
@@ -186,7 +175,7 @@
 <div class = "bg-container">
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
-            <img class="image" src="{% static './Assets/isteLogoThemed.png'%}" />
+            <a href="{% url 'cit2020:navPage' %}"><img class="image" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
         </div>
         <div class="container-fluid">
             <h2 class = "para-1"><strong>You Have Not Qualified For the Final Round</strong></h2>

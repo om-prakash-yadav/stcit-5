@@ -8,7 +8,7 @@
   {% if user and not user.is_anonymous %}
   <div class="containertimerpage-1">
     <div class="text-center conttimerpage">
-      <img class="logo-imagetimerpage" src="{% static './Assets/isteLogoThemed.png'%}" />
+      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imagetimerpage" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
     </div>
     <div class="containertimerpage container-fluid">
       <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
@@ -22,25 +22,16 @@
 </div>
 
 <style>
-  @font-face {
-    font-family: MonsOlympia;
-    src: url({% static './fonts/MonsOlympia.ttf'%});
-  }
-
   body{
     font-family: MonsOlympia;
   }
 
   .bg-containertimerpage {
-      background-image: url({% static './Assets/bg.png' %});
       margin: 0;
       padding: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: 100% 100%;
   }
 
   .outerBorder {

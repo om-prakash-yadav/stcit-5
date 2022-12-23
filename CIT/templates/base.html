@@ -41,12 +41,19 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
       rel="stylesheet"
     />
-    {% comment %} <style>
+    <style>
       @font-face {
         font-family: MonsOlympia;
-        src: url({%static"./fonts/MonsOlympia.ttf"%});
+        src: url({% static './fonts/MonsOlympia.ttf'%});
       }
-    </style> {% endcomment %}
+      body {
+        height: 100vh;
+        background-image: url({% static './Assets/bg.png' %});
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    </style> 
     {% block cssStyles %} {% endblock %}
   </head>
 

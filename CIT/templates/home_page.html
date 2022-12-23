@@ -1,37 +1,23 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} 
+{% load static %} 
 {% block content %}
+
 <style>
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
-  }
-
-  @font-face {
-    font-family: MonsOlympia;
-    src: url({% static './fonts/MonsOlympia.ttf'%});
   }
 
   body {
     font-family: MonsOlympia;
   }
-
-  body {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-    font-family: MonsOlympia;
-  }
-
 
   /* ------------------------------Button effect------------------------------------------------------------ */
   .startBtn-home a {
-    position: fixed;
     padding: 20px 50px;
     text-decoration: none;
-    color: #4EBAF0;
+    color: #4ebaf0;
     font-size: 2em;
     letter-spacing: 4px;
     overflow: hidden;
@@ -46,7 +32,7 @@
   .startBtn-home a span {
     position: fixed;
     display: flex;
-    transition: all 1s ease
+    transition: all 1s ease;
   }
 
   .startBtn-home a:hover {
@@ -72,26 +58,33 @@
   /* Bg image and responsiveness for mobile and tablet devices */
   @media (min-width: 200px) and (max-width: 1024px) {
     body {
-      background-image: url({% static './Assets/homePageMobile.png'%});
+      width : 100vw;
+      background-image: url({% static "./Assets/homePageMobile.png" %});
     }
 
     .titleHeading-home {
       justify-content: center;
-      color: #4EBAF0;
+      color: #4ebaf0;
       font-size: 9rem;
-      top: 5rem;
+      padding-top: 10vh;
       position: relative;
       font-optical-sizing: auto;
     }
 
     .textAfterHeading-home {
-      color: #4EBAF0;
-      justify-content: center;
-      height: 5rem;
+      color: #4ebaf0;
+      height: 10rem;
       margin-left: -1rem;
       margin-top: -2rem;
       text-align: center;
       font-size: 1rem;
+    }
+
+    .textAfterHeading-home row {
+      padding-left : 0;
+      padding-right : 0;
+      margin-right: 0;
+      margin-left: 0;
     }
 
     .socialMedia-home {
@@ -99,7 +92,7 @@
       position: fixed;
       left: 2rem;
       bottom: 2rem;
-      color: #4EBAF0;
+      color: #4ebaf0;
     }
 
     .socialMedia-home img {
@@ -110,25 +103,33 @@
     }
 
     .startBtn-home a {
-      position: relative;
-      display: inline;
-      top: 3rem;
+      position:relative;
+      top: 5vh;
+      right : 10vw;
       justify-content: center;
       text-align: center;
-      padding: 20px 30px;
+      padding: 12px 18px;
       text-decoration: none;
-      color: #4EBAF0;
-      font-size: 1rem;
+      color: #4ebaf0;
+      font-size: 1.1rem;
       letter-spacing: 4px;
       overflow: hidden;
       border-image-slice: 1;
       background-color: rgba(0, 64, 255, 0.153);
     }
 
+    .rulesBtn-home a{
+      left : 12vw;
+    }
+
     .rounded-corners-gradient-borders {
       border: double 2px transparent;
       border-radius: 20px;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#4EBAF0, #0018223b);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.542),
+          rgba(0, 0, 0, 0.542)
+        ),
+        linear-gradient(#4ebaf0, #0018223b);
       background-origin: border-box;
       background-clip: padding-box, border-box;
       box-shadow: 0 5px 5px rgba(0, 0, 0.2);
@@ -136,7 +137,7 @@
 
     .logo-home img {
       position: fixed;
-      width: 6rem;
+      width: 7rem;
       height: auto;
       top: 2.5rem;
       left: 0.6rem;
@@ -146,7 +147,7 @@
 
     .outerBorder {
       position: fixed;
-      border: 2px solid #4EBAF0;
+      border: 2px solid #4ebaf0;
       width: 95%;
       height: 95%;
       top: 2.6%;
@@ -158,7 +159,6 @@
     }
 
     .glowing-circle {
-
       -webkit-animation: glowing 1s ease-in-out infinite alternate;
       -moz-animation: glowing 1s ease-in-out infinite alternate;
       animation: glowing 1s ease-in-out infinite alternate;
@@ -166,11 +166,14 @@
 
     @keyframes glowing {
       from {
-        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0,
+          0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025,
+          0 0 6prgba (78, 186, 240, 0.271) F0, 0 0 7px #4ebaf0;
       }
 
       to {
-        box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+        box-shadow: 0 0 2px #fff, 0 0 3px #4ebaf0, 0 0 4px #4ebaf0,
+          0 0 5px #4ebaf0, 0 0 6px #4ebaf0, 0 0 7px #4ebaf0, 0 0 8px #4ebaf0;
       }
     }
   }
@@ -181,17 +184,16 @@
 
   @media (min-width: 1025px) {
     body {
-      background-image: url({% static './Assets/homePageDesktop.png'%});
+      background-image: url({% static "./Assets/homePageDesktop.png"%});
     }
 
     .titleHeading-home {
-      color: #4EBAF0;
+      color: #4ebaf0;
       font-size: 18rem;
       position: fixed;
       display: flex;
       top: -3rem;
       left: 9rem;
-
     }
 
     .logo-home img {
@@ -203,23 +205,22 @@
     }
 
     .textAfterHeading-home {
-      color: #4EBAF0;
+      color: #4ebaf0;
       position: relative;
       top: 24rem;
       left: -28rem;
       font-size: 2rem;
-      overflow: hidden;
     }
 
     .startBtn-home a {
       position: absolute;
-      padding: 1.2rem 2rem;
+      padding: 1rem 1.5rem;
       top: 5rem;
-      left: 4rem;
-      width: 16rem;
+      left: 13rem;
+      width: 12rem;
       text-decoration: none;
-      color: #4EBAF0;
-      font-size: 2rem;
+      color: #4ebaf0;
+      font-size: 1.8rem;
       letter-spacing: 4px;
       overflow: hidden;
       border: double 5px transparent;
@@ -229,21 +230,34 @@
     }
 
     .startBtn-home a:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
       transition: 0.5s;
       transition-delay: 0.3s;
+    }
+
+    .rulesBtn-home a {
+      left: -1rem;
     }
 
     .rounded-corners-gradient-borders {
       border: double 4px transparent;
       border-radius: 40px;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.542), rgba(0, 0, 0, 0.542)), linear-gradient(#4EBAF0, #0018223b);
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.542),
+          rgba(0, 0, 0, 0.542)
+        ),
+        linear-gradient(#4ebaf0, #0018223b);
       background-origin: border-box;
       background-clip: padding-box, border-box;
       box-shadow: 0 5px 5px rgba(0, 0, 0.2);
@@ -255,7 +269,7 @@
       font-size: 2rem;
       left: 18rem;
       bottom: 2.4rem;
-      color: #4EBAF0;
+      color: #4ebaf0;
     }
 
     .socialMedia-home img {
@@ -268,7 +282,7 @@
 
     .outerBorder {
       position: fixed;
-      border: 2px solid #4EBAF0;
+      border: 2px solid #4ebaf0;
       width: 95%;
       height: 95%;
       top: 2.5%;
@@ -280,7 +294,6 @@
     }
 
     .glowing-circle {
-
       -webkit-animation: glowing 1s ease-in-out infinite alternate;
       -moz-animation: glowing 1s ease-in-out infinite alternate;
       animation: glowing 1s ease-in-out infinite alternate;
@@ -288,62 +301,91 @@
 
     @keyframes glowing {
       from {
-        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0, 0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025, 0 0 6prgba(78, 186, 240, 0.271)F0, 0 0 7px #4EBAF0;
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #4e79f0,
+          0 0 4px rgba(0, 255, 255, 0.079), 0 0 5px #4ebaf025,
+          0 0 6prgba (78, 186, 240, 0.271) F0, 0 0 7px #4ebaf0;
       }
 
       to {
-        box-shadow: 0 0 2px #fff, 0 0 3px #4EBAF0, 0 0 4px #4EBAF0, 0 0 5px #4EBAF0, 0 0 6px #4EBAF0, 0 0 7px #4EBAF0, 0 0 8px #4EBAF0;
+        box-shadow: 0 0 2px #fff, 0 0 3px #4ebaf0, 0 0 4px #4ebaf0,
+          0 0 5px #4ebaf0, 0 0 6px #4ebaf0, 0 0 7px #4ebaf0, 0 0 8px #4ebaf0;
       }
     }
   }
 
   /*----------------------------------------------------------------*/
-</style> 
+</style>
 <div class="outerBorder glowing-circle"></div>
 <div class="wrapper">
   <div class="logo-home text-right">
     <img src="{% static './Assets/isteLogoThemed.png'%}" alt="ISTE Logo" />
   </div>
   <div class="titleHeading-home text-center">
-    CIT<div class="textAfterHeading-home text-center">
+    CIT
+    <div class="textAfterHeading-home text-center">
       Cognitive Intelligence Test<br />
-      {% if user.is_anonymous %}
-      <div class="startBtn-home text-center">
-        <a href="#" class="rounded-corners-gradient-borders " id="demo"
-          onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>Register
-        </a>
+      <div class="row" style="margin-right: 0;margin-left: 0;">
+        <div class="startBtn-home rulesBtn-home text-center col-6">
+          <a
+            href="{% url 'cit2020:rules' %}"
+            class="rounded-corners-gradient-borders"
+            id="demo"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Rules
+          </a>
+        </div>
+        {% if user.is_anonymous %}
+        <div class="startBtn-home text-center col-6">
+          <a
+            href="#"
+            class="rounded-corners-gradient-borders"
+            id="demo"
+            onclick="window.location='{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}';"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Register
+          </a>
+        </div>
+        {% endif %} {% if user and not user.is_anonymous %}
+        <div class="startBtn-home text-center col-6">
+          <a
+            href="#"
+            class="rounded-corners-gradient-borders"
+            id="demo"
+            onclick="window.location='{% url 'cit2020:navPage' %}';"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Enter
+          </a>
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
-      {% if user and not user.is_anonymous %}
-      <div class="startBtn-home text-center">
-        <a href="#" class="rounded-corners-gradient-borders " id="demo"
-          onclick="window.location='{% url 'cit2020:navPage' %}';">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>Enter
-        </a>
-      </div>
-      {% endif %}
     </div>
   </div>
 </div>
 
 <div class="socialMedia-home text-left align-text-bottom">
   Follow us on :&nbsp;
-  <a href="https://www.facebook.com/istenitdgp/" target="_blank"><img src="{% static './Assets/Asset 3.png'%}"
-      alt="Facebook" /></a><a href="https://instagram.com/istenitdgp?igshid=YmMyMTA2M2Y=" target="_blank"><img
-      src="{% static './Assets/Asset 1.png'%}" alt="Instagram" /></a><a
-    href="https://www.linkedin.com/company/istenitdgp/" target="_blank"><img src="{% static './Assets/Asset 2.png'%}"
-      alt="Linkedin" /></a>
+  <a href="https://www.facebook.com/istenitdgp/" target="_blank"
+    ><img src="{% static './Assets/Asset 3.png'%}" alt="Facebook" /></a
+  ><a
+    href="https://instagram.com/istenitdgp?igshid=YmMyMTA2M2Y="
+    target="_blank"
+    ><img src="{% static './Assets/Asset 1.png'%}" alt="Instagram" /></a
+  ><a href="https://www.linkedin.com/company/istenitdgp/" target="_blank"
+    ><img src="{% static './Assets/Asset 2.png'%}" alt="Linkedin"
+  /></a>
 </div>
 <script>
   function change_text() {
-    document.getElementById('demo').innerHTML = 'Start'
+    document.getElementById("demo").innerHTML = "Start";
   }
 </script>
 {% endblock %}

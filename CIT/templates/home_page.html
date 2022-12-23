@@ -56,7 +56,7 @@
   }
 
   /* Bg image and responsiveness for mobile and tablet devices */
-  @media (min-width: 200px) and (max-width: 1024px) {
+  @media (min-width: 200px) and (max-width: 1023px) {
     body {
       width : 100vw;
       background-image: url({% static "./Assets/homePageMobile.png" %});
@@ -105,7 +105,7 @@
     .startBtn-home a {
       position:relative;
       top: 5vh;
-      right : 10vw;
+      right : 6vw;
       justify-content: center;
       text-align: center;
       padding: 12px 18px;
@@ -118,8 +118,12 @@
       background-color: rgba(0, 64, 255, 0.153);
     }
 
+    .registerBtn-home a{
+      right : 6vw;
+    }
+
     .rulesBtn-home a{
-      left : 12vw;
+      left : 9vw;
     }
 
     .rounded-corners-gradient-borders {
@@ -182,7 +186,7 @@
 
   /* Bg image and responsiveness for desktop devices */
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     body {
       background-image: url({% static "./Assets/homePageDesktop.png"%});
     }
@@ -338,7 +342,7 @@
           </a>
         </div>
         {% if user.is_anonymous %}
-        <div class="startBtn-home text-center col-6">
+        <div class="startBtn-home text-center registerBtn-home col-6">
           <a
             href="#"
             class="rounded-corners-gradient-borders"

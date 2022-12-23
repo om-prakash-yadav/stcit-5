@@ -4,10 +4,10 @@
 {% load widget_tweaks %}
 
 <style>
-  * {
+*{
     margin: 0;
     padding: 0;
-    }
+}
 
 @font-face {
     font-family: MonsOlympia;
@@ -230,19 +230,19 @@ form {
                         {% render_field form.name class="form-control forms-input-box" placeholder="Enter Your Name" style="display:inline-block;max-width: 95%;" %} 
         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Your Username" required> {% endcomment %}
-                        {%render_field form.userName class="form-control forms-input-box" placeholder="Enter your Username" style="display:inline-block;max-width: 95%;" %}
+                        {% render_field form.userName class="form-control forms-input-box" placeholder="Enter your Username" style="display:inline-block;max-width: 95%;" %}
         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Phn Number" required> {% endcomment %}
                         {% render_field form.mobile class="form-control forms-input-box" type="Number" placeholder="Enter Your Mobile Number" style="display:inline-block;max-width: 95%;" %}  
         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Name of College/School" required> {% endcomment %}
-                        {% render_field form.institute_name class="form-control forms-input-box"  placeholder="Enter your Institute Name" style="display:inline-block;max-width: 95%;" %}  
+                        {% render_field form.institute_name class="form-control forms-input-box"  placeholder="Enter the name of College/School" style="display:inline-block;max-width: 95%;" %}  
                         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Department/School Name" required> {% endcomment %}
-                        {% render_field form.department class="form-control forms-input-box" placeholder="Enter School if you are school student" style="display:inline-block;max-width: 95%;" %}
+                        {% render_field form.department class="form-control forms-input-box" placeholder="Enter Department" style="display:inline-block;max-width: 95%;" %}
         
                         {% comment %} <input type="text" class="forms-input-box" placeholder="Year of Study" required> {% endcomment %}
-                        {% render_field form.year_of_study class="form-control forms-input-box" style="display:inline-block;max-width: 95%;" %}     
+                        {% render_field form.year_of_study class="form-control forms-input-box" placeholder="Enter year of study" style="display:inline-block;max-width: 95%;text-align:center;" %}     
                           
                         <button type="submit" class="button-forms submit-btn-forms"><span>Submit</span></button>
                       </form>

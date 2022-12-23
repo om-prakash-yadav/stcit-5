@@ -21,6 +21,7 @@ class player(models.Model):
     mobile = models.CharField(max_length=13,null=True)
 
     year_of_study_choices = (
+        ('', 'Enter the year of study'),
         ('Class 9', 'class 9'),
         ('Class 10', 'class 10'),
         ('Class 11', 'class 11'),
@@ -34,7 +35,7 @@ class player(models.Model):
     )
     institute_name = models.CharField(max_length=100,null=True)
     department = models.CharField(max_length=100, blank=True, null=True)
-    year_of_study = models.CharField(max_length=50, choices=year_of_study_choices, default="1st Year")
+    year_of_study = models.CharField(max_length=50, choices=year_of_study_choices, default="Enter the year of study")
     
     def __str__(self):
         return self.name

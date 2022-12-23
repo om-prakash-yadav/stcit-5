@@ -9,20 +9,9 @@
     }
     
     body {
-        background-image: url({% static './Assets/bg.png'%});
-        background-size: cover;
         overflow-y: hidden;
         font-family: MonsOlympia;
         font-weight: 400;
-    }
-    
-    @font-face {
-        font-family: MonsOlympia;
-        src: url({% static './fonts/MonsOlympia.ttf'%}); 
-    }
-    
-    body {
-        font-family: MonsOlympia;
     }
     
     .finish-container {
@@ -35,11 +24,11 @@
       .outerBorder {
           position: fixed;
           border: 2px solid #4EBAF0;
-          width: 93%;
-          height: 94.5%;
-          top: 2.6%;
-          left: 2.6%;
-          border-radius: 40px;
+          width: 95%;
+          height: 95%;
+          top: 2.5%;
+          left: 2.5%;
+          border-radius: 3rem;
           justify-content: center;
           align-items: center;
           align-content: center;
@@ -222,7 +211,7 @@
 <div class = "finish-container">
     <div class="container-1 outerBorder glowing-circle">
         <div class="text-center cont">
-            <img class="image" src="{% static './Assets/isteLogoThemed.png'%}" />
+            <a href="{% url 'cit2020:navPage' %}"><img class="image" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
         </div>
         <div class="container-fluid">
             {% if user and not user.is_anonymous %}

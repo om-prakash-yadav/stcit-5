@@ -1,64 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% comment %} {% extends 'base.html' %} {% block content %}
-{% load widget_tweaks %}
-
-<div class="view-profile">
-  <div class="container">
-    <br>
-    <h1>Your Profile :- </h1>
-    <br>
-    <div class="row">
-    <div class="col-md-12 col-lg-6 mb-2">
-        <h4><strong>Name : </strong> {{player.name}}</h4>  
-        <h4><strong>Email Id : </strong> {{player.email}}</h4>
-        <h4><strong>Mobile No : </strong> {{player.mobile}}</h4>
-        <h4><strong>School/College : </strong> {{player.institute_name}}</h4>
-        <h4><strong>Year of Study : </strong> {{player.year_of_study}}</h4>
-        <h4><strong>Department : </strong> {{player.department}}</h4>
-    </div>
-    <div class="col-md-12 col-lg-6 mb-2">
-        {% if player.slot == 0 %}
-        <h3><strong>Preliminary Round : </strong>Select <a href="{% url 'cit2020:index' %}"><strong>Slot</strong></a></h3>
-        {% else %}
-        <h3><strong>Preliminary Round : </strong></h3>
-        <h4><strong>Slot: </strong> 
-            {% if player.slot == 1 %} (1) Jan 11, 2022 (9:30 PM - 9:40 PM)
-            {% elif player.slot == 2 %} (2) Jan 11, 2022 (9:50 PM - 10:00 PM)
-            {% elif player.slot == 3 %} (3) Jan 11, 2022 (10:10 PM - 10:20 PM)
-            {% endif %}
-        </h4>
-        <h4><strong>Score : </strong> {{player.score}}</h4>
-        {% if final == False %}
-        <h4><strong>Selected for Final : </strong> -- </h4>
-        {% elif player.qualified == True %}
-        <h4><strong>Selected for Final : </strong> Yes </h4>
-        {% else %}
-        <h4><strong>Selected for Final : </strong> No </h4>
-        {% endif %}
-        {% if player.qualified == True %}
-        <h3><strong>Final Round : </strong></h3>
-        <h4><strong>Slot : </strong> Jan 11, 2022 (11:00 PM - 11:10 PM)</h4>
-        <h4><strong>Score : </strong> {{player.final_score}}</h4>
-        {% endif %}
-        {% endif %}    
-    </div>
-    </div>
-  </div>
-</div>
-
-{% endblock content %} {% endcomment %}
-
- 
 {% block content %}
 {% load widget_tweaks %}
 
-    <style>	   
-        @font-face {
-            font-family: MonsOlympia;
-            src: url({% static './fonts/MonsOlympia.ttf'%});
-          }
-
+    <style>
 		body {
 			font-family: MonsOlympia;
             letter-spacing: 2px;
@@ -67,24 +12,33 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
           }
 
           * {
             padding: 0;
             margin: 0;
         }
-        
-        body {
-            background-image: url({% static './Assets/bg.png' %});
-            background-size: cover;
-            background-size: 100% 100%;
+
+        .main-headinginstructionpage {
+            border-style: solid;
+            border-width: 1;
+            border-color: rgba(98, 159, 228, 0.781);
+            border-radius: 30px;
+            padding: 10px 25px;
+            position: relative;
+            top: -2rem;
+            font-size: 40px;
+            border-left-style: none;
+            color: rgb(77, 150, 233);
+            background-color: rgba(83, 174, 219, 0.155);
+            text-align: center;
+            font-family : MonsOlympia;
+            letter-spacing : 5px;
         }
+
+        
         {% comment %} back button {% endcomment %}
         .backButton{
             position: absolute;
@@ -177,7 +131,7 @@
         .container {
             color: rgb(255, 254, 254);
             padding: 10px;
-            margin: 60px;
+            {% comment %} margin: 60px; {% endcomment %}
         }
         
         h4 {
@@ -191,6 +145,26 @@
         
         
         @media only screen and (max-width: 600px) {
+
+            .main-headinginstructionpage {
+                border-style: solid;
+                border-width: 1;
+                border-color: rgba(98, 159, 228, 0.781);
+                border-radius: 30px;
+                padding: 10px;
+                position: relative;
+                top: 4rem;
+                font-size: 30px;
+                border-left-style: none;
+                font-family : MonsOlympia;
+                color: rgb(77, 150, 233);
+                background-color: rgba(83, 174, 219, 0.155);
+                text-align: center;
+            }
+
+            .container{
+                margin-top : 60px;
+            }
         
             .logo img {
                 width: 8rem;
@@ -221,8 +195,8 @@
     <div class="view-profile outerBorder-viewProfile glowing-circle">
         <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
         <div class="logo">
-            <img src="{% static './Assets/isteLogoThemed.png' %}" alt="" />
-            <h1>Your Profile</h1>
+            <a href="{% url 'cit2020:navPage' %}"><img src="{% static './Assets/isteLogoThemed.png' %}" alt="" /></a>
+            <h class="main-headinginstructionpage"> Profile</h>
         </div>
 
         <div class="container">

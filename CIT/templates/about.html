@@ -13,7 +13,7 @@
     }
       
   .outerBorder {
-    position: fixed;
+    position: absolute;
     border: 2px solid #4ebaf0;
     width: 95%;
     height: 95%;
@@ -53,9 +53,6 @@
   }
   
   .bg-containeraboutpage {
-    background-image: url({% static './Assets/bg.png' %});
-    margin: 0;
-    padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -159,9 +156,9 @@
 </style>
 <div class="bg-containeraboutpage">
   <div class="containeraboutpage-1 outerBorder glowing-circle container-fluid">
-    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+    <a href="{% url 'cit2020:navPage' %}"><a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
     <div class="text-center contaboutpage">
-      <img class="logo-imageaboutpage" src="{% static './Assets/isteLogoThemed.png'%}" />
+      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imageaboutpage" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
       <h class="main-headingaboutpage">About</h>
     </div>
     {% comment %} <div class="containeraboutpage-2"></div> {% endcomment %}

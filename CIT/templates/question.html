@@ -7,21 +7,10 @@
         margin: 0px;
     }
 
-    @font-face {
-        font-family: MonsOlympia;
-        src: url({% static './fonts/MonsOlympia.ttf'%});
-    }
-
     body {
-        background-size: 100% 100%;
         font-family: MonsOlympia;
         margin: 0;
         padding: 0;
-        height: 100vh;
-        background-image: url({% static './Assets/bg.png' %});
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
     }
 
     .header {
@@ -509,7 +498,7 @@
     }
     else if ({{ player.slot }}== 1) {
         // slot 1 date
-        countDownDate = new Date("Dec 18, 2022 13:50:00").getTime();
+        countDownDate = new Date("Dec 22, 2022 18:50:00").getTime();
     } 
       else if ({{ player.slot }}== 2) {
         // slot 2 date 

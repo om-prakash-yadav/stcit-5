@@ -2,10 +2,6 @@
 {% load static %}
 {% block content %}
   <style>
-    @font-face {
-      font-family: MonsOlympia;
-      src: url({% static './fonts/MonsOlympia.ttf'%});
-    }
     
     body {
       font-family: MonsOlympia;
@@ -14,13 +10,8 @@
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
       display: flex;
       justify-content: center;
-      background-image: url({% static './Assets/navPageBackground.png'%});
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: 100% 100%;
     }
 
     .btn:before {
@@ -165,7 +156,7 @@
   </style>
 
   <div class="logo-nav text-left">
-    <img src="{% static './Assets/isteLogoThemed.png'%}" alt="ISTE Logo" />
+    <a href="{% url 'cit2020:index' %}" ><img src="{% static './Assets/isteLogoThemed.png'%}" alt="ISTE Logo" /></a>
   </div>
   <div class="outerBorder-navPage glowing-circle"></div>
   <div class="buttonBox-nav">

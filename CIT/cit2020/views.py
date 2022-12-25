@@ -18,7 +18,7 @@ slot2_end=datetime.datetime(2022, 12, 16, 12, 15, 00, 701322)
 slot3_start=datetime.datetime(2022, 12, 16, 12, 17, 00, 701322)
 slot3_end=datetime.datetime(2022, 12, 16, 12, 19, 00, 701322)
 
-round1_result=datetime.datetime(2022, 12, 20, 15, 20, 00, 701322)
+round1_result=datetime.datetime(2022, 12, 30, 15, 20, 00, 701322)
 
 final_start=datetime.datetime(2022, 12, 20, 12, 22, 00, 701322)
 final_end=datetime.datetime(2022, 12, 20, 12, 24, 00, 701322)
@@ -34,7 +34,10 @@ def index(request):
         
         if player.details_updated == False:
             return redirect(reverse_lazy('cit2020:update_profile'))
-        
+
+        # elif player.qualified==False and datetime.datetime.now() > round1_result:
+        #     return render(request, 'notQualified.html')
+            
         elif player.slot < 1:
             return render(request, 'forms.html')
               
@@ -82,7 +85,10 @@ def quiz(request):
             return render(request, 'question.html', {'player': player, 'question': question})
         except models.question.DoesNotExist:
             return render(request, 'finish.html', {'player': player})
+        
         return render(request, 'home_page.html')
+    
+    return render(request, 'home_page.html')
 
 def save_profile(backend, user, response, *args, **kwargs):
     if backend.name == 'google-oauth2':

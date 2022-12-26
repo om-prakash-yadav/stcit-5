@@ -9,35 +9,25 @@
     padding: 0;
 }
 
-@font-face {
-    font-family: MonsOlympia;
-    src: url({% static './fonts/MonsOlympia.ttf'%});
-}
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-image: url({% static './Assets/bg.png' %});
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
     font-family : MonsOlympia;
 }
 
 .outerBorder {
     position: absolute;
-      border: 2px solid #4EBAF0;
-      width: 95%;
-      height: 95%;
-      top: 2.5%;
-      left:2.5%;
-      bottom: 2.5%;
-      border-radius: 3rem;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
+    border: 2px solid #4EBAF0;
+    width: 95%;
+    top: 2.5%;
+    border-radius: 3rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height:95%;
 }
 
 .glowing-circle {

@@ -2,27 +2,26 @@
 {% load static %}
 {% block content %}
 
-<style>
-    @font-face {
-        font-family: MonsOlympia;
-        src: url({% static './fonts/MonsOlympia.ttf'%});
-    }
-      
+<style> 
     body {
-        font-family: MonsOlympia;
+        font-family: Montserrat;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width : 100vw;
+        display: flex;
+        justify-content: center;
     }
       
   .outerBorder {
     position: absolute;
-    border: 2px solid #4ebaf0;
-    width: 95%;
-    height: 95%;
-    top: 2.5%;
-    left: 2.5%;
-    border-radius: 3rem;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+            border: 2px solid #4EBAF0;
+            width: 95%;
+            top: 2.5%;
+            border-radius: 3rem;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
   }
   
   .containeraboutpage-1 {
@@ -48,11 +47,9 @@
     }
   }
  
-  body {
-    font-family: MonsOlympia;
-  }
-  
   .bg-containeraboutpage {
+    margin: 0;
+    padding: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -68,11 +65,9 @@
   }
   
   .logo-imageaboutpage {
+    height: 100px;
     position: absolute;
-    width: 10rem;
-    height: auto;
-    top: 1rem;
-    left: -0.5rem;
+    left: 0;
   }
   
   .main-headingaboutpage {
@@ -87,35 +82,38 @@
     background-color: rgba(83, 174, 219, 0.155);
     text-align: center;
     align-self: flex-end;
-    letter-spacing: 5px;
   }
   
   .containeraboutpage-2 {
-    border-style: solid;
-    border-radius: 20px;
-    border-width: 1;
-    border-color: rgba(98, 122, 228, 0.648);
     padding: 15px;
     margin-top: 30px;
     height: 80%;
   }
 
-  {% comment %} back button {% endcomment %}
+  .containeraboutpage-2 h1 , .containeraboutpage-2 h2{
+    letter-spacing : 5px;
+    margin-bottom : 1.5rem;
+    font-family: MonsOlympia;
+  }
+
+  .containeraboutpage-2 p{
+    font-family : Montserrat;
+  }
+
   .backButton{
     position: absolute;
-        border: 2px solid #4EBAF0;
-        border-radius: 1rem;
-        font-size: 1.5rem;
-        padding: 0px 10px;
-        right:1.5%;
-        top:2.5%;
-        font-family: MonsOlympia;
-        border-left-style: none;
-        color: rgb(194 200 206);
-        background-color:#0000004d;
-        text-align: center;
+    border: 2px solid #4EBAF0;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    padding: 0px 10px;
+    right:1.5%;
+    top:2%;
+    font-family: MonsOlympia;
+    border-left-style: none;
+    color: rgb(194 200 206);
+    background-color:#0000004d;
+    text-align: center;
 }
-
 
 .backButton:hover{
     background-color:#4EBAF0;
@@ -129,11 +127,33 @@
     animation: glowing 2s ease-in-out infinite alternate;
 }
 
+.abouttheme{
+  color: white;
+  text-align: center;
+}
+
+.prize-section h2{
+  color: white;
+  text-align: center;
+}
+
+.sponsors-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sponsors-section h2{
+  text-align: center;
+  color: white;
+}
+.sponsors-section img , .prize-section img{
+  margin-top : 2rem;
+}
+
 @media screen and (max-width: 600px) {
   .main-headingaboutpage {
     font-size: 25px;
-    margin-left : 10px;
-    margin-top : 8px;
+    margin-top : 0.5rem; 
   }
 
   .logo-imageaboutpage {
@@ -144,24 +164,68 @@
     left: -0.5rem;
   }
 
-  .containeraboutpage-2 {
-    height: cover;
-  }
-
   .backButton{
     right:4%;
-    top:4%;
+    top:1.5%;
   }
+ 
+  .abouttheme{
+    color: white;
+    text-align: left;
+  }
+  .containeraboutpage-2 h1 , .containeraboutpage-2 h2{
+    letter-spacing : 5px;
+    text-align: center;
+  }
+
 }
+
+
+
+
 </style>
 <div class="bg-containeraboutpage">
   <div class="containeraboutpage-1 outerBorder glowing-circle container-fluid">
-    <a href="{% url 'cit2020:navPage' %}"><a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
+    <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
     <div class="text-center contaboutpage">
-      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imageaboutpage" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
+      <img class="logo-imageaboutpage" src="{% static './Assets/isteLogoThemed.png'%}" />
       <h class="main-headingaboutpage">About</h>
     </div>
-    {% comment %} <div class="containeraboutpage-2"></div> {% endcomment %}
+    <div class="containeraboutpage-2">
+      <div class="abouttheme">
+      <h1>Cognitive Intelligence Test 5.0</h1>
+      <p>Cognitive Intelligence test is the newest member in the chapter's list of
+      events. It is an online event where sets of questions are designed similar
+      to that of a screening process in company.CIT not only provides an idea
+      about the level of competition but also gives a chance to rectify oneself.
+      The test comprises of basic mathematical aptitude, verbal and logical
+      reasoning and data interpretation. This is one of the finest opportunities
+      to test one's skills and be better before the ultimate showdown.</p>
+      <br>
+      <br>
+      <h2><strong>Schedule For CIT 5.0</strong></h2>
+      <b>Preliminary Round:</b> Candidates can attempt CIT only once in any of the three available slots:
+      <li><b>Slot 1:</b> January 18, 2021 (7:00 PM - 7:45 PM)</li>
+      <li><b>Slot 2:</b> January 19, 2021 (7:00 PM - 7:45 PM)</li>
+      <li><b>Slot 3:</b> January 20, 2021 (8:00 PM - 8:45 PM)</li>
+      <b>Final Round:</b> Candidates selected for final round will receive a mail with details
+      <li><b>Final:</b> January 22, 2021 (8:00 PM - 8:45 PM)</li>
+</div>
+<br>
+<br>
+<div class="prize-section">
+  <h2><strong>Cash PRIZES worth 7.5K For CIT 5.0</strong></p>
+    <img src="{% static 'assets/ims.png'%}" alt="PRIZES">
+</div>
+<br>
+<br>
+<div class="sponsors-section ">
+  <h2><strong>EVENT SPONSOR</strong></p>
+    <img src="{% static 'assets/ims.png'%}" alt="IMS" style="margin-right: 10px; padding-bottom: 0; border-radius: 15px;">
+    <img src="{% static 'assets/iocl.png'%}" alt="IOCL"
+                    style="padding-bottom: 0; border-radius: 15px; margin-right: 10px;">
+</div>
+    </div>
   </div>
 </div>
 {% endblock %}

@@ -52,14 +52,15 @@
 
   .outerBorder-navPage {
     position: absolute;
-    border: 2px solid #4EBAF0;
+    border: 2px solid #4ebaf0;
     width: 95%;
     top: 2.5%;
+    left: 2.5%;
     border-radius: 3rem;
     justify-content: center;
     align-items: center;
     align-content: center;
-    min-height:95%;
+    min-height: 95%;
   }
 
   .navButton {
@@ -87,11 +88,11 @@
 
   .buttonBox-nav {
     height: 80%;
-    display : flex;
-    flex-direction : column;
-    align-items : center;
-    justify-content : center;
-    margin-top : 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
   }
 
   @keyframes glowing {
@@ -105,6 +106,18 @@
       box-shadow: 0 0 2px #fff, 0 0 3px #4ebaf0, 0 0 4px #4ebaf0,
         0 0 5px #4ebaf0, 0 0 6px #4ebaf0, 0 0 7px #4ebaf0, 0 0 8px #4ebaf0;
     }
+  }
+
+  .logoutBtn{
+    background-color : #061E4C;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logoutBtn img{
+    height : 35px;
+    color : white;
+    margin-right : 8px;
   }
 
   /* For desktop */
@@ -134,7 +147,15 @@
       letter-spacing: 4px;
       overflow: hidden;
     }
-
+    .logoutBtn{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width : 12rem;
+      height: 10%;
+      font-size : 1rem;
+      padding: 5px 20px;
+    }
   }
 
   /* For mobiles */
@@ -160,8 +181,21 @@
       left: -0.5rem;
     }
 
-    .buttonBox-nav{
-      margin-top : 6rem;
+    .buttonBox-nav {
+      margin-top: 6rem;
+    }
+
+    .logoutBtn{
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width:7rem;
+      font-size : 0.5rem;
+      height: 6%;
+      padding: 10px 5px;
+    }
+    .logoutBtn img{
+      height : 16px;
     }
   }
 </style>
@@ -169,11 +203,12 @@
 <div class="outerBorder-navPage glowing-circle">
   <div class="logo-nav text-left">
     <a href="{% url 'cit2020:index' %}">
-      <img src="{% static './Assets/isteLogoThemed.png'%}" alt="ISTE Logo"/>
+      <img src="{% static './Assets/isteLogoThemed.png'%}" alt="ISTE Logo" />
     </a>
   </div>
   <div class="buttonBox-nav">
     {% csrf_token %}
+    {% if user.is_authenticated %}
     <a href="{% url 'cit2020:quiz' %}">
       <button
         type="button"
@@ -182,6 +217,7 @@
         Start Quiz
       </button></a
     >
+    {% endif %}
     <br />
     <a href="{% url 'cit2020:about' %}">
       <button
@@ -210,6 +246,7 @@
       </button>
     </a>
     <br />
+    {% if user.is_authenticated %}
     <a href="{% url 'cit2020:view_profile' %}">
       <button
         type="button"
@@ -218,6 +255,7 @@
         view profile
       </button>
     </a>
+    {% endif %}
     <br />
 
     {% comment %}
@@ -230,5 +268,16 @@
     </button>
     {% endcomment %}
   </div>
+  {% if user.is_authenticated %}
+  <a href="{% url 'logout' %}?next={{ '/' }}">
+      <button
+        type="button"
+        class="btn start rounded-corners-gradient-borders-navPage navButton logoutBtn"
+      >
+      <img src="{% static './Assets/logout.png'%}" />
+        Log Out
+      </button>
+  </a>
 </div>
+{% endif %}
 {% endblock %}

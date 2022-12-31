@@ -78,18 +78,22 @@
         }
 
         .containerinstructionpage-2 {
-            border-style: solid;
+            {% comment %} border-style: solid;
             border-radius: 20px;
             border-width: 1;
-            border-color: #4EBAF0;
-            padding: 15px;
-            margin-top: 5rem;
+            border-color: #4EBAF0; {% endcomment %}
+            {% comment %} padding: 15px; {% endcomment %}
+            margin-top: 2rem;
         }
 
         .parainstructionpage {
             color: white;
-            padding: 15px;
             font-size: 20px;
+        }
+
+        .rulesHeader{
+            margin-top : 3rem;
+            margin-bottom : 3rem;
         }
 
         .main-headinginstructionpage1 {
@@ -138,7 +142,7 @@
 
     .cont{
         height: 0px;
-        margin-bottom: 10rem;
+        margin-bottom: 8rem;
     }
     {% comment %}  {% endcomment %}
    
@@ -166,7 +170,7 @@
                 padding: 10px 20px;
                 position: relative;
                 top: 4rem;
-                font-size: 40px;
+                font-size: 30px;
                 border-left-style: none;
                 font-family : MonsOlympia;
                 color: rgb(77, 150, 233);
@@ -182,6 +186,11 @@
                 color: white;
                 padding: 13px;
                 font-size: 18px;
+            }
+
+             .rulesHeader{
+                margin-top : 2rem;
+                margin-bottom : 2rem;
             }
 
             .containerinstructionpage-1 {
@@ -208,7 +217,7 @@
           <span>&#x2022</span> Candidates selected for final round will receive a mail with details. <br />
           <span>&#x2022</span> Final Round: January 22, 2021 (8:00 PM - 8:45 PM)
         </p>
-        <div class="text-center">
+        <div class="text-center rulesHeader">
           <h class="main-headinginstructionpage1">Rules</h>
         </div>
         <p class="parainstructionpage">

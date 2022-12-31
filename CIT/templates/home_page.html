@@ -327,18 +327,18 @@
   <div class="titleHeading-home text-center">
     CIT
     <div class="textAfterHeading-home text-center">
-      Cognitive Intelligence Test<br />
+      Cognitive Intelligence Test 6.0<br />
       <div class="row" style="margin-right: 0;margin-left: 0;">
         <div class="startBtn-home rulesBtn-home text-center col-6">
           <a
-            href="{% url 'cit2020:rules' %}"
+            href="{% url 'cit2020:about' %}"
             class="rounded-corners-gradient-borders"
             id="demo"
           >
             <span></span>
             <span></span>
             <span></span>
-            <span></span>Rules
+            <span></span>About
           </a>
         </div>
         {% if user.is_anonymous %}
@@ -352,7 +352,7 @@
             <span></span>
             <span></span>
             <span></span>
-            <span></span>Register
+            <span></span>Login
           </a>
         </div>
         {% endif %} {% if user and not user.is_anonymous %}
@@ -382,9 +382,9 @@
   ><a
     href="https://instagram.com/istenitdgp?igshid=YmMyMTA2M2Y="
     target="_blank"
-    ><img src="{% static './Assets/Asset 1.png'%}" alt="Instagram" /></a
+    ><img src="{% static './Assets/Asset 2.png'%}" alt="Instagram" /></a
   ><a href="https://www.linkedin.com/company/istenitdgp/" target="_blank"
-    ><img src="{% static './Assets/Asset 2.png'%}" alt="Linkedin"
+    ><img src="{% static './Assets/Asset 1.png'%}" alt="Linkedin"
   /></a>
 </div>
 <script>

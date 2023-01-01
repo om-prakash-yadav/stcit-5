@@ -13,7 +13,7 @@
     <div class="containertimerpage container-fluid">
       <h1 class="main-headingtimerpage">TEST WILL START AFTER</h1>
       <p id="demo" style="color:red;"></p>
-      <p class="paratimerpage1">Register at <a href="https://www.facebook.com/istenitdgp/" style="text-decoration: none;">Dare2Compete</a> platform to confirm your registration.</p>
+      <p class="paratimerpage1">Register at <a href="" style="text-decoration: none;">Dare2Compete</a> platform to confirm your registration.</p>
       <p class="paratimerpage2">READ THE RULES CAREFULLY BEFORE STARTING YOUR TEST</p>
       <p class="paratimerpage3">ALL THE BEST!</p>
     </div>
@@ -147,6 +147,7 @@
     color: rgb(194 200 206);
     background-color:#0000004d;
     text-align: center;
+    z-index : 100;
 }
 
 .backButton:hover{
@@ -161,6 +162,10 @@
     animation: glowing 2s ease-in-out infinite alternate;
 }
 {% comment %}  {% endcomment %}
+
+#demo{
+  font-size : 2rem;
+}
 
   @media screen and (max-width: 600px) {
       .backButton{
@@ -198,6 +203,9 @@
           font-size: 18px;
       }
 
+      #demo{
+        font-size : 1.5rem;
+      }
   }
 </style>
 

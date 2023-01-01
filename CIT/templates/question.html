@@ -264,7 +264,7 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        height: auto;
+        min-height: 95%;
         border-radius: 3rem;
         width: 95%;
         top: 2.5%;
@@ -381,7 +381,7 @@
 <div class="container1 glowing-circle outerBorder">
     <div class="header">
         <div class="logo">
-            <img src="{% static './Assets/isteLogoThemed.png'%}" alt="" />
+            <a href="{% url 'cit2020:navPage' %}"><img src="{% static './Assets/isteLogoThemed.png'%}" alt="" /></a>
         </div>
         <div class="content">
             <h2>SECTION</h2>
@@ -494,11 +494,11 @@
     var countDownDate;
     if ({{ player.qualified }}) {
         // Final slot date
-        countDownDate = new Date("Dec 20, 2022 23:10:00").getTime();
+        countDownDate = new Date("Dec 31, 2022 23:10:00").getTime();
     }
     else if ({{ player.slot }}== 1) {
         // slot 1 date
-        countDownDate = new Date("Dec 22, 2023 18:50:00").getTime();
+        countDownDate = new Date("Dec 31, 2023 21:50:00").getTime();
     } 
       else if ({{ player.slot }}== 2) {
         // slot 2 date 
@@ -510,7 +510,7 @@
     } 
       else {
         // final slot date 
-        countDownDate = new Date("Jan 11, 2022 23:10:00").getTime();
+        countDownDate = new Date("Dec 31, 2023 18:50:00").getTime();
     }
 
 

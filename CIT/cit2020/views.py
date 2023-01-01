@@ -9,19 +9,19 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2022, 12, 18, 12, 10, 00, 701322)
-slot1_end=datetime.datetime(2022, 12, 18, 15, 12, 00, 701322)
+slot1_start=datetime.datetime(2022, 1, 30, 10, 10, 00, 701322)
+slot1_end=datetime.datetime(2022, 12, 30, 17, 12, 00, 701322)
 
-slot2_start=datetime.datetime(2022, 12, 16, 12, 13, 00, 701322)
-slot2_end=datetime.datetime(2022, 12, 16, 12, 15, 00, 701322)
+slot2_start=datetime.datetime(2023, 12, 16, 12, 13, 00, 701322)
+slot2_end=datetime.datetime(2023, 12, 16, 12, 15, 00, 701322)
 
-slot3_start=datetime.datetime(2022, 12, 16, 12, 17, 00, 701322)
-slot3_end=datetime.datetime(2022, 12, 16, 12, 19, 00, 701322)
+slot3_start=datetime.datetime(2023, 12, 16, 12, 17, 00, 701322)
+slot3_end=datetime.datetime(2023, 12, 16, 12, 19, 00, 701322)
 
-round1_result=datetime.datetime(2022, 12, 30, 15, 20, 00, 701322)
+round1_result=datetime.datetime(2022, 12, 30, 18, 40, 00, 701322)
 
-final_start=datetime.datetime(2022, 12, 20, 12, 22, 00, 701322)
-final_end=datetime.datetime(2022, 12, 20, 12, 24, 00, 701322)
+final_start=datetime.datetime(2022, 12, 30, 12, 22, 00, 701322)
+final_end=datetime.datetime(2023, 12, 31, 12, 24, 00, 701322)
 
 def index(request):
     user = request.user
@@ -45,6 +45,7 @@ def index(request):
             return render(request, 'home_page.html')
     return render(request, 'home_page.html')
 
+
 def quiz(request):   
     lastquestion = models.question.objects.all().count()
     user = request.user
@@ -55,32 +56,41 @@ def quiz(request):
         except:
             logout(request)
             return render(request, 'home_page.html')
-        if player.qualified==True and datetime.datetime.now() < final_start:
-            return render(request, 'wait.html', {'player': player,})
-        elif player.qualified==True and datetime.datetime.now() > final_end:
-            return render(request, 'finish.html', {'player': player})
-        elif player.qualified==False and datetime.datetime.now() > round1_result:
-            return render(request, 'luck.html', {'player': player})
-        elif player.slot == 1 and datetime.datetime.now() < slot1_start:
-            return render(request, 'wait.html', {'player': player})
-        elif player.slot == 1 and datetime.datetime.now() > slot1_end:
-            return render(request, 'finish.html', {'player': player})
         
-        elif player.slot == 2 and datetime.datetime.now() < slot2_start:
-            return render(request, 'wait.html', {'player': player})
-        elif player.slot == 2 and datetime.datetime.now() > slot2_end:
-            return render(request, 'finish.html', {'player': player})
+        if player.details_updated == False:
+            return redirect(reverse_lazy('cit2020:update_profile'))
+        if player.slot < 1:
+            return render(request, 'forms.html')
+        if datetime.datetime.now() > round1_result:
+            if player.qualified==True:
+                if datetime.datetime.now() < final_start:
+                    return render(request, 'wait.html', {'player': player,})
+                elif datetime.datetime.now() > final_end:
+                    return render(request, 'finish.html', {'player': player})
+            else:
+                return render(request, 'luck.html', {'player': player})
+        else:
+            if player.slot == 1:
+                if datetime.datetime.now() < slot1_start:
+                    return render(request, 'wait.html', {'player': player})
+                elif datetime.datetime.now() > slot1_end:
+                    return render(request, 'finish.html', {'player': player})
+            
+            elif player.slot == 2: 
+                if datetime.datetime.now() < slot2_start:
+                    return render(request, 'wait.html', {'player': player})
+                elif datetime.datetime.now() > slot2_end:
+                    return render(request, 'finish.html', {'player': player})
+            
+            elif player.slot == 3:
+                if datetime.datetime.now() < slot3_start:
+                    return render(request, 'wait.html', {'player': player})
+                elif datetime.datetime.now() > slot3_end:
+                    return render(request, 'finish.html', {'player': player})
         
-        elif player.slot == 3 and datetime.datetime.now() < slot3_start:
-            return render(request, 'wait.html', {'player': player})
-        elif player.slot == 3 and datetime.datetime.now() > slot3_end:
-            return render(request, 'finish.html', {'player': player})
-        
-        elif player.current_question > lastquestion:
+        if player.current_question > lastquestion:
             return render(request, 'win.html', {'player': player})
         try:
-            if player.details_updated == False:
-                return redirect(reverse_lazy('cit2020:update_profile'))
             question = models.question.objects.get(Q_number=player.current_question)
             return render(request, 'question.html', {'player': player, 'question': question})
         except models.question.DoesNotExist:
@@ -222,13 +232,13 @@ def forms(request):
         slot = request.POST.get('slot')
         player = models.player.objects.get(user_id=request.user.pk)
         if slot == '1':
-            player.slot = player.slot + 1
+            player.slot = 1
            
         elif slot == '2':
-            player.slot = player.slot + 2
+            player.slot = 2
           
         elif slot == '3':
-            player.slot = player.slot + 3
+            player.slot = 3
 
         player.save()
 

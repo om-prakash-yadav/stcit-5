@@ -205,7 +205,7 @@
                         <td>{{ player.name }}
                             <p class="text-muted mb-0">@{{player.userName}}</p>
                         </td>
-                        <td class="text-center">{{player.final_score}}</td>
+                        <td class="text-center">{% if showScore %}{{player.final_score}}{% endif %}</td>
                     </tr>
                     {% endif %}
                     {% endfor %}
@@ -225,7 +225,9 @@
                         <td>{{ player.name }}
                             <p class="text-muted mb-0">@{{player.userName}}</p>
                         </td>
-                        <td class="text-center">{{player.score}}</td>
+                        
+                        <td class="text-center">{% if showScore %}{{player.score}}{% endif %}</td>
+                       
                     </tr>
                     {% endif %}
                     {% endfor %}

@@ -9,8 +9,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2022, 1, 30, 10, 10, 00, 701322)
-slot1_end=datetime.datetime(2022, 12, 30, 17, 12, 00, 701322)
+slot1_start=datetime.datetime(2023, 1, 4, 0, 10, 00, 701322)
+slot1_end=datetime.datetime(2023, 1, 4, 17, 12, 00, 701322)
 
 slot2_start=datetime.datetime(2023, 12, 16, 12, 13, 00, 701322)
 slot2_end=datetime.datetime(2023, 12, 16, 12, 15, 00, 701322)
@@ -175,28 +175,37 @@ def answer(request):
 
 def lboard(request,slot=0):
     is_final=False
+    showScore=True
     if slot==0:
         if datetime.datetime.now() > final_start:
             slot=4
     if slot==1 :
         if datetime.datetime.now() < slot1_start:
-            return render(request, 'lboard.html',{'slot':slot})
+            return render(request, 'lboard.html',{'slot':slot })
         else :
+            if (datetime.datetime.now() > slot1_start and datetime.datetime.now() < slot1_end):
+                showScore=False
             p = models.player.objects.filter(slot=1).order_by('-score', 'timestamp')
     elif slot==2:
         if datetime.datetime.now() < slot2_start:
             return render(request, 'lboard.html',{'slot':slot})
         else :
+            if (datetime.datetime.now() > slot2_start and datetime.datetime.now() < slot2_end):
+                showScore=False
             p = models.player.objects.filter(slot=2).order_by('-score', 'timestamp')
     elif slot==3:
         if datetime.datetime.now() < slot3_start:
             return render(request, 'lboard.html',{'slot':slot})
         else :
+            if (datetime.datetime.now() > slot3_start and datetime.datetime.now() < slot3_end):
+                showScore=False
             p = models.player.objects.filter(slot=3).order_by('-score', 'timestamp')
     elif slot==4 :
         if datetime.datetime.now() < final_start:
             return render(request, 'lboard.html',{})
         else :
+            if (datetime.datetime.now() > final_start and datetime.datetime.now() < final_end):
+                showScore=False
             p = models.player.objects.filter(qualified=True).order_by('-final_score', 'timestamp')
             is_final = True
     else :
@@ -215,7 +224,7 @@ def lboard(request,slot=0):
         cur_rank += 1
         if show==True and pl.id == request.user.id:
             rank=pl.rank
-    return render(request, 'lboard.html', {'players': p, 'rank': rank, 'is_final':is_final,'slot':slot})
+    return render(request, 'lboard.html', {'players': p, 'rank': rank, 'is_final':is_final,'slot':slot,'showScore':showScore})
 
 def rules(request):
     return render(request, 'rules.html')

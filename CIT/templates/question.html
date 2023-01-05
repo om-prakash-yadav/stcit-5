@@ -492,26 +492,26 @@
     True = 1
     False = 0
     var countDownDate;
-    if ({{ player.qualified }}) {
+    if ({{player.qualified}}) {
         // Final slot date
-        countDownDate = new Date("Dec 31, 2022 23:10:00").getTime();
-    }
-    else if ({{ player.slot }}== 1) {
+        countDownDate = new Date("Jan 5, 2023 23:20:00").getTime();
+      }
+      else if ({{player.slot}}==1) {
         // slot 1 date
-        countDownDate = new Date("Dec 31, 2023 21:50:00").getTime();
-    } 
-      else if ({{ player.slot }}== 2) {
+        countDownDate = new Date("Jan 5, 2023 22:15:00").getTime();
+      } 
+      else if ({{player.slot}}==2) {
         // slot 2 date 
-        countDownDate = new Date("Dec 18, 2022 22:00:00").getTime();
-    } 
-      else if ({{ player.slot }}== 3) {
+        countDownDate = new Date("Jan 5, 2023 22:35:00").getTime();
+      } 
+      else if ({{player.slot}}==3) {
         // slot 3 date 
-        countDownDate = new Date("Jan 11, 2022 22:20:00").getTime();
-    } 
-      else {
+        countDownDate = new Date("Jan 5, 2023 22:55:00").getTime();
+      } 
+      else{
         // final slot date 
-        countDownDate = new Date("Dec 31, 2023 18:50:00").getTime();
-    }
+        countDownDate = new Date("Jan 5, 2023 23:20:00").getTime();
+      }
 
 
     // Update the count down every 1 second

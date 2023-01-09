@@ -82,6 +82,7 @@
     background-color: rgba(83, 174, 219, 0.155);
     text-align: center;
     align-self: flex-end;
+    font-family : MonsOlympia;
   }
   
   .containeraboutpage-2 {
@@ -188,42 +189,36 @@
   <div class="containeraboutpage-1 outerBorder glowing-circle container-fluid">
     <a href="{% url 'cit2020:navPage' %}"><button type="button" class="btn backButton glowing-circle-backButton"><-</button></a>
     <div class="text-center contaboutpage">
-      <img class="logo-imageaboutpage" src="{% static './Assets/isteLogoThemed.png'%}" />
+      <a href="{% url 'cit2020:navPage' %}"><img class="logo-imageaboutpage" src="{% static './Assets/isteLogoThemed.png'%}" /></a>
       <h class="main-headingaboutpage">About</h>
     </div>
     <div class="containeraboutpage-2">
       <div class="abouttheme">
       <h1>Cognitive Intelligence Test 6.0</h1>
-      <p>Cognitive Intelligence test is the newest member in the chapter's list of
-      events. It is an online event where sets of questions are designed similar
-      to that of a screening process in company.CIT not only provides an idea
-      about the level of competition but also gives a chance to rectify oneself.
-      The test comprises of basic mathematical aptitude, verbal and logical
-      reasoning and data interpretation. This is one of the finest opportunities
-      to test one's skills and be better before the ultimate showdown.</p>
+      <p>CIT 6.0 is one-of-a-kind opportunity for all aspiring students as we unveil exhilarating challenges of national standard over the realms of basic mathematical aptitude, logical & verbal reasoning, and data interpretation. Not only does CIT implant an idea of various acclaimed aptitude tests like CAT, but our flagship event also never fails to provide a simulation of the overall screening procedure of the hiring companies. This is the most anticipated online event to compete for intellectual glory among multitude of striving contestants.</p>
       <br>
       <br>
       <h2><strong>Schedule For CIT 6.0</strong></h2>
       <b>Preliminary Round:</b> Candidates can attempt CIT only once in any of the three available slots:
-      <li><b>Slot 1:</b> January 18, 2021 (7:00 PM - 7:45 PM)</li>
-      <li><b>Slot 2:</b> January 19, 2021 (7:00 PM - 7:45 PM)</li>
-      <li><b>Slot 3:</b> January 20, 2021 (8:00 PM - 8:45 PM)</li>
+      <li><b>Slot 1:</b> January 18, 2023 (9:00 PM - 9:45 PM)</li>
+      <li><b>Slot 2:</b> January 19, 2023 (9:00 PM - 9:45 PM)</li>
+      <li><b>Slot 3:</b> January 20, 2023 (9:00 PM - 9:45 PM)</li>
       <b>Final Round:</b> Candidates selected for final round will receive a mail with details
-      <li><b>Final:</b> January 22, 2021 (8:00 PM - 8:45 PM)</li>
+      <li><b>Final:</b> January 22, 2023 (9:00 PM - 9:45 PM)</li>
 </div>
 <br>
 <br>
 <div class="prize-section">
-  <h2><strong>Cash PRIZES worth 7.5K For CIT 6.0</strong></p>
-    <img src="{% static 'Assets/ims.png'%}" alt="PRIZES">
+  <h2><strong>Cash PRIZES worth 3K For CIT 6.0</strong></p>
+    {% comment %} <img src="{% static 'Assets/ims.png'%}" alt="PRIZES"> {% endcomment %}
 </div>
 <br>
 <br>
 <div class="sponsors-section ">
   <h2><strong>EVENT SPONSOR</strong></p>
     <img src="{% static 'Assets/ims.png'%}" alt="IMS" style="margin-right: 10px; padding-bottom: 0; border-radius: 15px;">
-    <img src="{% static 'Assets/iocl.png'%}" alt="IOCL"
-                    style="padding-bottom: 0; border-radius: 15px; margin-right: 10px;">
+    {% comment %} <img src="{% static 'Assets/iocl.png'%}" alt="IOCL"
+                    style="padding-bottom: 0; border-radius: 15px; margin-right: 10px;"> {% endcomment %}
 </div>
     </div>
   </div>

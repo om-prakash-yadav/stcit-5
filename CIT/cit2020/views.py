@@ -9,19 +9,19 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from .forms import Profileform
 
-slot1_start=datetime.datetime(2023, 1, 9, 17, 45, 00, 701322)
-slot1_end=datetime.datetime(2023, 1, 9, 17, 50, 00, 701322)
+slot1_start=datetime.datetime(2023, 1, 18, 21, 00, 00, 701322)
+slot1_end=datetime.datetime(2023, 1, 18, 21, 45, 00, 701322)
 
-slot2_start=datetime.datetime(2023, 1, 9, 17, 51, 00, 701322)
-slot2_end=datetime.datetime(2023, 1, 9, 17, 56, 00, 701322)
+slot2_start=datetime.datetime(2023, 1, 19, 21, 00, 00, 701322)
+slot2_end=datetime.datetime(2023, 1, 19, 21, 45, 00, 701322)
 
-slot3_start=datetime.datetime(2023, 1, 9, 17, 57, 00, 701322)
-slot3_end=datetime.datetime(2023, 1, 9, 18, 2, 00, 701322)
+slot3_start=datetime.datetime(2023, 1, 20, 21, 00, 00, 701322)
+slot3_end=datetime.datetime(2023, 1, 20, 21, 45, 00, 701322)
 
-round1_result=datetime.datetime(2023, 1, 9, 18,3, 00, 701322)
+round1_result=datetime.datetime(2023, 1, 21, 12,00, 00, 701322)
 
-final_start=datetime.datetime(2023, 1, 9, 18, 4, 00, 701322)
-final_end=datetime.datetime(2023, 1, 9, 18,9, 00, 701322)
+final_start=datetime.datetime(2023, 1, 22, 21, 00, 00, 701322)
+final_end=datetime.datetime(2023, 1, 22, 21,45, 00, 701322)
 
 def index(request):
     user = request.user
